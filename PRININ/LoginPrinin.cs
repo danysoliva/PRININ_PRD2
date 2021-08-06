@@ -225,5 +225,12 @@ namespace PRININ
             //ReleaseCapture();
             //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            txt_usuario.Text = "danys.oliva";
+            txt_password.Text = "Gto1804?";
+            ValidateUserInfo();
+        }
     }
 }

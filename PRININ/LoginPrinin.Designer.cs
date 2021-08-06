@@ -37,6 +37,7 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.lblVersion = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_usuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -134,6 +135,17 @@
             this.lblVersion.TabIndex = 15;
             this.lblVersion.Text = "0.0.0.0";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(228, 95);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(86, 75);
+            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // LoginPrinin
             // 
             this.Appearance.BackColor = System.Drawing.Color.DarkGray;
@@ -141,6 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 294);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureEdit2);
             this.Controls.Add(this.pictureEdit1);
@@ -174,5 +187,6 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.LabelControl lblVersion;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

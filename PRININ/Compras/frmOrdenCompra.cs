@@ -499,7 +499,8 @@ namespace PRININ.Compras
 						                         where hh.cerrada = 0 
 							                     and dd.id_capitulo = @id_cap1
 							                     and hh.fecha >= '10/06/2020'";
-                        command.Parameters.Add("id_cap1", SqlDbType.Int).Value = row["id_capitulo"];
+                        int IdCap = Convert.ToInt32(row["id_capitulo"]);
+                        command.Parameters.Add("id_cap1", SqlDbType.Int).Value = IdCap;
                         string vTotalActual = command.ExecuteScalar().ToString();
 
                         decimal total = (Convert.ToDecimal(row["cantidad"]) * Convert.ToDecimal(row["precio"]));
@@ -508,8 +509,8 @@ namespace PRININ.Compras
                                                     where enable = 1 
                                                           and id = @id_cap2";
 
-                        command.Parameters.Add("id_cap2", SqlDbType.Int).Value = row["id_capitulo"];
-                        object id = row["id_capitulo"];
+                        command.Parameters.Add("id_cap2", SqlDbType.Int).Value = IdCap;
+                        object id = IdCap;
 
                         string vMontoInicial= command.ExecuteScalar().ToString();
 
@@ -687,12 +688,13 @@ namespace PRININ.Compras
                         command.Parameters.Add("cantidad", SqlDbType.Decimal).Value = row["cantidad"];
                         command.Parameters.Add("precio", SqlDbType.Decimal).Value = row["precio"];
 
+                        int IdCap_ = Convert.ToInt32(row["id_capitulo"]);
                         if (row["id_rubro"] == null)
                             command.Parameters.Add("id_rubro", SqlDbType.Int).Value = DBNull.Value;
                         else
                             command.Parameters.Add("id_rubro", SqlDbType.Int).Value = row["id_rubro"];
 
-                        command.Parameters.Add("id_cap", SqlDbType.Int).Value = row["id_capitulo"]; 
+                        command.Parameters.Add("id_cap", SqlDbType.Int).Value = IdCap_; 
 
                         command.ExecuteNonQuery();
                     }
