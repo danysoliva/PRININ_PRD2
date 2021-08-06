@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EDC8BDC-E426-431C-8F08-AA94128A60FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PRININ</RootNamespace>
+    <AssemblyName>PRININ</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2" />
+    <Reference Include="DevExpress.Data.v15.2" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DBOperations.cs" />
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoice_OptionsPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invoice_OptionsPrint.Designer.cs">
+      <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoice_OptionsPrint.resx">
+      <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\shrimp_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\shrimp_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\invoice_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\close_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\close_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\close_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\creditnote_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\creditnote_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\creditnote_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\creditnote_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\debitnote_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\debitnote_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\debitnote_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\debitnote_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\config_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\config_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\config_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\config_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\config_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\cancel_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\cancel_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\cancel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\cancel_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\cancel_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\document_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\document_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\document_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\document_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\document_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\ok_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\ok_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\ok_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\ok_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PNG\ok_64.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

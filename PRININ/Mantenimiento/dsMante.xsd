@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMante" targetNamespace="http://tempuri.org/dsMante.xsd" xmlns:mstns="http://tempuri.org/dsMante.xsd" xmlns="http://tempuri.org/dsMante.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMante" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMante" msprop:Generator_UserDSName="dsMante">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="proveedores" msprop:Generator_TableClassName="proveedoresDataTable" msprop:Generator_TableVarName="tableproveedores" msprop:Generator_RowChangedName="proveedoresRowChanged" msprop:Generator_TablePropName="proveedores" msprop:Generator_RowDeletingName="proveedoresRowDeleting" msprop:Generator_RowChangingName="proveedoresRowChanging" msprop:Generator_RowEvHandlerName="proveedoresRowChangeEventHandler" msprop:Generator_RowDeletedName="proveedoresRowDeleted" msprop:Generator_RowClassName="proveedoresRow" msprop:Generator_UserTableName="proveedores" msprop:Generator_RowEvArgName="proveedoresRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="rtn" msprop:Generator_ColumnVarNameInTable="columnrtn" msprop:Generator_ColumnPropNameInRow="rtn" msprop:Generator_ColumnPropNameInTable="rtnColumn" msprop:Generator_UserColumnName="rtn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cai_prov" msprop:Generator_TableClassName="cai_provDataTable" msprop:Generator_TableVarName="tablecai_prov" msprop:Generator_TablePropName="cai_prov" msprop:Generator_RowDeletingName="cai_provRowDeleting" msprop:Generator_RowChangingName="cai_provRowChanging" msprop:Generator_RowEvHandlerName="cai_provRowChangeEventHandler" msprop:Generator_RowDeletedName="cai_provRowDeleted" msprop:Generator_UserTableName="cai_prov" msprop:Generator_RowChangedName="cai_provRowChanged" msprop:Generator_RowEvArgName="cai_provRowChangeEvent" msprop:Generator_RowClassName="cai_provRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cai" msprop:Generator_ColumnVarNameInTable="columncai" msprop:Generator_ColumnPropNameInRow="cai" msprop:Generator_ColumnPropNameInTable="caiColumn" msprop:Generator_UserColumnName="cai" type="xs:string" minOccurs="0" />
+              <xs:element name="rango" msprop:Generator_ColumnVarNameInTable="columnrango" msprop:Generator_ColumnPropNameInRow="rango" msprop:Generator_ColumnPropNameInTable="rangoColumn" msprop:Generator_UserColumnName="rango" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_limite" msprop:Generator_ColumnVarNameInTable="columnfecha_limite" msprop:Generator_ColumnPropNameInRow="fecha_limite" msprop:Generator_ColumnPropNameInTable="fecha_limiteColumn" msprop:Generator_UserColumnName="fecha_limite" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

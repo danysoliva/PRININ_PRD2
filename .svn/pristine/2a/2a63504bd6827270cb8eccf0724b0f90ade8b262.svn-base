@@ -1,0 +1,233 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using PRININ.Classes;
+using System.Data.SqlClient;
+
+namespace PRININ
+{
+    public partial class invoice_OptionsPrint : DevExpress.XtraEditors.XtraForm
+    {
+        #region Developer Defined Variables
+
+        DBOperations dp = new DBOperations();
+
+        string LocalUserName;
+        string LocalMachineName;
+
+        #endregion
+
+        #region Developer Defined Methods
+
+        private void load_company() 
+        {
+            try
+            {
+                cmb_company.Properties.DataSource = dp.PRININ_GetSelectData(@"SELECT [CCCONO] AS id
+                                                                                    ,[CCTX15] AS name
+                                                                                FROM [dbo].[CMNDIV]
+                                                                                WHERE [CCDIVI] = '' ").Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos de la compañía.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void load_division()
+        {
+            try
+            {
+                cmb_division.Properties.DataSource = dp.PRININ_GetSelectData(string.Format(@" SELECT [CCDIVI] AS id
+                                                                                                    ,[CCCONM] AS name
+                                                                                                    ,[CCTX15] AS name2
+                                                                                                FROM [dbo].[CMNDIV]
+                                                                                                WHERE [CCCONO] = {0}
+                                                                                                AND [CCDIVI] <> '' ", cmb_company.EditValue)).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos de la división.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void load_facility()
+        {
+            try
+            {
+                cmb_facility.Properties.DataSource = dp.PRININ_GetSelectData(string.Format(@" SELECT [CFFACI] AS id
+                                                                                                    ,[CFFACN] AS name
+                                                                                                FROM [PRININ].[dbo].[CFACIL]
+                                                                                                WHERE [CFCONO] = {0}
+                                                                                                AND [CFDIVI] = {1} ", cmb_company.EditValue, cmb_division.EditValue)).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos de la planta.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void load_wharehouse()
+        {
+            try
+            {
+                cmb_wharehouse.Properties.DataSource = dp.PRININ_GetSelectData(string.Format(@"SELECT [OAADK2] AS id
+                                                                                                     ,[OACONM] AS name
+                                                                                                 FROM [PRININ].[dbo].[CIADDR]
+                                                                                                WHERE [OACONO] = {0} ", cmb_company.EditValue)).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos del almacén.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void load_regional_data()
+        {
+            try
+            {
+                cmb_cai.Properties.DataSource = dp.PRININ_GetSelectData(@"SELECT [id]
+                                                                                ,[cai]
+                                                                                ,[fecha_emision] AS emision
+                                                                                ,[fecha_vence] AS vencimiento
+                                                                            FROM [PRININ].[dbo].[z_INVREGDAT]
+                                                                            WHERE [estado] = 'a'").Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos del almacén.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool all_data_is_good() 
+        {
+            if (cmb_company.EditValue == null)
+                return false;
+            else if (cmb_division.EditValue == null)
+                return false;
+            else if (cmb_facility.EditValue == null)
+                return false;
+            else if (cmb_wharehouse.EditValue == null)
+                return false;
+            else if (cmb_cai.EditValue == null)
+                return false;
+            else if (txt_InvoiceNumber.Text.ToString() == "")
+                return false;
+            else if (txt_PO.Text.ToString() == "")
+                return false;
+            else
+                return true;
+        }
+
+        #endregion
+        public invoice_OptionsPrint()
+        {
+            InitializeComponent();
+        }
+
+        private void invoice_OptionsPrint_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                LocalUserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                LocalMachineName = System.Environment.MachineName;
+                
+                load_company();
+                load_regional_data();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al cargar datos de la compañía.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmb_company_EditValueChanged(object sender, EventArgs e)
+        {
+            load_division();
+            load_wharehouse();
+        }
+
+        private void cmb_division_EditValueChanged(object sender, EventArgs e)
+        {
+            load_facility();
+        }
+
+        private void btn_cancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btn_Print_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                if (all_data_is_good())
+                {
+                    #region Procedure Parameters
+
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@ccicompania", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@ccidivision", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@cciplanta", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@ccialmacen", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@nnufactura", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@regdataid", SqlDbType.Int));
+                    cmd.Parameters.Add(new SqlParameter("@line1", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@line2", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@line3", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@line4", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@user", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@machine", SqlDbType.VarChar));
+                    cmd.Parameters.Add(new SqlParameter("@customerPO", SqlDbType.VarChar));
+
+                    cmd.Parameters["@ccicompania"].Value = cmb_company.EditValue;
+                    cmd.Parameters["@ccidivision"].Value = cmb_division.EditValue;
+                    cmd.Parameters["@cciplanta"].Value = cmb_facility.EditValue;
+                    cmd.Parameters["@ccialmacen"].Value = cmb_wharehouse.EditValue;
+                    cmd.Parameters["@nnufactura"].Value = txt_InvoiceNumber.Text.ToString();
+                    cmd.Parameters["@regdataid"].Value = int.Parse(cmb_cai.EditValue.ToString());
+                    cmd.Parameters["@line1"].Value = txt_line1.Text.ToString();
+                    cmd.Parameters["@line2"].Value = txt_line2.Text.ToString();
+                    cmd.Parameters["@line3"].Value = txt_line3.Text.ToString();
+                    cmd.Parameters["@line4"].Value = txt_line4.Text.ToString();
+                    cmd.Parameters["@user"].Value = LocalUserName;
+                    cmd.Parameters["@machine"].Value = LocalMachineName;
+                    cmd.Parameters["@customerPO"].Value = txt_PO.Text.ToString();
+
+                    /********************OUTPUT PARAMETER*********************************************************/
+                    SqlParameter param = cmd.Parameters.Add(new SqlParameter("@InsertedID", SqlDbType.Int));
+                    param.Direction = ParameterDirection.ReturnValue;
+                    /*********************************************************************************************/
+
+                    #endregion
+
+                    #region Procedure Execution
+
+                    Int32 recordID = Convert.ToInt32(dp.PRININ_Exec_SP_GetID("sp_invoice_import_single", cmd, param));
+
+                    MessageBox.Show("Done! ID = " + recordID.ToString(), "All Good", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    #endregion
+                }
+                else 
+                {
+                    MessageBox.Show("A excepción de las Lineas, todos los datos son requeridos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error al guardar los datos.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}

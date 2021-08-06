@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ND_NC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="company_id" type="xs:decimal" minOccurs="0" />
+              <xs:element name="company_name" type="xs:string" minOccurs="0" />
+              <xs:element name="division_id" type="xs:string" minOccurs="0" />
+              <xs:element name="division_name" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_code" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_long_name" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_short_name" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_rtn" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_address_l1" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_address_l2" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_address_l3" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_country" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_phone" type="xs:string" minOccurs="0" />
+              <xs:element name="ND_NC_number" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_EMISION_ND_NC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="value" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_USD_words" type="xs:string" minOccurs="0" />
+              <xs:element name="currency_name" type="xs:string" minOccurs="0" />
+              <xs:element name="ND_NC" type="xs:string" minOccurs="0" />
+              <xs:element name="ND_NC_CODE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="title" type="xs:string" minOccurs="0" />
+              <xs:element name="concept" type="xs:string" minOccurs="0" />
+              <xs:element name="id1" type="xs:int" minOccurs="0" />
+              <xs:element name="cai" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_emision" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_vence" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="num_ini" type="xs:string" minOccurs="0" />
+              <xs:element name="num_fin" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_by" type="xs:string" minOccurs="0" />
+              <xs:element name="created_from" type="xs:string" minOccurs="0" />
+              <xs:element name="kind" type="xs:string" minOccurs="0" />
+              <xs:element name="gen_corr" type="xs:boolean" minOccurs="0" />
+              <xs:element name="correlative" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
