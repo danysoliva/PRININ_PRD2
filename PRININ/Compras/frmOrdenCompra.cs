@@ -696,6 +696,8 @@ namespace PRININ.Compras
 
                         command.Parameters.Add("id_cap", SqlDbType.Int).Value = IdCap_; 
 
+
+
                         command.ExecuteNonQuery();
                     }
 
