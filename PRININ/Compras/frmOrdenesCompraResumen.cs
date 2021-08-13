@@ -285,5 +285,133 @@ namespace PRININ.Compras
             frmReporteOrdenesDetalle frm = new frmReporteOrdenesDetalle();
             frm.Show();
         }
+
+        private void repositoryItemButtonPrint_ButtonClick_1(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridMain.FocusedView;
+            var row = (dsCompras.resumen_ocRow)gridView.GetFocusedDataRow();
+            string num = row.numero;
+
+            DBOperations dps = new DBOperations();
+            SqlConnection con = new SqlConnection(dps.ConnectionStringPRININ);
+            con.Open();
+            SqlCommand command = con.CreateCommand();
+
+            command.CommandText = @"SELECT resolucion from ORDEN_COMPRA
+							                      where id =" + row.id.ToString();
+            //command.Parameters.Add("resolucion", SqlDbType.Int).Value = row["resolucion"];
+            string resolucionn = command.ExecuteScalar().ToString();
+
+            string resolucion = "-" + resolucionn;
+
+            num = "Orden #" + num;
+
+            try
+            {
+                //Encabezado
+                string sql = @"SELECT [id]
+                                      ,[proveedor]
+                                      ,[codigo_proveedor]
+                                      ,[rtn]
+                                      ,[direccion]
+                                      ,coalesce([contacto],'')as contacto
+                                      ,coalesce([telefono],'')as telefono 
+                                      ,[fecha]
+                                      ,[fecha_vence]
+                                      ,[moneda]
+                                      ,[referencia]
+                                      ,coalesce(obs,'')as obs
+	                                  ,(select descripcion
+		                                from PRININ.dbo.conf_monedas
+		                                where id=moneda)as moneda
+                                      ,numero
+                                      ,resolucion
+                                      ,[num_factura]
+                                      ,[num_oc_sar]
+                                  FROM [dbo].[ORDEN_COMPRA]
+                                  where id =" + row.id.ToString();
+                DBOperations dp = new DBOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.oc_enc.Clear();
+                adat.Fill(dsCompras1.oc_enc);
+
+
+                //Detalle
+                string sqlD = @"SELECT [id]
+                                      ,[id_orden_compra]
+                                      ,coalesce([codigo],'') as codigo
+                                      ,[descripcion]
+                                      ,[cantidad]
+                                      ,[precio]
+                                      ,[id_rubro]
+	                                  ,(cantidad * precio) as total_f
+	                                  ,(SELECT(cast(rr.[codigo] as varchar) + ' - ' +rr.[descripcion]) as descripcion
+                                        FROM [dbo].[RUBROS] rr
+                                        where rr.enable = 1 and rr.id = id_rubro) as nombre_rubro
+                                  FROM [dbo].[ORDEN_COMPRA_D]
+                                  where id_orden_compra =" + row.id.ToString();
+
+                SqlCommand cmdD = new SqlCommand(sqlD, conn);
+                SqlDataAdapter adatD = new SqlDataAdapter(cmdD);
+                dsCompras1.oc_detalle.Clear();
+                adatD.Fill(dsCompras1.oc_detalle);
+
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+            decimal total = 0;
+            foreach (dsCompras.oc_detalleRow row1 in dsCompras1.oc_detalle)
+            {
+                total += (row1.cantidad * row1.precio);
+            }
+
+            int printcount = dsCompras1.oc_detalle.Rows.Count;
+
+            int rowwant = 20 - (printcount);
+
+            if (rowwant > 0)
+            {
+                DataRow workRow;
+                for (int i = 1; i <= rowwant; i++)
+                {
+                    workRow = dsCompras1.oc_detalle.NewRow();
+                    workRow["id"] = DBNull.Value;
+                    workRow["id_orden_compra"] = DBNull.Value;
+                    workRow["codigo"] = DBNull.Value;
+
+                    if (i == 1)
+                    {
+                        workRow["descripcion"] = "       ****Ultima Linea****";
+                        workRow["nombre_rubro"] = "       ****Ultima Linea****";
+                    }
+                    else
+                    {
+                        workRow["nombre_rubro"] = DBNull.Value;
+                        workRow["descripcion"] = DBNull.Value;
+                    }
+
+                    workRow["cantidad"] = DBNull.Value;
+                    workRow["precio"] = DBNull.Value;
+                    workRow["total_f"] = DBNull.Value;
+                    workRow["id_rubro"] = DBNull.Value;
+                    dsCompras1.oc_detalle.Rows.Add(workRow);
+                }
+            }
+
+
+
+            RPT_OrdenCompra report = new RPT_OrdenCompra(num, total, resolucion) { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
+            //RPT_OrdenCompra report = new RPT_OrdenCompra(num) { DataSource = dsCompras1, ShowPrintMarginsWarning = false };
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            printReport.ShowPreview();
+        }
     }
 }

@@ -63,7 +63,7 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsCompras1 = new PRININ.Compras.dsCompras();
             this.grResolucion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceResoluciones = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.txtObservaciones = new DevExpress.XtraEditors.TextEdit();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -83,8 +83,10 @@
             this.coltotal_f = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceRubros = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookupEditCapitulos = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -112,14 +114,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grResolucion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceResoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRubros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookupEditCapitulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCapitulos)).BeginInit();
@@ -446,17 +448,17 @@
             this.grResolucion.Properties.Appearance.Options.UseFont = true;
             this.grResolucion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grResolucion.Properties.DataSource = this.bindingSource3;
+            this.grResolucion.Properties.DataSource = this.bindingSourceResoluciones;
             this.grResolucion.Properties.DisplayMember = "descripcion";
-            this.grResolucion.Properties.ValueMember = "id";
+            this.grResolucion.Properties.ValueMember = "codigo";
             this.grResolucion.Size = new System.Drawing.Size(125, 24);
             this.grResolucion.TabIndex = 8;
             this.grResolucion.TextChanged += new System.EventHandler(this.grResolucion_TextChanged);
             // 
-            // bindingSource3
+            // bindingSourceResoluciones
             // 
-            this.bindingSource3.DataMember = "resolucion";
-            this.bindingSource3.DataSource = this.dsCompras1;
+            this.bindingSourceResoluciones.DataMember = "resolucion";
+            this.bindingSourceResoluciones.DataSource = this.dsCompras1;
             // 
             // label10
             // 
@@ -662,7 +664,7 @@
             this.repositoryItemGridLookUpEdit1.AutoHeight = false;
             this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit1.DataSource = this.bindingSource2;
+            this.repositoryItemGridLookUpEdit1.DataSource = this.bindingSourceRubros;
             this.repositoryItemGridLookUpEdit1.DisplayMember = "descripcion";
             this.repositoryItemGridLookUpEdit1.KeyMember = "id;descripcion";
             this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
@@ -672,17 +674,37 @@
             this.repositoryItemGridLookUpEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemGridLookUpEdit1_EditValueChanged);
             this.repositoryItemGridLookUpEdit1.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.repositoryItemGridLookUpEdit1_EditValueChanging);
             // 
-            // bindingSource2
+            // bindingSourceRubros
             // 
-            this.bindingSource2.DataMember = "rubros";
-            this.bindingSource2.DataSource = this.dsCompras1;
+            this.bindingSourceRubros.DataMember = "rubros";
+            this.bindingSourceRubros.DataSource = this.dsCompras1;
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid3,
+            this.coldescripcion3});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid3
+            // 
+            this.colid3.Caption = "Código";
+            this.colid3.FieldName = "id";
+            this.colid3.Name = "colid3";
+            this.colid3.Visible = true;
+            this.colid3.VisibleIndex = 0;
+            // 
+            // coldescripcion3
+            // 
+            this.coldescripcion3.Caption = "Descripción";
+            this.coldescripcion3.FieldName = "descripcion";
+            this.coldescripcion3.Name = "coldescripcion3";
+            this.coldescripcion3.Visible = true;
+            this.coldescripcion3.VisibleIndex = 1;
             // 
             // colnombre_rubro
             // 
@@ -835,14 +857,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCompras1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grResolucion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceResoluciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRubros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookupEditCapitulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCapitulos)).EndInit();
@@ -892,7 +914,7 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_rubro;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_rubro;
-        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.BindingSource bindingSourceRubros;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SimpleButton cmdCancelar;
         private DevExpress.XtraEditors.SimpleButton cmdAgregar;
@@ -912,10 +934,12 @@
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
-        private System.Windows.Forms.BindingSource bindingSource3;
+        private System.Windows.Forms.BindingSource bindingSourceResoluciones;
         private DevExpress.XtraGrid.Columns.GridColumn colpagos_d;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonDelete;
         private DevExpress.XtraGrid.Columns.GridColumn colid_capitulo;
         private DevExpress.XtraGrid.Columns.GridColumn colcapitulo;
+        private DevExpress.XtraGrid.Columns.GridColumn colid3;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion3;
     }
 }

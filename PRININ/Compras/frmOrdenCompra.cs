@@ -39,6 +39,7 @@ namespace PRININ.Compras
             //LoadRubros();
             LoadResolucion();
             LoadMonedas();
+            
             //repositoryItemGridLookUpEdit1.View.Columns["id"].Visible = false;
             if (ProTipoEdicion == TipoEdicion.Update)
             {
@@ -891,6 +892,10 @@ namespace PRININ.Compras
 
             //int iclick = Convert.ToInt32(click);
             //this.LoadRubrosRes(iclick);
+            //var gridView = (GridView)grResolucion.focu;
+            //var row = (dsCompras.resolucionRow)gridView.GetFocusedDataRow();
+
+            LoadRubrosRes(grResolucion.EditValue.ToString());
         }
 
         private void repositoryItemButtonEdit1_ButtonClick_1(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

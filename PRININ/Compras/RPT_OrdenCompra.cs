@@ -13,7 +13,14 @@ namespace PRININ.RPTS
         public RPT_OrdenCompra(string pNumeroOrden, decimal pTotal, string presolucion)
         {
             InitializeComponent();
-            lblNumeroOrden.Text = pNumeroOrden + presolucion; 
+            if (!string.IsNullOrEmpty(presolucion))
+                if(presolucion.Length>1)
+                    lblNumeroOrden.Text = pNumeroOrden + " Resolución: " + presolucion;
+                else
+                    lblNumeroOrden.Text = pNumeroOrden;
+            else
+                lblNumeroOrden.Text = pNumeroOrden;
+
             lblTotal.Text = lblSub.Text = string.Format("{0:###,##0.00}", pTotal);
         }
 
