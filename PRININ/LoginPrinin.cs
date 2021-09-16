@@ -10,6 +10,8 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using PRININ.Classes;
 using System.Reflection;
+using PRININ.Factura;
+using PRININ.DEV;
 
 namespace PRININ
 {
@@ -64,9 +66,6 @@ namespace PRININ
         }
 
         private void ValidateUserInfo()
-
-
-
         {
             Users user = new Users();
              string usuario = user.EncrypPassword("Nutreco");//Users.EncrypPassword("Nutreco"); 
@@ -228,9 +227,36 @@ namespace PRININ
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            txt_usuario.Text = "danys.oliva";
-            txt_password.Text = "Gto1804?";
+            //txt_usuario.Text = "danys.oliva";
+            //txt_password.Text = "Gto1804?";
+            //ValidateUserInfo();
+            frmHomeFacturas frm = new frmHomeFacturas("");
+            //frm.MdiParent = this.MdiParent;
+            frm.Show();
+            //frmDEV frm = new frmDEV();
+            //frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
             ValidateUserInfo();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void pS_Button1_Click(object sender, EventArgs e)
+        {
+            ValidateUserInfo();
+        }
+
+        private void pS_Button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

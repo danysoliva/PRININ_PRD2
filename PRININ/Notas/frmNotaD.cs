@@ -81,7 +81,7 @@ namespace PRININ.Notas
                                         ,[fecha_doc]
                                         ,[id_doc_fiscal]
                                         ,[tasa]
-                                FROM [dbo].[NOTAS]
+                                FROM [PRININ].[dbo].[NOTAS]
                                 WHERE id = " + row.id;
                         DBOperations dp = new DBOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -135,10 +135,10 @@ namespace PRININ.Notas
 
                     try
                     {
-                        string sql = @"SELECT [fecha_emision]
+                        string sql = @"SELECT [fecha_vence]
                                       ,[num_ini]
                                       ,[num_fin]
-                                  FROM [dbo].[z_INVREGDAT]
+                                  FROM [PRININ].[dbo].[z_INVREGDAT]
                                   where id = " + ID_Doc_Fiscal;
                         DBOperations dp = new DBOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -203,7 +203,7 @@ namespace PRININ.Notas
             //                            ,[fecha_doc]
             //                            ,[id_doc_fiscal]
             //                            ,[tasa]
-            //                    FROM [dbo].[NOTAS]
+            //                    FROM [PRININ].[dbo].[NOTAS]
             //                    WHERE id = " + row.id;
             //    DBOperations dp = new DBOperations();
             //    SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -260,7 +260,7 @@ namespace PRININ.Notas
             //    string sql = @"SELECT [fecha_emision]
             //                          ,[num_ini]
             //                          ,[num_fin]
-            //                      FROM [dbo].[z_INVREGDAT]
+            //                      FROM [PRININ].[dbo].[z_INVREGDAT]
             //                      where id = " + ID_Doc_Fiscal;
             //    DBOperations dp = new DBOperations();
             //    SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);

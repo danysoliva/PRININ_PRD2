@@ -43,6 +43,7 @@
             this.cmdResumenNotas = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,11 +194,24 @@
             this.simpleButton1.Text = "Facturas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ImageOptions.Image = global::PRININ.Properties.Resources.invoice_321;
+            this.simpleButton3.Location = new System.Drawing.Point(12, 523);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(224, 44);
+            this.simpleButton3.TabIndex = 10;
+            this.simpleButton3.Text = "Facturas UNITED";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
             // frmMenuPrinin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 524);
+            this.ClientSize = new System.Drawing.Size(248, 572);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.cmdPedidos);
             this.Controls.Add(this.cmdMantenimiento);
             this.Controls.Add(this.cmdRptsNotas);
@@ -233,5 +247,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdRptsNotas;
         private DevExpress.XtraEditors.SimpleButton cmdMantenimiento;
         private DevExpress.XtraEditors.SimpleButton cmdPedidos;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

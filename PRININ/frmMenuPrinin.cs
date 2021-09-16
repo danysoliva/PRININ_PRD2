@@ -13,6 +13,7 @@ using PRININ.Notas;
 using PRININ.Classes;
 using PRININ.Mantenimiento;
 using PRININ.Pedidos;
+using PRININ.Factura;
 
 namespace PRININ
 {
@@ -206,6 +207,14 @@ namespace PRININ
             {
                 CajaDialogo.Error("No tiene privilegios para esta funcion! Permiso Requerido #7");
             }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            frmHomeFacturas frm = new frmHomeFacturas(this.theme);
+            
+            //frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

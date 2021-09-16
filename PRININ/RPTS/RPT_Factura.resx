@@ -213,6 +213,7 @@
               &lt;xs:element name="line_unit_price" type="xs:string" minOccurs="0" /&gt;
               &lt;xs:element name="line_total_USD" type="xs:decimal" minOccurs="0" /&gt;
               &lt;xs:element name="line_total_HNL" type="xs:decimal" minOccurs="0" /&gt;
+              &lt;xs:element name="discount" type="xs:decimal" minOccurs="0" /&gt;
             &lt;/xs:sequence&gt;
           &lt;/xs:complexType&gt;
         &lt;/xs:element&gt;

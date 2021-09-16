@@ -49,7 +49,7 @@ namespace PRININ.Notas
                                   ,T0.[id_doc_fiscal]
                                   ,T0.[tasa]
                                      ,T1.nombre
-                              FROM [dbo].[NOTAS] T0 join dbo.TIPONOTA T1 on  T0.tipo_nota = t1.id
+                              FROM [PRININ].[dbo].[NOTAS] T0 join dbo.TIPONOTA T1 on  T0.tipo_nota = t1.id
                               where T0.enable = 1 and T0.fecha_doc BETWEEN @desde and @hasta and T0.[tipo_nota] = @tipo_nota";
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);

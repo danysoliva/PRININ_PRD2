@@ -49,11 +49,11 @@ namespace PRININ.Notas
         {
             string sql = @"SELECT [prefijo]
                                   ,[siguiente]
-                              FROM [dbo].[conf_tables_id]";
+                              FROM [PRININ].[dbo].[conf_tables_id]";
 
             string sql2 = @"SELECT [id]
                                   ,[cai]
-                              FROM [dbo].[z_INVREGDAT]
+                              FROM [PRININ].[dbo].[z_INVREGDAT]
                               where estado = 'a'";
             switch (TipoNotaActual)
             {

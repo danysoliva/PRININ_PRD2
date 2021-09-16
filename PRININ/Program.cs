@@ -6,6 +6,8 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using PRININ.Classes;
+using DevExpress.Xpf.Core;
+using DevExpress.XtraGauges.Presets.Styles;
 
 namespace PRININ
 {
@@ -20,19 +22,32 @@ namespace PRININ
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //BonusSkins.Register();
 
+            BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("Whiteprint");
+            UserLookAndFeel.Default.SetSkinStyle("Moderno");
+
+
+            //protected override void OnStartup(StartupEventArgs e)
+            //{
+            //ApplicationThemeHelper.ApplicationThemeName = Theme.Military.Name;
+            //base.OnStartup(e);
+            //}
+
             //Application.Run(new frmMenuPrinin());// Form1());
 
             var login = new LoginPrinin();
             if (login.ShowDialog() == DialogResult.OK)
             {
                 Users vUserLogin = login.UsuarioLogueado;
-                frmMenuPrinin form = new frmMenuPrinin(login.UsuarioLogueado, login.UsuarioLogueado.theme);
-                form.UsuarioLogueado = login.UsuarioLogueado;
-                Application.Run(form);
+                MDIParentPRININ mdi = new MDIParentPRININ(login.UsuarioLogueado);
+                mdi.WindowState = FormWindowState.Maximized;
+                mdi.Show();
+
+                //frmMenuPrinin form = new frmMenuPrinin(login.UsuarioLogueado, login.UsuarioLogueado.theme);
+                //form.MdiParent = mdi;
+                //form.UsuarioLogueado = login.UsuarioLogueado;
+                Application.Run(mdi);
             }
 
 

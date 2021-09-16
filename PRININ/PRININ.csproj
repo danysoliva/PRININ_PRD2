@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>123</ApplicationRevision>
+    <ApplicationRevision>125</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -247,6 +247,11 @@
     <Compile Include="Classes\ConversorNumALetras.cs" />
     <Compile Include="Classes\ConversorNumALetrasDolares.cs" />
     <Compile Include="Classes\DBOperations.cs" />
+    <Compile Include="Classes\DocsFiscales.cs" />
+    <Compile Include="Classes\FacturaH.cs" />
+    <Compile Include="Classes\PS_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Functions.cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Monedas.cs" />
@@ -333,10 +338,39 @@
     <Compile Include="Compras\RPT_OrdenCompra_Normal.Designer.cs">
       <DependentUpon>RPT_OrdenCompra_Normal.cs</DependentUpon>
     </Compile>
+    <Compile Include="DEV\frmDEV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEV\frmDEV.Designer.cs">
+      <DependentUpon>frmDEV.cs</DependentUpon>
+    </Compile>
     <Compile Include="dsCheques.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCheques.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\dsFacturasPRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\frmFacturaPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\frmFacturaPRD.Designer.cs">
+      <DependentUpon>frmFacturaPRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\frmHomeFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\frmHomeFacturas.Designer.cs">
+      <DependentUpon>frmHomeFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\RPT_FacturaPRD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Factura\RPT_FacturaPRD.Designer.cs">
+      <DependentUpon>RPT_FacturaPRD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCheques.cs">
       <SubType>Form</SubType>
@@ -426,6 +460,12 @@
     </Compile>
     <Compile Include="Mantenimiento_Correlativo.Designer.cs">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParentPRININ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParentPRININ.Designer.cs">
+      <DependentUpon>MDIParentPRININ.cs</DependentUpon>
     </Compile>
     <Compile Include="ND_NC_OptionsPrint.cs">
       <SubType>Form</SubType>
@@ -593,6 +633,9 @@
     <Compile Include="WaitForm1.Designer.cs">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Classes\PS_Button.resx">
+      <DependentUpon>PS_Button.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenCompraNormal.resx">
       <DependentUpon>frmOrdenCompraNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -629,6 +672,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\RPT_OrdenCompra_Normal.resx">
       <DependentUpon>RPT_OrdenCompra_Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEV\frmDEV.resx">
+      <DependentUpon>frmDEV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\frmFacturaPRD.resx">
+      <DependentUpon>frmFacturaPRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\frmHomeFacturas.resx">
+      <DependentUpon>frmHomeFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\RPT_FacturaPRD.resx">
+      <DependentUpon>RPT_FacturaPRD.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCheques.resx">
       <DependentUpon>frmCheques.cs</DependentUpon>
@@ -673,6 +729,9 @@
     <EmbeddedResource Include="Mantenimiento_Correlativo.resx">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParentPRININ.resx">
+      <DependentUpon>MDIParentPRININ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ND_NC_OptionsPrint.resx">
       <DependentUpon>ND_NC_OptionsPrint.cs</DependentUpon>
@@ -793,6 +852,17 @@
     </None>
     <None Include="dsCheques.xss">
       <DependentUpon>dsCheques.xsd</DependentUpon>
+    </None>
+    <None Include="Factura\dsFacturasPRD.xsc">
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
+    </None>
+    <None Include="Factura\dsFacturasPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFacturasPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Factura\dsFacturasPRD.xss">
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
     </None>
     <None Include="Gestion de Usuarios\dsUsers.xsc">
       <DependentUpon>dsUsers.xsd</DependentUpon>
@@ -2244,6 +2314,13 @@
     <None Include="Resources\Reports-icon24px.png" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-5-Reports.ico" />
     <None Include="Resources\Alarm-Error-icon16px.png" />
+    <None Include="Resources\excel16px.png" />
+    <None Include="Resources\excel64px.png" />
+    <None Include="Resources\view-details24px.png" />
+    <None Include="Resources\add24px_.png" />
+    <None Include="Resources\printer24px_.png" />
+    <None Include="Resources\user32px.png" />
+    <None Include="Resources\cross32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

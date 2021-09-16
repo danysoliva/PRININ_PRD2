@@ -124,7 +124,7 @@
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblLinea1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine9 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine8 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine7 = new DevExpress.XtraReports.UI.XRLine();
@@ -799,7 +799,7 @@
             this.xrLabel25,
             this.xrLabel24,
             this.xrLabel21,
-            this.xrLabel10,
+            this.lblLinea1,
             this.xrLine9,
             this.xrLine8,
             this.xrLine7,
@@ -1305,21 +1305,19 @@
             this.xrLabel21.Text = "xrLabel21";
             this.xrLabel21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel10
+            // lblLinea1
             // 
-            this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[header.invoice_cust_line1]")});
-            this.xrLabel10.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.ForeColor = System.Drawing.Color.DimGray;
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(194.65F, 2.905235F);
-            this.xrLabel10.Name = "xrLabel10";
-            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(275.5834F, 19.87502F);
-            this.xrLabel10.StylePriority.UseFont = false;
-            this.xrLabel10.StylePriority.UseForeColor = false;
-            this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "xrLabel10";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblLinea1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLinea1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblLinea1.LocationFloat = new DevExpress.Utils.PointFloat(194.65F, 2.905235F);
+            this.lblLinea1.Name = "lblLinea1";
+            this.lblLinea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblLinea1.SizeF = new System.Drawing.SizeF(275.5834F, 19.87502F);
+            this.lblLinea1.StylePriority.UseFont = false;
+            this.lblLinea1.StylePriority.UseForeColor = false;
+            this.lblLinea1.StylePriority.UseTextAlignment = false;
+            this.lblLinea1.Text = "lblLinea1";
+            this.lblLinea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLine9
             // 
@@ -1679,7 +1677,7 @@
         private DevExpress.XtraReports.UI.XRLine xrLine5;
         private DevExpress.XtraReports.UI.XRLabel xrLabel24;
         private DevExpress.XtraReports.UI.XRLabel xrLabel21;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.UI.XRLabel lblLinea1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel25;
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
         private DevExpress.XtraReports.UI.XRLabel xrLabel44;

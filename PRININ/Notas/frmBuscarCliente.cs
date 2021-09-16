@@ -35,7 +35,7 @@ namespace PRININ.Compras
                 string sql = @"SELECT OKCUNO as codigo,
                                         [OKCUNM] as nombre,
 	                                    OKVRNO as rtn
-                                    FROM [dbo].[OCUSMA]
+                                    FROM [PRININ].[dbo].[OCUSMA]
                                     WHERE OKCUNO LIKE '321%' --321 es el codigo de compañia PROMIX
                                 order by 2 asc ";
                 DBOperations dp = new DBOperations();

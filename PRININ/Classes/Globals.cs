@@ -44,7 +44,7 @@ namespace PRININ.Classes
         //PRININ
         public static string prinin_ServerAddress="10.50.10.19";
         public static string prinin_ServerName ="10.50.10.19";
-        public static string prinin_ActiveDB = "PRININ";
+        public static string prinin_ActiveDB = "PRININ_DEV";
 
         public static string prinin_DB_User = "sa";
         public static string prinin_DB_Pass = "Pr0mix2017";

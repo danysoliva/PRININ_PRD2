@@ -63,6 +63,16 @@ namespace PRININ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add24px_ {
+            get {
+                object obj = ResourceManager.GetObject("add24px_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Alarm_Error_icon16px {
             get {
                 object obj = ResourceManager.GetObject("Alarm-Error-icon16px", resourceCulture);
@@ -263,6 +273,16 @@ namespace PRININ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cross32px {
+            get {
+                object obj = ResourceManager.GetObject("cross32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_5_Reports {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-5-Reports", resourceCulture);
@@ -356,6 +376,26 @@ namespace PRININ.Properties {
         internal static System.Drawing.Bitmap document_64 {
             get {
                 object obj = ResourceManager.GetObject("document_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excel16px {
+            get {
+                object obj = ResourceManager.GetObject("excel16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excel64px {
+            get {
+                object obj = ResourceManager.GetObject("excel64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,6 +613,16 @@ namespace PRININ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer24px_ {
+            get {
+                object obj = ResourceManager.GetObject("printer24px_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PromixLogo_Trans {
             get {
                 object obj = ResourceManager.GetObject("PromixLogo_Trans", resourceCulture);
@@ -716,6 +766,26 @@ namespace PRININ.Properties {
         internal static System.Drawing.Bitmap US_flag_48 {
             get {
                 object obj = ResourceManager.GetObject("US_flag_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user32px {
+            get {
+                object obj = ResourceManager.GetObject("user32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_details24px {
+            get {
+                object obj = ResourceManager.GetObject("view-details24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
