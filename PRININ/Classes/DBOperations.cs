@@ -172,6 +172,34 @@ namespace PRININ.Classes
             conn.Close();
         }
 
+        internal string Get_Prinin_db_window_assigned(string pCodeWindow)
+        {
+            string ConnectionString_ = "";
+            try
+            {
+                string sql = @"sp_get_data_base_name_for_windows";
+                DBOperations dp = new DBOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@code", pCodeWindow);
+                //cmd.Parameters.AddWithValue("@id_rub", pIdRubroSelected);
+                string DataBaseName_w = cmd.ExecuteScalar().ToString();
+
+                ConnectionString_ = @"Server=" + Globals.prinin_ServerAddress + @";
+                                      Database=" + DataBaseName_w + @";
+                                      User Id=" + Globals.prinin_DB_User + @";
+                                      Password=" + Globals.prinin_DB_Pass + ";";
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return ConnectionString_;
+        }
+
         #endregion
 
     }

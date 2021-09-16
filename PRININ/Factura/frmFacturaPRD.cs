@@ -18,6 +18,9 @@ namespace PRININ.Factura
     {
         int pId;
         FacturaH fact1;
+
+        public string CodeWindow { get { return "WD0001"; } }
+
         public frmFacturaPRD(int pid)
         {
             InitializeComponent();
@@ -98,7 +101,9 @@ namespace PRININ.Factura
             {
                 string sql = @"sp_get_lista_tax_habilitados_facturas";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -120,7 +125,9 @@ namespace PRININ.Factura
             {
                 string sql = @"sp_get_detalles_factura";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -209,7 +216,9 @@ namespace PRININ.Factura
                                   FROM [dbo].[INV_DETAIL]
                                   where id_invoice_header =@id";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 //cmd.CommandType = CommandType.StoredProcedure;

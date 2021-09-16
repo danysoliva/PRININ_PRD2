@@ -15,6 +15,10 @@ namespace PRININ.Factura
 {
     public partial class frmHomeFacturas : Form
     {
+        /// <summary>
+        /// Code Windows or Module: WD0001
+        /// </summary>
+        /// <param name="ptema"></param>
         public frmHomeFacturas(string ptema)
         {
             //this.theme
@@ -22,13 +26,16 @@ namespace PRININ.Factura
             LoadFacturas();
         }
 
+        public string CodeWindow { get { return "WD0001"; } }
+
         private void LoadFacturas()
         {
             try
             {
                 string sql = @"sp_get_home_facturas_united";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;

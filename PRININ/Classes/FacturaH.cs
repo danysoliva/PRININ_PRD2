@@ -50,6 +50,8 @@ namespace PRININ.Classes
         public string PaisNombre;
         public bool Recuperado;
 
+        public string CodeWindow { get { return "WD0001"; } }
+
         public FacturaH()
         {
 
@@ -61,7 +63,10 @@ namespace PRININ.Classes
             {
                 string sql = @"sp_get_facturas_united_header";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -166,7 +171,9 @@ namespace PRININ.Classes
             {
                 string sql = @"sp_set_update_aditionals_data_invoiceh";
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
