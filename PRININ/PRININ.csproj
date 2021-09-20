@@ -2330,6 +2330,8 @@
     <None Include="Resources\printer24px_.png" />
     <None Include="Resources\user32px.png" />
     <None Include="Resources\cross32px.png" />
+    <None Include="Resources\Document-icon32px.png" />
+    <None Include="Resources\document-photo-icon32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

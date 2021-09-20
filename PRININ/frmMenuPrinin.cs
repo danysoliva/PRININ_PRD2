@@ -213,7 +213,14 @@ namespace PRININ
         {
             frmHomeFacturas frm = new frmHomeFacturas(this.theme);
             
-            //frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            frmNotaD_UNITE frm = new frmNotaD_UNITE(this.theme);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

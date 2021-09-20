@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrinin));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notasCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdPedidos = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMantenimiento = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRptsNotas = new DevExpress.XtraEditors.SimpleButton();
@@ -43,7 +43,8 @@
             this.cmdResumenNotas = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,23 +57,29 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(230, 52);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // facturasToolStripMenuItem
+            // simpleButton7
             // 
-            this.facturasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.facturasToolStripMenuItem.Image = global::PRININ.Properties.Resources.invoice_16;
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
+            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton7.Appearance.Options.UseFont = true;
+            this.simpleButton7.ImageOptions.Image = global::PRININ.Properties.Resources.document_photo_icon32px;
+            this.simpleButton7.Location = new System.Drawing.Point(12, 573);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(224, 44);
+            this.simpleButton7.TabIndex = 11;
+            this.simpleButton7.Text = "Notas UNITED";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
-            // notasCréditoToolStripMenuItem
+            // simpleButton3
             // 
-            this.notasCréditoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notasCréditoToolStripMenuItem.Image = global::PRININ.Properties.Resources.creditnote_16;
-            this.notasCréditoToolStripMenuItem.Name = "notasCréditoToolStripMenuItem";
-            this.notasCréditoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.notasCréditoToolStripMenuItem.Text = "Notas Crédito y Débito";
-            this.notasCréditoToolStripMenuItem.Click += new System.EventHandler(this.notasCréditoToolStripMenuItem_Click);
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ImageOptions.Image = global::PRININ.Properties.Resources.invoice_321;
+            this.simpleButton3.Location = new System.Drawing.Point(12, 523);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(224, 44);
+            this.simpleButton3.TabIndex = 10;
+            this.simpleButton3.Text = "Facturas UNITED";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdPedidos
             // 
@@ -194,23 +201,30 @@
             this.simpleButton1.Text = "Facturas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // simpleButton3
+            // facturasToolStripMenuItem
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = global::PRININ.Properties.Resources.invoice_321;
-            this.simpleButton3.Location = new System.Drawing.Point(12, 523);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(224, 44);
-            this.simpleButton3.TabIndex = 10;
-            this.simpleButton3.Text = "Facturas UNITED";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.facturasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.facturasToolStripMenuItem.Image = global::PRININ.Properties.Resources.invoice_16;
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
+            // 
+            // notasCréditoToolStripMenuItem
+            // 
+            this.notasCréditoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notasCréditoToolStripMenuItem.Image = global::PRININ.Properties.Resources.creditnote_16;
+            this.notasCréditoToolStripMenuItem.Name = "notasCréditoToolStripMenuItem";
+            this.notasCréditoToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.notasCréditoToolStripMenuItem.Text = "Notas Crédito y Débito";
+            this.notasCréditoToolStripMenuItem.Click += new System.EventHandler(this.notasCréditoToolStripMenuItem_Click);
             // 
             // frmMenuPrinin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 572);
+            this.ClientSize = new System.Drawing.Size(248, 625);
+            this.Controls.Add(this.simpleButton7);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.cmdPedidos);
             this.Controls.Add(this.cmdMantenimiento);
@@ -248,5 +262,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdMantenimiento;
         private DevExpress.XtraEditors.SimpleButton cmdPedidos;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
     }
 }

@@ -16,11 +16,12 @@ namespace PRININ.Notas
 {
     public partial class frmNotaD_UNITE : Form
     {
-        public frmNotaD_UNITE()
+        public frmNotaD_UNITE(string ptema)
         {
             InitializeComponent();
             LoadNotas();
         }
+        public string CodeWindow { get { return "WD0002"; } }
 
         private void LoadNotas()
         {
@@ -29,10 +30,12 @@ namespace PRININ.Notas
                 int show_closed = 0;
                 if (tgMostrarCerradas.IsOn)
                     show_closed = 1;
-
+                
                 string sql = @"EXEC [dbo].[ft_get_resumen_notas_credito_debito] @showClosed = " + show_closed;
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -84,8 +87,10 @@ namespace PRININ.Notas
                                 FROM [PRININ].[dbo].[NOTAS]
                                 WHERE id = " + row.id;
                         DBOperations dp = new DBOperations();
-                        SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                        conn.Open();
+                    //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                    string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                    SqlConnection conn = new SqlConnection(ConnectionString);
+                    conn.Open();
                         SqlCommand cmd = new SqlCommand(sql, conn);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
@@ -141,8 +146,10 @@ namespace PRININ.Notas
                                   FROM [PRININ].[dbo].[z_INVREGDAT]
                                   where id = " + ID_Doc_Fiscal;
                         DBOperations dp = new DBOperations();
-                        SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                        conn.Open();
+                    //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                    string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                    SqlConnection conn = new SqlConnection(ConnectionString);
+                    conn.Open();
                         SqlCommand cmd = new SqlCommand(sql, conn);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
@@ -326,7 +333,9 @@ namespace PRININ.Notas
                                  SET [enable] = 0
                                WHERE id = " + row.id;
                 DBOperations dp = new DBOperations();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();

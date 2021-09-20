@@ -383,6 +383,26 @@ namespace PRININ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Document_icon32px {
+            get {
+                object obj = ResourceManager.GetObject("Document-icon32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_photo_icon32px {
+            get {
+                object obj = ResourceManager.GetObject("document-photo-icon32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap excel16px {
             get {
                 object obj = ResourceManager.GetObject("excel16px", resourceCulture);
