@@ -485,6 +485,12 @@
     <Compile Include="invoice_OptionsPrint.Designer.cs">
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notas UNITE\frmNotaD_UNITE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmNotaD_UNITE.Designer.cs">
+      <DependentUpon>frmNotaD_UNITE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notas\dsNotas.cs">
       <DependentUpon>dsNotas.xsd</DependentUpon>
     </Compile>
@@ -744,6 +750,9 @@
     <EmbeddedResource Include="invoice_OptionsPrint.resx">
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmNotaD_UNITE.resx">
+      <DependentUpon>frmNotaD_UNITE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notas\frmBuscarCliente.resx">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>

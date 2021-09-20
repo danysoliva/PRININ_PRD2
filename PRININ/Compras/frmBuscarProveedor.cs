@@ -33,8 +33,8 @@ namespace PRININ.Compras
             try
             {
                 string sql = @"SELECT [IDRGTM] as codigo
-                                    ,[IDALSU] as nombre
-                                    ,[IDVRNO] as rtn
+                                     ,[IDALSU] as nombre
+                                     ,[IDVRNO] as rtn
                                 FROM [dbo].[CIDMAS]";
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
