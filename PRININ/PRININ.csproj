@@ -485,6 +485,17 @@
     <Compile Include="invoice_OptionsPrint.Designer.cs">
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notas UNITE\dsNotasUNITE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\frmExploreFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmExploreFactura.Designer.cs">
+      <DependentUpon>frmExploreFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notas UNITE\frmNotaD_UNITE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -751,6 +762,9 @@
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmExploreFactura.resx">
+      <DependentUpon>frmExploreFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notas UNITE\frmNotaD_UNITE.resx">
       <DependentUpon>frmNotaD_UNITE.cs</DependentUpon>
     </EmbeddedResource>
@@ -895,6 +909,17 @@
     </None>
     <None Include="Mantenimiento\dsMante.xss">
       <DependentUpon>dsMante.xsd</DependentUpon>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xsc">
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotasUNITE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xss">
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
     </None>
     <None Include="Notas\dsNotas.xsc">
       <DependentUpon>dsNotas.xsd</DependentUpon>

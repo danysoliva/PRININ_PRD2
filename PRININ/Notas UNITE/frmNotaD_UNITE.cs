@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using POS_Gasolinera_v1._0;
 using PRININ.Classes;
+using PRININ.Notas_UNITE;
 using PRININ.RPTS;
 using System;
 using System.Collections.Generic;
@@ -31,16 +33,18 @@ namespace PRININ.Notas
                 if (tgMostrarCerradas.IsOn)
                     show_closed = 1;
                 
-                string sql = @"EXEC [dbo].[ft_get_resumen_notas_credito_debito] @showClosed = " + show_closed;
+                string sql = @"[ft_get_resumen_notas_credito_debito_unite]";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
                 SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@showClosed", show_closed);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsNotas1.notas_resumen.Clear();
-                adat.Fill(dsNotas1.notas_resumen);
+                dsNotasUNITE1.notas_resumen.Clear();
+                adat.Fill(dsNotasUNITE1.notas_resumen);
                 conn.Close();
             }
             catch (Exception ec)
@@ -52,133 +56,139 @@ namespace PRININ.Notas
         private void btnImprimir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //Vamos a instanciar un formulario para elegir el CAI y el Correlativo del Comprobante
-            frmSelectCAI frmSelect = new frmSelectCAI();
-            if (frmSelect.ShowDialog() == DialogResult.OK)
-            {
+            //frmSelectCAI frmSelect = new frmSelectCAI();
+            //if (frmSelect.ShowDialog() == DialogResult.OK)
+            //{
                     var gridView = (GridView)gridControl1.FocusedView;
-                    var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+                    var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
 
-                    int tipon = 0;
-                    string cai = "";
-                    string codCliente = "";
-                    decimal credito = 0;
-                    decimal TasaCambio = 0;
-                    decimal debito = 0;
-                    string montoL = "";
-                    string concepto = "";
-                    string NumDoc = "";
-                    string RTN = "";
-                    DateTime Fecha = DateTime.Now;
-                    int ID_Doc_Fiscal = 0;
-                    try
-                    {
-                        string sql = @"SELECT    [tipo_nota]
-                                        ,[cai]
-                                        ,[cod_cliente]
-                                        ,[credito]
-                                        ,[debito]
-                                        ,[monto_letras]
-                                        ,[concepto]
-                                        ,[num_documento]
-                                        ,[rtn]
-                                        ,[fecha_doc]
-                                        ,[id_doc_fiscal]
-                                        ,[tasa]
-                                FROM [PRININ].[dbo].[NOTAS]
-                                WHERE id = " + row.id;
-                        DBOperations dp = new DBOperations();
-                    //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                    string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
-                    SqlConnection conn = new SqlConnection(ConnectionString);
-                    conn.Open();
-                        SqlCommand cmd = new SqlCommand(sql, conn);
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            tipon = dr.GetInt32(0);
-                            cai = dr.GetString(1);
-                            codCliente = dr.GetString(2);
-                            credito = dr.GetDecimal(3);
-                            debito = dr.GetDecimal(4);
-                            montoL = dr.GetString(5);
-                            concepto = dr.GetString(6);
-                            NumDoc = dr.GetString(7);
-                            RTN = dr.GetString(8);
-                            Fecha = dr.GetDateTime(9);
-                            ID_Doc_Fiscal = dr.GetInt32(10);
-                            TasaCambio = dr.GetDecimal(11);
-                        }
-                        dr.Close();
-                        conn.Close();
-                    }
-                    catch (Exception ec)
-                    {
-                        CajaDialogo.Error(ec.Message);
-                    }
-                    string titulo = "";
-                    decimal monto = 0;
-                    string Evento = "";
-                    switch (tipon)
-                    {
-                        case 1://credito
-                            titulo = "NOTA DE CREDITO";
-                            Evento = "ACREDITANDO";
-                            monto = credito;
-                            break;
-                        case 2://debito
-                            titulo = "NOTA DE DEBITO";
-                            Evento = "DEBITANDO";
-                            monto = debito;
-                            break;
-                    }
-                    string Leyenda = "Por este medio le notificamos que le estamos " + Evento +
-                                     " a su apreciable cuanta los valores antes mencionado por el siguiente concepto:";
-                    DateTime fechai = DateTime.Now;
-                    string ini = "";
-                    string fin = "";
-
-
-                    try
-                    {
-                        string sql = @"SELECT [fecha_vence]
-                                      ,[num_ini]
-                                      ,[num_fin]
-                                  FROM [PRININ].[dbo].[z_INVREGDAT]
-                                  where id = " + ID_Doc_Fiscal;
-                        DBOperations dp = new DBOperations();
-                    //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                    string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
-                    SqlConnection conn = new SqlConnection(ConnectionString);
-                    conn.Open();
-                        SqlCommand cmd = new SqlCommand(sql, conn);
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            fechai = dr.GetDateTime(0);
-                            ini = dr.GetString(1);
-                            fin = dr.GetString(2);
-                        }
-                        dr.Close();
-                        conn.Close();
-                    }
-                    catch (Exception ec)
-                    {
-                        CajaDialogo.Error(ec.Message);
-                    }
-
-                    RPT_ND_NC_Local report = new RPT_ND_NC_Local(cai, NumDoc,
-                                                                 Fecha, titulo,
-                                                                 monto, codCliente,
-                                                                 row.cliente, RTN,
-                                                                 concepto, Leyenda,
-                                                                 fechai, ini,
-                                                                 fin, row.enable, TasaCambio, frmSelect.CaiPar, frmSelect.correl, frmSelect.OtrasFact);
-                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    ReportPrintTool printReport = new ReportPrintTool(report);
-                    report.ShowPrintMarginsWarning = false;
-                    printReport.ShowPreview();
-                
+            if(string.IsNullOrEmpty(row.cliente))
+            {
+                CajaDialogo.Error("Es necesario vincular una factura para poder imprimir la Nota!\nHaga Click en la celda # Factura para poder crear el vinculo!");
+                return;
             }
+
+            int tipon = 0;
+            string cai = "";
+            string codCliente = "";
+            decimal credito = 0;
+            decimal TasaCambio = 0;
+            decimal debito = 0;
+            string montoL = "";
+            string concepto = "";
+            string NumDoc = "";
+            string RTN = "";
+            DateTime Fecha = DateTime.Now;
+            int ID_Doc_Fiscal = 0;
+            try
+            {
+                string sql = @"SELECT    [tipo_nota]
+                                ,[cai]
+                                ,[cod_cliente]
+                                ,[credito]
+                                ,[debito]
+                                ,[monto_letras]
+                                ,[concepto]
+                                ,[num_documento]
+                                ,[rtn]
+                                ,[fecha_doc]
+                                ,[id_doc_fiscal]
+                                ,[tasa]
+                        FROM [dbo].[NOTAS]
+                        WHERE id = " + row.id;
+                DBOperations dp = new DBOperations();
+            //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+            string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    tipon = dr.GetInt32(0);
+                    cai = dr.GetString(1);
+                    codCliente = dr.GetString(2);
+                    credito = dr.GetDecimal(3);
+                    debito = dr.GetDecimal(4);
+                    montoL = dr.GetString(5);
+                    concepto = dr.GetString(6);
+                    NumDoc = dr.GetString(7);
+                    RTN = dr.GetString(8);
+                    Fecha = dr.GetDateTime(9);
+                    ID_Doc_Fiscal = dr.GetInt32(10);
+                    TasaCambio = dr.GetDecimal(11);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            string titulo = "";
+            decimal monto = 0;
+            string Evento = "";
+            switch (tipon)
+            {
+                case 1://credito
+                    titulo = "NOTA DE CREDITO";
+                    Evento = "ACREDITANDO";
+                    monto = credito;
+                    break;
+                case 2://debito
+                    titulo = "NOTA DE DEBITO";
+                    Evento = "DEBITANDO";
+                    monto = debito;
+                    break;
+            }
+            string Leyenda = "Por este medio le notificamos que le estamos " + Evento +
+                                " a su apreciable cuanta los valores antes mencionado por el siguiente concepto:";
+            DateTime fechai = DateTime.Now;
+            string ini = "";
+            string fin = "";
+
+
+            try
+            {
+                string sql = @"SELECT [fecha_vence]
+                                ,[num_ini]
+                                ,[num_fin]
+                            FROM [PRININ].[dbo].[z_INVREGDAT]
+                            where id = " + ID_Doc_Fiscal;
+                DBOperations dp = new DBOperations();
+            //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+            string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+            SqlConnection conn = new SqlConnection(ConnectionString);
+            conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    fechai = dr.GetDateTime(0);
+                    ini = dr.GetString(1);
+                    fin = dr.GetString(2);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+            RPT_ND_NC_Local report = new RPT_ND_NC_Local(cai, NumDoc,
+                                                            Fecha, titulo,
+                                                            monto, codCliente,
+                                                            row.cliente, RTN,
+                                                            concepto, Leyenda,
+                                                            fechai, ini,
+                                                            fin, row.enable, TasaCambio, row.cai, row.num_documento, row.num_fact);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            report.ShowPrintMarginsWarning = false;
+            printReport.ShowPreview();
+                
+           // }
 
             #region codigo no usado
             //var gridView = (GridView)gridControl1.FocusedView;
@@ -355,13 +365,110 @@ namespace PRININ.Notas
             {
                 var gridView = (GridView)gridControl1.FocusedView;
                 //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
-                var row = (dsNotas.notas_resumenRow)gridView.GetDataRow(e.RowHandle);
+                var row = (dsNotasUNITE.notas_resumenRow)gridView.GetDataRow(e.RowHandle);
                 if (row != null)
                 {
                     if (row.enable)
                         e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
                     else
                         e.Appearance.BackColor = Color.FromArgb(207, 117, 132);
+                }
+            }
+        }
+
+        private void cmdCerrar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        private string GetLastEight(string invoice_number)
+        {
+            if (invoice_number.Length < 8)
+            {
+                return "Error: 03";
+            }
+
+            String var = invoice_number;
+            String Var_Sub = "";
+            if (var != null & var != "")
+            {
+                int tam_var = var.Length;
+                Var_Sub = var.Substring((tam_var - 8), 8);
+            }
+            return Var_Sub;
+        }
+
+        private void cmdSearchInvoice_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
+
+            //CajaDialogo.Information("Go!");
+            frmExploreFactura frm = new frmExploreFactura();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                FacturaH Fact = new FacturaH();
+                if (Fact.RecuperarRegistro(frm.IdFactura))
+                {
+                    //**********NUMERO FISCAL ND Y NC***********-
+                    //Generar numeracion Fiscal PRININ para el SAR
+            
+
+                    if (string.IsNullOrEmpty(row.num_documento))
+                    {
+                        DocsFiscales docs = new DocsFiscales();
+                        if (docs.RecuperarRegistro(DocsFiscales.DocType.Factura))
+                        {
+                            row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
+                            row.cai = docs.CAI;
+                            decimal valor_ = 0;
+                            if (row.tipo_nota == 1)
+                                valor_ = row.credito;
+                            else
+                                valor_ = row.debito;
+
+                            ConversorNumALetras ConverLetras = new ConversorNumALetras(valor_);
+                            row.monto_letras = ConverLetras.NumeroEnLetras;
+                            row.id_doc_fiscal = docs.Id;
+                        }
+                    }
+                    //else
+                    //{
+                    //    //row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
+                    //}
+
+                    row.cliente = Fact.customer_long_name;
+                    row.num_fact = Fact.invoice_number_fiscal;
+                    row.cod_cliente = Fact.customer_code;
+                    row.factura_id = Fact.Id;
+
+                    //Update Nota
+                    try
+                    {
+                        string sql = @"sp_update_note_with_invoice_foreign";
+                        DBOperations dp = new DBOperations();
+                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                        string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                        SqlConnection conn = new SqlConnection(ConnectionString);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", row.id);//Id note
+                        cmd.Parameters.AddWithValue("@factura_id", row.factura_id);
+                        cmd.Parameters.AddWithValue("@cod_cliente", row.cod_cliente);
+                        cmd.Parameters.AddWithValue("@rtn", Fact.customer_rtn);
+                        cmd.Parameters.AddWithValue("@cai", row.cai);
+                        cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
+                        cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
+                        cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
+
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
                 }
             }
         }

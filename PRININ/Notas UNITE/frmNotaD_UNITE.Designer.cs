@@ -39,8 +39,13 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsNotas1 = new PRININ.Notas.dsNotas();
+            this.dsNotasUNITE1 = new PRININ.Notas_UNITE.dsNotasUNITE();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo_nota = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,20 +62,29 @@
             this.colfecha_doc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmonto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactura_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnImprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colAnular = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAnular = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colnum_fact = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdSearchInvoice = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colunite_doc_num = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsNotas1 = new PRININ.Notas.dsNotas();
             this.cmdNueva = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tgMostrarCerradas = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_doc_fiscal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNotas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnular)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSearchInvoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNotas1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tgMostrarCerradas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,22 +94,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "notas_resumen";
-            this.gridControl1.DataSource = this.dsNotas1;
+            this.gridControl1.DataSource = this.dsNotasUNITE1;
             this.gridControl1.Location = new System.Drawing.Point(3, 80);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnImprimir,
-            this.btnAnular});
-            this.gridControl1.Size = new System.Drawing.Size(1032, 452);
+            this.btnAnular,
+            this.cmdSearchInvoice});
+            this.gridControl1.Size = new System.Drawing.Size(1102, 452);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // dsNotas1
+            // dsNotasUNITE1
             // 
-            this.dsNotas1.DataSetName = "dsNotas";
-            this.dsNotas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsNotasUNITE1.DataSetName = "dsNotasUNITE";
+            this.dsNotasUNITE1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -118,12 +133,17 @@
             this.colrtn,
             this.colfecha_doc,
             this.colmonto,
+            this.colid_doc_fiscal,
             this.coltipo,
+            this.colfactura_id,
             this.colcliente,
             this.colPrint,
-            this.colAnular});
+            this.colAnular,
+            this.colnum_fact,
+            this.colunite_doc_num});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
@@ -145,7 +165,7 @@
             this.colfecha_cr.OptionsColumn.AllowEdit = false;
             this.colfecha_cr.Visible = true;
             this.colfecha_cr.VisibleIndex = 0;
-            this.colfecha_cr.Width = 83;
+            this.colfecha_cr.Width = 68;
             // 
             // colcai
             // 
@@ -159,8 +179,8 @@
             this.colcod_cliente.Name = "colcod_cliente";
             this.colcod_cliente.OptionsColumn.AllowEdit = false;
             this.colcod_cliente.Visible = true;
-            this.colcod_cliente.VisibleIndex = 1;
-            this.colcod_cliente.Width = 79;
+            this.colcod_cliente.VisibleIndex = 2;
+            this.colcod_cliente.Width = 65;
             // 
             // colcredito
             // 
@@ -184,18 +204,18 @@
             this.colconcepto.Name = "colconcepto";
             this.colconcepto.OptionsColumn.AllowEdit = false;
             this.colconcepto.Visible = true;
-            this.colconcepto.VisibleIndex = 7;
-            this.colconcepto.Width = 253;
+            this.colconcepto.VisibleIndex = 8;
+            this.colconcepto.Width = 191;
             // 
             // colnum_documento
             // 
-            this.colnum_documento.Caption = "# Doc.";
+            this.colnum_documento.Caption = "# Nota Fiscal";
             this.colnum_documento.FieldName = "num_documento";
             this.colnum_documento.Name = "colnum_documento";
             this.colnum_documento.OptionsColumn.AllowEdit = false;
             this.colnum_documento.Visible = true;
-            this.colnum_documento.VisibleIndex = 4;
-            this.colnum_documento.Width = 149;
+            this.colnum_documento.VisibleIndex = 5;
+            this.colnum_documento.Width = 110;
             // 
             // colenable
             // 
@@ -216,8 +236,8 @@
             this.colfecha_doc.Name = "colfecha_doc";
             this.colfecha_doc.OptionsColumn.AllowEdit = false;
             this.colfecha_doc.Visible = true;
-            this.colfecha_doc.VisibleIndex = 5;
-            this.colfecha_doc.Width = 97;
+            this.colfecha_doc.VisibleIndex = 6;
+            this.colfecha_doc.Width = 71;
             // 
             // colmonto
             // 
@@ -226,8 +246,8 @@
             this.colmonto.Name = "colmonto";
             this.colmonto.OptionsColumn.AllowEdit = false;
             this.colmonto.Visible = true;
-            this.colmonto.VisibleIndex = 6;
-            this.colmonto.Width = 113;
+            this.colmonto.VisibleIndex = 7;
+            this.colmonto.Width = 84;
             // 
             // coltipo
             // 
@@ -236,8 +256,13 @@
             this.coltipo.Name = "coltipo";
             this.coltipo.OptionsColumn.AllowEdit = false;
             this.coltipo.Visible = true;
-            this.coltipo.VisibleIndex = 3;
-            this.coltipo.Width = 74;
+            this.coltipo.VisibleIndex = 4;
+            this.coltipo.Width = 53;
+            // 
+            // colfactura_id
+            // 
+            this.colfactura_id.FieldName = "factura_id";
+            this.colfactura_id.Name = "colfactura_id";
             // 
             // colcliente
             // 
@@ -246,8 +271,8 @@
             this.colcliente.Name = "colcliente";
             this.colcliente.OptionsColumn.AllowEdit = false;
             this.colcliente.Visible = true;
-            this.colcliente.VisibleIndex = 2;
-            this.colcliente.Width = 166;
+            this.colcliente.VisibleIndex = 3;
+            this.colcliente.Width = 150;
             // 
             // colPrint
             // 
@@ -255,7 +280,8 @@
             this.colPrint.ColumnEdit = this.btnImprimir;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 8;
+            this.colPrint.VisibleIndex = 10;
+            this.colPrint.Width = 50;
             // 
             // btnImprimir
             // 
@@ -273,7 +299,8 @@
             this.colAnular.ColumnEdit = this.btnAnular;
             this.colAnular.Name = "colAnular";
             this.colAnular.Visible = true;
-            this.colAnular.VisibleIndex = 9;
+            this.colAnular.VisibleIndex = 11;
+            this.colAnular.Width = 53;
             // 
             // btnAnular
             // 
@@ -284,6 +311,40 @@
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnAnular.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnAnular_ButtonClick);
+            // 
+            // colnum_fact
+            // 
+            this.colnum_fact.Caption = "# Factura";
+            this.colnum_fact.ColumnEdit = this.cmdSearchInvoice;
+            this.colnum_fact.FieldName = "num_fact";
+            this.colnum_fact.Name = "colnum_fact";
+            this.colnum_fact.Visible = true;
+            this.colnum_fact.VisibleIndex = 9;
+            this.colnum_fact.Width = 74;
+            // 
+            // cmdSearchInvoice
+            // 
+            this.cmdSearchInvoice.AutoHeight = false;
+            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            this.cmdSearchInvoice.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdSearchInvoice.Name = "cmdSearchInvoice";
+            this.cmdSearchInvoice.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSearchInvoice_ButtonClick);
+            // 
+            // colunite_doc_num
+            // 
+            this.colunite_doc_num.Caption = "# Doc UNITE";
+            this.colunite_doc_num.FieldName = "unite_doc_num";
+            this.colunite_doc_num.Name = "colunite_doc_num";
+            this.colunite_doc_num.OptionsColumn.AllowEdit = false;
+            this.colunite_doc_num.Visible = true;
+            this.colunite_doc_num.VisibleIndex = 1;
+            this.colunite_doc_num.Width = 99;
+            // 
+            // dsNotas1
+            // 
+            this.dsNotas1.DataSetName = "dsNotas";
+            this.dsNotas1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmdNueva
             // 
@@ -303,7 +364,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(798, 51);
+            this.label1.Location = new System.Drawing.Point(868, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 18);
             this.label1.TabIndex = 29;
@@ -312,7 +373,7 @@
             // tgMostrarCerradas
             // 
             this.tgMostrarCerradas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tgMostrarCerradas.Location = new System.Drawing.Point(929, 48);
+            this.tgMostrarCerradas.Location = new System.Drawing.Point(999, 48);
             this.tgMostrarCerradas.Name = "tgMostrarCerradas";
             this.tgMostrarCerradas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tgMostrarCerradas.Properties.Appearance.Options.UseFont = true;
@@ -332,11 +393,31 @@
             this.labelControl2.TabIndex = 27;
             this.labelControl2.Text = "Notas de Crédito/Débito";
             // 
-            // frmNotaD
+            // cmdCerrar
+            // 
+            this.cmdCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCerrar.Appearance.Options.UseFont = true;
+            this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCerrar.ImageOptions.SvgImage")));
+            this.cmdCerrar.Location = new System.Drawing.Point(983, 7);
+            this.cmdCerrar.Name = "cmdCerrar";
+            this.cmdCerrar.Size = new System.Drawing.Size(111, 35);
+            this.cmdCerrar.TabIndex = 30;
+            this.cmdCerrar.Text = "Cerrar";
+            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
+            // 
+            // colid_doc_fiscal
+            // 
+            this.colid_doc_fiscal.FieldName = "id_doc_fiscal";
+            this.colid_doc_fiscal.Name = "colid_doc_fiscal";
+            // 
+            // frmNotaD_UNITE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 538);
+            this.ClientSize = new System.Drawing.Size(1106, 538);
+            this.Controls.Add(this.cmdCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tgMostrarCerradas);
             this.Controls.Add(this.labelControl2);
@@ -344,11 +425,14 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "frmNotaD_UNITE";
             this.Text = "Notas Debito";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNotas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnular)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdSearchInvoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNotas1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tgMostrarCerradas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -384,5 +468,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnImprimir;
         private DevExpress.XtraGrid.Columns.GridColumn colAnular;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnAnular;
+        private Notas_UNITE.dsNotasUNITE dsNotasUNITE1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum_fact;
+        private DevExpress.XtraGrid.Columns.GridColumn colunite_doc_num;
+        private DevExpress.XtraEditors.SimpleButton cmdCerrar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdSearchInvoice;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactura_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_doc_fiscal;
     }
 }

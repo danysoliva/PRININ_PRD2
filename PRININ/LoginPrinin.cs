@@ -227,14 +227,14 @@ namespace PRININ
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            //txt_usuario.Text = "danys.oliva";
-            //txt_password.Text = "Gto1804?";
-            //ValidateUserInfo();
-            frmHomeFacturas frm = new frmHomeFacturas("");
-            //frm.MdiParent = this.MdiParent;
-            frm.Show();
-            //frmDEV frm = new frmDEV();
+            txt_usuario.Text = "danys.oliva";
+            txt_password.Text = "Gto1804?";
+            ValidateUserInfo();
+            //frmHomeFacturas frm = new frmHomeFacturas("");
+            ////frm.MdiParent = this.MdiParent;
             //frm.Show();
+            ////frmDEV frm = new frmDEV();
+            ////frm.Show();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
