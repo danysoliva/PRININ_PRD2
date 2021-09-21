@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using PRININ.Classes;
 using PRININ.Gestion_de_Usuarios;
+using PRININ.Numeracion_Fiscal;
 
 namespace PRININ.Mantenimiento
 {
@@ -52,6 +53,13 @@ namespace PRININ.Mantenimiento
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void btnNumeracionFiscal_Click(object sender, EventArgs e)
+        {
+            frmNumeracionFiscal frm = new frmNumeracionFiscal(UsuarioLogueado);
+
+            frm.Show();
         }
     }
 }

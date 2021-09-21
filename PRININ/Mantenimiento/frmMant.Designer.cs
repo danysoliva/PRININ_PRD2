@@ -33,6 +33,7 @@
             this.cmdPermisos = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMantCAI = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNumeracionFiscal = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cmdClose
@@ -40,7 +41,7 @@
             this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Appearance.Options.UseFont = true;
             this.cmdClose.ImageOptions.Image = global::PRININ.Properties.Resources.close_32;
-            this.cmdClose.Location = new System.Drawing.Point(14, 245);
+            this.cmdClose.Location = new System.Drawing.Point(14, 307);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(236, 44);
             this.cmdClose.TabIndex = 10;
@@ -84,11 +85,24 @@
             this.cmdMantCAI.Text = "Mant. CAI Proveedor";
             this.cmdMantCAI.Click += new System.EventHandler(this.cmdMantCAI_Click);
             // 
+            // btnNumeracionFiscal
+            // 
+            this.btnNumeracionFiscal.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNumeracionFiscal.Appearance.Options.UseFont = true;
+            this.btnNumeracionFiscal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNumeracionFiscal.ImageOptions.Image")));
+            this.btnNumeracionFiscal.Location = new System.Drawing.Point(14, 239);
+            this.btnNumeracionFiscal.Name = "btnNumeracionFiscal";
+            this.btnNumeracionFiscal.Size = new System.Drawing.Size(236, 44);
+            this.btnNumeracionFiscal.TabIndex = 12;
+            this.btnNumeracionFiscal.Text = "Numeración Fiscal";
+            this.btnNumeracionFiscal.Click += new System.EventHandler(this.btnNumeracionFiscal_Click);
+            // 
             // frmMant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(262, 524);
+            this.Controls.Add(this.btnNumeracionFiscal);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdPermisos);
             this.Controls.Add(this.cmdUsuarios);
@@ -105,5 +119,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdPermisos;
         private DevExpress.XtraEditors.SimpleButton cmdUsuarios;
         private DevExpress.XtraEditors.SimpleButton cmdMantCAI;
+        private DevExpress.XtraEditors.SimpleButton btnNumeracionFiscal;
     }
 }

@@ -540,6 +540,24 @@
     <Compile Include="Notas\frmNotaD.Designer.cs">
       <DependentUpon>frmNotaD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numeracion Fiscal\dsNumeracionFiscal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscal.designer.cs">
+      <DependentUpon>frmNumeracionFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.designer.cs">
+      <DependentUpon>frmNumeracionFiscalCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\Model\NumeracionFiscal.cs" />
     <Compile Include="Pedidos\dsPedidos.cs">
       <DependentUpon>dsPedidos.xsd</DependentUpon>
     </Compile>
@@ -783,6 +801,12 @@
     <EmbeddedResource Include="Notas\frmNotaD.resx">
       <DependentUpon>frmNotaD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numeracion Fiscal\frmNumeracionFiscal.resx">
+      <DependentUpon>frmNumeracionFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.resx">
+      <DependentUpon>frmNumeracionFiscalCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frmAddProd.resx">
       <DependentUpon>frmAddProd.cs</DependentUpon>
     </EmbeddedResource>
@@ -931,6 +955,17 @@
     </None>
     <None Include="Notas\dsNotas.xss">
       <DependentUpon>dsNotas.xsd</DependentUpon>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xsc">
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNumeracionFiscal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xss">
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Pedidos\dsPedidos.xsc">
@@ -2359,6 +2394,7 @@
     <None Include="Resources\document-photo-icon32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
