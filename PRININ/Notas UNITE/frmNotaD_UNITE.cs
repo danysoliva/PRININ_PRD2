@@ -335,7 +335,7 @@ namespace PRININ.Notas
 
             //Anular la nota
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+            var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
 
             try
             {
@@ -470,6 +470,51 @@ namespace PRININ.Notas
                         CajaDialogo.Error(ec.Message);
                     }
                 }
+            }
+        }
+
+        private void cmdDesvincular_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Boton Desvincular
+            DialogResult r = CajaDialogo.Pregunta("Realmente desea desvincular la factura de ésta Nota?");
+            if (r != DialogResult.Yes)
+                return;
+
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
+
+            //Update Nota
+            try
+            {
+                string sql = @"sp_set_disable_link_invoice_note";
+                DBOperations dp = new DBOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);//Id note
+                //cmd.Parameters.AddWithValue("@factura_id", row.factura_id);
+                //cmd.Parameters.AddWithValue("@cod_cliente", row.cod_cliente);
+                //cmd.Parameters.AddWithValue("@rtn", Fact.customer_rtn);
+                //cmd.Parameters.AddWithValue("@cai", row.cai);
+                //cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
+                //cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
+                //cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
+                row.cai = null;
+                row.cod_cliente = null;
+                row.cliente = null;
+                row.num_documento = null;
+                row.rtn = null;
+                row.id_doc_fiscal = 0;
+                row.factura_id = 0;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
     }
