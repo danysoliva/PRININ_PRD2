@@ -182,7 +182,7 @@ namespace PRININ.Notas
                                                             row.cliente, RTN,
                                                             concepto, Leyenda,
                                                             fechai, ini,
-                                                            fin, row.enable, TasaCambio, row.cai, row.num_documento, row.num_fact);
+                                                            fin, row.enable, TasaCambio, row.cai, row.num_fact, "");
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
             report.ShowPrintMarginsWarning = false;
@@ -403,6 +403,13 @@ namespace PRININ.Notas
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
 
+            if(row.unite_doc_num== null)
+            {
+                CajaDialogo.Error("Solo se puede aplicar a Notas generadas mediante UNITE!");
+                return;
+            }
+
+
             //CajaDialogo.Information("Go!");
             frmExploreFactura frm = new frmExploreFactura();
             if(frm.ShowDialog() == DialogResult.OK)
@@ -413,11 +420,42 @@ namespace PRININ.Notas
                     //**********NUMERO FISCAL ND Y NC***********-
                     //Generar numeracion Fiscal PRININ para el SAR
             
+                    if (row.tipo_nota == 1)//Nota Crédito
+                    {
+                        frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto);
+                        if(frm2.ShowDialog() == DialogResult.OK)
+                        {
+                            row.due_date = frm2.dateFechaVence.DateTime;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        frmDueDateND frm2 = new frmDueDateND();// (frm.IdFactura, row.fecha_doc, row.id, row.concepto);
+                        if (frm2.ShowDialog() == DialogResult.OK)
+                        {
+                            row.due_date = frm2.dateFechaVence.DateTime;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+
 
                     if (string.IsNullOrEmpty(row.num_documento))
                     {
                         DocsFiscales docs = new DocsFiscales();
-                        if (docs.RecuperarRegistro(DocsFiscales.DocType.Factura))
+                        DocsFiscales.DocType TypeDoc;
+                        if (row.tipo_nota == 1)
+                            TypeDoc = DocsFiscales.DocType.NotaCredito;
+                        else
+                            TypeDoc = DocsFiscales.DocType.NotaDebito;
+
+                        if (docs.RecuperarRegistro(TypeDoc))
                         {
                             row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
                             row.cai = docs.CAI;
@@ -432,10 +470,6 @@ namespace PRININ.Notas
                             row.id_doc_fiscal = docs.Id;
                         }
                     }
-                    //else
-                    //{
-                    //    //row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
-                    //}
 
                     row.cliente = Fact.customer_long_name;
                     row.num_fact = Fact.invoice_number_fiscal;
@@ -461,6 +495,7 @@ namespace PRININ.Notas
                         cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
                         cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
                         cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
+                        cmd.Parameters.AddWithValue("@duedate", row.due_date);
 
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -509,6 +544,7 @@ namespace PRININ.Notas
                 row.rtn = null;
                 row.id_doc_fiscal = 0;
                 row.factura_id = 0;
+                row.num_fact = null;
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
