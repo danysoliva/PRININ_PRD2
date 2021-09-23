@@ -29,12 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMant));
+            this.btnNumeracionFiscal = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.cmdPermisos = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMantCAI = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNumeracionFiscal = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
+            // 
+            // btnNumeracionFiscal
+            // 
+            this.btnNumeracionFiscal.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNumeracionFiscal.Appearance.Options.UseFont = true;
+            this.btnNumeracionFiscal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNumeracionFiscal.ImageOptions.Image")));
+            this.btnNumeracionFiscal.Location = new System.Drawing.Point(14, 239);
+            this.btnNumeracionFiscal.Name = "btnNumeracionFiscal";
+            this.btnNumeracionFiscal.Size = new System.Drawing.Size(236, 44);
+            this.btnNumeracionFiscal.TabIndex = 12;
+            this.btnNumeracionFiscal.Text = "Numeración Fiscal";
+            this.btnNumeracionFiscal.Click += new System.EventHandler(this.btnNumeracionFiscal_Click);
             // 
             // cmdClose
             // 
@@ -84,18 +96,6 @@
             this.cmdMantCAI.TabIndex = 7;
             this.cmdMantCAI.Text = "Mant. CAI Proveedor";
             this.cmdMantCAI.Click += new System.EventHandler(this.cmdMantCAI_Click);
-            // 
-            // btnNumeracionFiscal
-            // 
-            this.btnNumeracionFiscal.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNumeracionFiscal.Appearance.Options.UseFont = true;
-            this.btnNumeracionFiscal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNumeracionFiscal.ImageOptions.Image")));
-            this.btnNumeracionFiscal.Location = new System.Drawing.Point(14, 239);
-            this.btnNumeracionFiscal.Name = "btnNumeracionFiscal";
-            this.btnNumeracionFiscal.Size = new System.Drawing.Size(236, 44);
-            this.btnNumeracionFiscal.TabIndex = 12;
-            this.btnNumeracionFiscal.Text = "Numeración Fiscal";
-            this.btnNumeracionFiscal.Click += new System.EventHandler(this.btnNumeracionFiscal_Click);
             // 
             // frmMant
             // 

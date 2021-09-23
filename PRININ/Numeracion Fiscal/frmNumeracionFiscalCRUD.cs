@@ -29,6 +29,7 @@ namespace PRININ.Numeracion_Fiscal
         public frmNumeracionFiscalCRUD(Users userLogin,int t_transaccion)
         {
             InitializeComponent();
+            load_typedoc();
             usuarioLogueado = userLogin;
 
             tipo_transaccion = t_transaccion;
@@ -89,7 +90,7 @@ namespace PRININ.Numeracion_Fiscal
                             return;
                         }
 
-                        if (string.IsNullOrEmpty(cbxTipoDocumento.Text))
+                        if (string.IsNullOrEmpty(lueTypeDoc.Text))
                         {
                             CajaDialogo.Error("DEBE INGRESAR TIPO DE DOCUMENTO");
                             return;
@@ -109,6 +110,7 @@ namespace PRININ.Numeracion_Fiscal
                         }
 
 
+                       
                         using (SqlConnection cnx= new SqlConnection(dp.ConnectionStringPRININ))
                         {
 
@@ -131,7 +133,7 @@ namespace PRININ.Numeracion_Fiscal
                             cmd.Parameters.Add("@gen_corr", SqlDbType.Bit).Value = tsSecuencia.EditValue;
                             cmd.Parameters.Add("@correlative", SqlDbType.Int).Value = correlativo;
                             cmd.Parameters.Add("@leyenda", SqlDbType.NVarChar).Value = txtNumIni.Text.Substring(0, 11);
-                            cmd.Parameters.Add("@TypeDoc", SqlDbType.NVarChar).Value = cbxTipoDocumento.Text;
+                            cmd.Parameters.Add("@TypeDoc", SqlDbType.NVarChar).Value = lueTypeDoc.Text;
 
                             cmd.ExecuteNonQuery();
 
@@ -189,7 +191,7 @@ namespace PRININ.Numeracion_Fiscal
                             return;
                         }
 
-                        if (string.IsNullOrEmpty(cbxTipoDocumento.Text))
+                        if (string.IsNullOrEmpty(lueTypeDoc.Text))
                         {
                             CajaDialogo.Error("DEBE INGRESAR TIPO DE DOCUMENTO");
                             return;
@@ -203,7 +205,7 @@ namespace PRININ.Numeracion_Fiscal
                         numeracionFiscal.FechaEmision= Convert.ToDateTime( deFechaEmision.EditValue);
                         numeracionFiscal.FechaVence = Convert.ToDateTime(deFechaVence.EditValue);
                         numeracionFiscal.GenCorr    =  Convert.ToBoolean(     tsSecuencia.EditValue);
-                        numeracionFiscal.TypeDoc = cbxTipoDocumento.Text;
+                        numeracionFiscal.TypeDoc = lueTypeDoc.Text;
                         numeracionFiscal.Estado  = luEstado.EditValue.ToString();
                         
 
@@ -240,7 +242,7 @@ namespace PRININ.Numeracion_Fiscal
                             cmd.Parameters.Add("@gen_corr", SqlDbType.Bit).Value = tsSecuencia.EditValue;
                             cmd.Parameters.Add("@correlative", SqlDbType.Int).Value = correlativo;
                             cmd.Parameters.Add("@leyenda", SqlDbType.NVarChar).Value = txtNumIni.Text.Substring(0, 11);
-                            cmd.Parameters.Add("@TypeDoc", SqlDbType.NVarChar).Value = cbxTipoDocumento.Text;
+                            cmd.Parameters.Add("@TypeDoc", SqlDbType.NVarChar).Value = lueTypeDoc.Text;
                             cmd.Parameters.Add("@id", SqlDbType.Int).Value = numeracionFiscal.ID;
 
                             cmd.ExecuteNonQuery();
@@ -286,7 +288,7 @@ namespace PRININ.Numeracion_Fiscal
                     deFechaEmision.EditValue = numeracionFiscal.FechaEmision;
                     deFechaVence.EditValue = numeracionFiscal.FechaVence;
                     tsSecuencia.EditValue = numeracionFiscal.GenCorr;
-                    cbxTipoDocumento.Text = numeracionFiscal.TypeDoc;
+                    lueTypeDoc.Text = numeracionFiscal.TypeDoc;
                     luEstado.EditValue = numeracionFiscal.Estado;
 
                 }
@@ -304,6 +306,32 @@ namespace PRININ.Numeracion_Fiscal
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void load_typedoc()
+        {
+            try
+            {
+                DBOperations dp = new DBOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringPRININ))
+                {
+                    cnx.Open();
+
+                    dsNumeracionFiscal.typedoc.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_typedoc", cnx);
+                    da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    da.Fill(dsNumeracionFiscal.typedoc);
+
+                    cnx.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

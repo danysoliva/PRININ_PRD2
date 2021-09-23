@@ -152,6 +152,7 @@
     </Reference>
     <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
     <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -596,6 +597,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retencion\dsRetencion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmFindProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmFindProvider.Designer.cs">
+      <DependentUpon>xfrmFindProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencion.Designer.cs">
+      <DependentUpon>xfrmRetencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencionNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencionNew.Designer.cs">
+      <DependentUpon>xfrmRetencionNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPTS\rptChequesEmitidos.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -643,6 +667,18 @@
     </Compile>
     <Compile Include="RPTS\RPT_CHQUE.Designer.cs">
       <DependentUpon>RPT_CHQUE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RPT_RETENCION.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RPT_RETENCION.Designer.cs">
+      <DependentUpon>RPT_RETENCION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RPT_Retencion_.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RPT_Retencion_.Designer.cs">
+      <DependentUpon>RPT_Retencion_.cs</DependentUpon>
     </Compile>
     <Compile Include="TEMP_JV.cs">
       <SubType>Form</SubType>
@@ -833,6 +869,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Retencion\xfrmFindProvider.resx">
+      <DependentUpon>xfrmFindProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retencion\xfrmRetencion.resx">
+      <DependentUpon>xfrmRetencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retencion\xfrmRetencionNew.resx">
+      <DependentUpon>xfrmRetencionNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPTS\rptChequesEmitidos.resx">
       <DependentUpon>rptChequesEmitidos.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -864,6 +909,12 @@
     <EmbeddedResource Include="RPTS\RPT_ND_NC_Local.resx">
       <DependentUpon>RPT_ND_NC_Local.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RPT_RETENCION.resx">
+      <DependentUpon>RPT_RETENCION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RPT_Retencion_.resx">
+      <DependentUpon>RPT_Retencion_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TEMP_JV.resx">
       <DependentUpon>TEMP_JV.cs</DependentUpon>
@@ -988,6 +1039,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Retencion\dsRetencion.xsc">
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </None>
+    <None Include="Retencion\dsRetencion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRetencion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Retencion\dsRetencion.xss">
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PNG\shrimp_16.png" />

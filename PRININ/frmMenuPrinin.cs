@@ -14,6 +14,7 @@ using PRININ.Classes;
 using PRININ.Mantenimiento;
 using PRININ.Pedidos;
 using PRININ.Factura;
+using PRININ.Retencion;
 
 namespace PRININ
 {
@@ -220,6 +221,13 @@ namespace PRININ
         private void simpleButton7_Click(object sender, EventArgs e)
         {
             frmNotaD_UNITE frm = new frmNotaD_UNITE(this.theme);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnComprobanteRetencion_Click(object sender, EventArgs e)
+        {
+            xfrmRetencion frm = new xfrmRetencion(this.theme,UsuarioLogueado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
