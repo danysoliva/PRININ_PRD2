@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>127</ApplicationRevision>
+    <ApplicationRevision>128</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -249,6 +249,7 @@
     <Compile Include="Classes\DBOperations.cs" />
     <Compile Include="Classes\DocsFiscales.cs" />
     <Compile Include="Classes\FacturaH.cs" />
+    <Compile Include="Classes\Nota.cs" />
     <Compile Include="Classes\PS_Button.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -343,6 +344,12 @@
     </Compile>
     <Compile Include="DEV\frmDEV.Designer.cs">
       <DependentUpon>frmDEV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DEV\frmGenerateXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEV\frmGenerateXML.Designer.cs">
+      <DependentUpon>frmGenerateXML.cs</DependentUpon>
     </Compile>
     <Compile Include="dsCheques.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -513,6 +520,24 @@
     </Compile>
     <Compile Include="Notas UNITE\frmTipoNotaCredito.Designer.cs">
       <DependentUpon>frmTipoNotaCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Concept.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Concept.Designer.cs">
+      <DependentUpon>RPT_NC_Concept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Items.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Items.Designer.cs">
+      <DependentUpon>RPT_NC_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_ND.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_ND.Designer.cs">
+      <DependentUpon>RPT_ND.cs</DependentUpon>
     </Compile>
     <Compile Include="Notas\dsNotas.cs">
       <DependentUpon>dsNotas.xsd</DependentUpon>
@@ -723,6 +748,9 @@
     <EmbeddedResource Include="DEV\frmDEV.resx">
       <DependentUpon>frmDEV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DEV\frmGenerateXML.resx">
+      <DependentUpon>frmGenerateXML.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura\frmFacturaPRD.resx">
       <DependentUpon>frmFacturaPRD.cs</DependentUpon>
     </EmbeddedResource>
@@ -803,6 +831,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Notas UNITE\frmTipoNotaCredito.resx">
       <DependentUpon>frmTipoNotaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_NC_Concept.resx">
+      <DependentUpon>RPT_NC_Concept.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_NC_Items.resx">
+      <DependentUpon>RPT_NC_Items.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_ND.resx">
+      <DependentUpon>RPT_ND.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Notas\frmBuscarCliente.resx">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>

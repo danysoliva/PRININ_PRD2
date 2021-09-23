@@ -50,6 +50,11 @@ namespace PRININ.Notas_UNITE
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.pS_ButtonGuardar = new PRININ.Classes.PS_Button();
             this.pS_Button1 = new PRININ.Classes.PS_Button();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCuenta = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
@@ -58,11 +63,13 @@ namespace PRININ.Notas_UNITE
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaVence.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConcepto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCuenta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // toggleSwitch1
             // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(150, 80);
+            this.toggleSwitch1.Location = new System.Drawing.Point(150, 54);
             this.toggleSwitch1.Name = "toggleSwitch1";
             this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
@@ -76,7 +83,7 @@ namespace PRININ.Notas_UNITE
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(3, 81);
+            this.labelControl1.Location = new System.Drawing.Point(3, 55);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(122, 20);
             this.labelControl1.TabIndex = 1;
@@ -96,7 +103,7 @@ namespace PRININ.Notas_UNITE
             // 
             this.gridControl1.DataMember = "detalle_nota";
             this.gridControl1.DataSource = this.dsNotasUNITE1;
-            this.gridControl1.Location = new System.Drawing.Point(3, 242);
+            this.gridControl1.Location = new System.Drawing.Point(3, 218);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(570, 200);
@@ -117,7 +124,8 @@ namespace PRININ.Notas_UNITE
             this.colprecio,
             this.coltotal_linea,
             this.colcantidad_u,
-            this.colcantidad_kg});
+            this.colcantidad_kg,
+            this.colcodigo});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -125,8 +133,6 @@ namespace PRININ.Notas_UNITE
             // 
             this.colcuenta.FieldName = "cuenta";
             this.colcuenta.Name = "colcuenta";
-            this.colcuenta.Visible = true;
-            this.colcuenta.VisibleIndex = 0;
             // 
             // coldescripcion
             // 
@@ -135,6 +141,7 @@ namespace PRININ.Notas_UNITE
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 1;
+            this.coldescripcion.Width = 205;
             // 
             // colprecio
             // 
@@ -142,7 +149,8 @@ namespace PRININ.Notas_UNITE
             this.colprecio.Name = "colprecio";
             this.colprecio.OptionsColumn.AllowEdit = false;
             this.colprecio.Visible = true;
-            this.colprecio.VisibleIndex = 2;
+            this.colprecio.VisibleIndex = 4;
+            this.colprecio.Width = 60;
             // 
             // coltotal_linea
             // 
@@ -150,7 +158,8 @@ namespace PRININ.Notas_UNITE
             this.coltotal_linea.Name = "coltotal_linea";
             this.coltotal_linea.OptionsColumn.AllowEdit = false;
             this.coltotal_linea.Visible = true;
-            this.coltotal_linea.VisibleIndex = 3;
+            this.coltotal_linea.VisibleIndex = 5;
+            this.coltotal_linea.Width = 88;
             // 
             // colcantidad_u
             // 
@@ -158,7 +167,8 @@ namespace PRININ.Notas_UNITE
             this.colcantidad_u.Name = "colcantidad_u";
             this.colcantidad_u.OptionsColumn.AllowEdit = false;
             this.colcantidad_u.Visible = true;
-            this.colcantidad_u.VisibleIndex = 4;
+            this.colcantidad_u.VisibleIndex = 2;
+            this.colcantidad_u.Width = 67;
             // 
             // colcantidad_kg
             // 
@@ -166,13 +176,14 @@ namespace PRININ.Notas_UNITE
             this.colcantidad_kg.Name = "colcantidad_kg";
             this.colcantidad_kg.OptionsColumn.AllowEdit = false;
             this.colcantidad_kg.Visible = true;
-            this.colcantidad_kg.VisibleIndex = 5;
+            this.colcantidad_kg.VisibleIndex = 3;
+            this.colcantidad_kg.Width = 69;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(3, 220);
+            this.labelControl3.Location = new System.Drawing.Point(3, 196);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 20);
             this.labelControl3.TabIndex = 4;
@@ -182,7 +193,7 @@ namespace PRININ.Notas_UNITE
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(3, 122);
+            this.labelControl4.Location = new System.Drawing.Point(3, 111);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(128, 20);
             this.labelControl4.TabIndex = 5;
@@ -191,7 +202,7 @@ namespace PRININ.Notas_UNITE
             // dateFechaVence
             // 
             this.dateFechaVence.EditValue = null;
-            this.dateFechaVence.Location = new System.Drawing.Point(150, 119);
+            this.dateFechaVence.Location = new System.Drawing.Point(150, 108);
             this.dateFechaVence.Name = "dateFechaVence";
             this.dateFechaVence.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFechaVence.Properties.Appearance.Options.UseFont = true;
@@ -206,7 +217,7 @@ namespace PRININ.Notas_UNITE
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(3, 160);
+            this.labelControl5.Location = new System.Drawing.Point(3, 137);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(67, 20);
             this.labelControl5.TabIndex = 7;
@@ -214,7 +225,7 @@ namespace PRININ.Notas_UNITE
             // 
             // txtConcepto
             // 
-            this.txtConcepto.Location = new System.Drawing.Point(150, 159);
+            this.txtConcepto.Location = new System.Drawing.Point(150, 136);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Properties.ReadOnly = true;
             this.txtConcepto.Size = new System.Drawing.Size(423, 55);
@@ -224,7 +235,7 @@ namespace PRININ.Notas_UNITE
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(395, 452);
+            this.labelControl6.Location = new System.Drawing.Point(395, 428);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(38, 20);
             this.labelControl6.TabIndex = 9;
@@ -237,7 +248,7 @@ namespace PRININ.Notas_UNITE
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(439, 448);
+            this.spinEdit1.Location = new System.Drawing.Point(439, 424);
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
@@ -260,7 +271,7 @@ namespace PRININ.Notas_UNITE
             this.pS_ButtonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pS_ButtonGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pS_ButtonGuardar.ForeColor = System.Drawing.Color.Black;
-            this.pS_ButtonGuardar.Location = new System.Drawing.Point(146, 495);
+            this.pS_ButtonGuardar.Location = new System.Drawing.Point(140, 548);
             this.pS_ButtonGuardar.Name = "pS_ButtonGuardar";
             this.pS_ButtonGuardar.Size = new System.Drawing.Size(150, 40);
             this.pS_ButtonGuardar.TabIndex = 47;
@@ -282,7 +293,7 @@ namespace PRININ.Notas_UNITE
             this.pS_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pS_Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pS_Button1.ForeColor = System.Drawing.Color.White;
-            this.pS_Button1.Location = new System.Drawing.Point(302, 495);
+            this.pS_Button1.Location = new System.Drawing.Point(296, 548);
             this.pS_Button1.Name = "pS_Button1";
             this.pS_Button1.Size = new System.Drawing.Size(150, 40);
             this.pS_Button1.TabIndex = 46;
@@ -292,11 +303,60 @@ namespace PRININ.Notas_UNITE
             this.pS_Button1.UseVisualStyleBackColor = false;
             this.pS_Button1.Click += new System.EventHandler(this.pS_Button1_Click);
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(3, 83);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(49, 20);
+            this.labelControl7.TabIndex = 49;
+            this.labelControl7.Text = "Cuenta:";
+            // 
+            // txtCuenta
+            // 
+            this.txtCuenta.Location = new System.Drawing.Point(150, 83);
+            this.txtCuenta.Name = "txtCuenta";
+            this.txtCuenta.Size = new System.Drawing.Size(133, 20);
+            this.txtCuenta.TabIndex = 50;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(3, 438);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(99, 20);
+            this.labelControl8.TabIndex = 51;
+            this.labelControl8.Text = "Observaciones:";
+            // 
+            // memoObservaciones
+            // 
+            this.memoObservaciones.Location = new System.Drawing.Point(3, 459);
+            this.memoObservaciones.Name = "memoObservaciones";
+            this.memoObservaciones.Size = new System.Drawing.Size(386, 82);
+            this.memoObservaciones.TabIndex = 52;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            this.colcodigo.Width = 63;
+            // 
             // frmTipoNotaCredito
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 543);
+            this.ClientSize = new System.Drawing.Size(575, 594);
+            this.Controls.Add(this.memoObservaciones);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.txtCuenta);
+            this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.pS_ButtonGuardar);
             this.Controls.Add(this.pS_Button1);
             this.Controls.Add(this.spinEdit1);
@@ -320,6 +380,8 @@ namespace PRININ.Notas_UNITE
             ((System.ComponentModel.ISupportInitialize)(this.dateFechaVence.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtConcepto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCuenta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoObservaciones.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +410,10 @@ namespace PRININ.Notas_UNITE
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad_u;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad_kg;
         public DevExpress.XtraEditors.DateEdit dateFechaVence;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtCuenta;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.MemoEdit memoObservaciones;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
     }
 }

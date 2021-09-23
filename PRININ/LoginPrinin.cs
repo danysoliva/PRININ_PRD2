@@ -227,6 +227,8 @@ namespace PRININ
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            //frmGenerateXML frm = new frmGenerateXML();
+            //frm.Show();
             txt_usuario.Text = "danys.oliva";
             txt_password.Text = "Gto1804?";
             ValidateUserInfo();

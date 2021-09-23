@@ -59,8 +59,8 @@ namespace PRININ.Notas
             //frmSelectCAI frmSelect = new frmSelectCAI();
             //if (frmSelect.ShowDialog() == DialogResult.OK)
             //{
-                    var gridView = (GridView)gridControl1.FocusedView;
-                    var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
 
             if(string.IsNullOrEmpty(row.cliente))
             {
@@ -78,6 +78,7 @@ namespace PRININ.Notas
             string concepto = "";
             string NumDoc = "";
             string RTN = "";
+            string Obs = "";
             DateTime Fecha = DateTime.Now;
             int ID_Doc_Fiscal = 0;
             try
@@ -94,6 +95,7 @@ namespace PRININ.Notas
                                 ,[fecha_doc]
                                 ,[id_doc_fiscal]
                                 ,[tasa]
+                                ,obs
                         FROM [dbo].[NOTAS]
                         WHERE id = " + row.id;
                 DBOperations dp = new DBOperations();
@@ -117,6 +119,7 @@ namespace PRININ.Notas
                     Fecha = dr.GetDateTime(9);
                     ID_Doc_Fiscal = dr.GetInt32(10);
                     TasaCambio = dr.GetDecimal(11);
+                    Obs = dr.GetString(12);
                 }
                 dr.Close();
                 conn.Close();
@@ -153,7 +156,7 @@ namespace PRININ.Notas
                 string sql = @"SELECT [fecha_vence]
                                 ,[num_ini]
                                 ,[num_fin]
-                            FROM [PRININ].[dbo].[z_INVREGDAT]
+                            FROM [dbo].[z_INVREGDAT]
                             where id = " + ID_Doc_Fiscal;
                 DBOperations dp = new DBOperations();
             //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -176,18 +179,109 @@ namespace PRININ.Notas
                 CajaDialogo.Error(ec.Message);
             }
 
-            RPT_ND_NC_Local report = new RPT_ND_NC_Local(cai, NumDoc,
-                                                            Fecha, titulo,
-                                                            monto, codCliente,
-                                                            row.cliente, RTN,
-                                                            concepto, Leyenda,
-                                                            fechai, ini,
-                                                            fin, row.enable, TasaCambio, row.cai, row.num_fact, "");
-            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-            ReportPrintTool printReport = new ReportPrintTool(report);
-            report.ShowPrintMarginsWarning = false;
-            printReport.ShowPreview();
-                
+            if (row.tipo_nota == 1)//Credito
+            {
+                Nota Note1 = new Nota();
+                if (Note1.IsNotaArticulos(row.id))
+                {
+                    //Es de articulos
+
+                    //Cargar detalle de articulos
+                    try
+                    {
+                        string sql = @"sp_get_detalle_lineas_nota_credito";
+                        DBOperations dp = new DBOperations();
+                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                        string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                        SqlConnection conn = new SqlConnection(ConnectionString);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@idnote", row.id);
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        dsNotasUNITE1.detalle_nota_print.Clear();
+                        adat.Fill(dsNotasUNITE1.detalle_nota_print);
+                        conn.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+
+                    RPT_NC_Items report = new RPT_NC_Items(cai, NumDoc,
+                                                                Fecha, titulo,
+                                                                monto, codCliente,
+                                                                row.cliente, RTN,
+                                                                concepto, Leyenda,
+                                                                fechai, ini,
+                                                                fin, row.enable, TasaCambio, row.cai, row.num_fact, "", row.due_date, Obs)
+                    { DataSource = dsNotasUNITE1, DataMember = "detalle_nota_print", ShowPrintMarginsWarning = false };
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(report);
+                    report.ShowPrintMarginsWarning = false;
+                    printReport.ShowPreview();
+                }
+                else
+                {
+                    //Es de Concepto
+                    //Cargar detalle de articulos
+                    try
+                    {
+                        string sql = @"sp_get_detalle_lineas_nota_credito_concepto";
+                        DBOperations dp = new DBOperations();
+                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                        string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                        SqlConnection conn = new SqlConnection(ConnectionString);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@idnote", row.id);
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        dsNotasUNITE1.detalle_nota_print.Clear();
+                        adat.Fill(dsNotasUNITE1.detalle_nota_print);
+                        conn.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+                    //
+                    RPT_NC_Concept report = new RPT_NC_Concept(cai, NumDoc,
+                                                                Fecha, titulo,
+                                                                monto, codCliente,
+                                                                row.cliente, RTN,
+                                                                concepto, Leyenda,
+                                                                fechai, ini,
+                                                                fin, row.enable, TasaCambio, row.cai, row.num_fact, "", row.due_date,Obs)
+                    { DataSource = dsNotasUNITE1, DataMember = "detalle_nota_print", ShowPrintMarginsWarning = false };
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(report);
+                    report.ShowPrintMarginsWarning = false;
+                    printReport.ShowPreview();
+                }
+
+
+
+
+
+
+                //RPT_OrdenCompra report = new RPT_OrdenCompra(num, total) { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
+
+            }
+            else//Debito
+            {
+                RPT_ND report = new RPT_ND(cai, NumDoc,
+                                                                Fecha, titulo,
+                                                                monto, codCliente,
+                                                                row.cliente, RTN,
+                                                                concepto, Leyenda,
+                                                                fechai, ini,
+                                                                fin, row.enable, TasaCambio, row.cai, row.num_fact, "", row.due_date, Obs);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                report.ShowPrintMarginsWarning = false;
+                printReport.ShowPreview();
+            }
            // }
 
             #region codigo no usado
@@ -438,6 +532,7 @@ namespace PRININ.Notas
                         if (frm2.ShowDialog() == DialogResult.OK)
                         {
                             row.due_date = frm2.dateFechaVence.DateTime;
+                            row.obs = frm2.memoObservaciones.Text;
                         }
                         else
                         {
@@ -496,6 +591,7 @@ namespace PRININ.Notas
                         cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
                         cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
                         cmd.Parameters.AddWithValue("@duedate", row.due_date);
+                        cmd.Parameters.AddWithValue("@obs", row.obs);
 
                         cmd.ExecuteNonQuery();
                         conn.Close();
