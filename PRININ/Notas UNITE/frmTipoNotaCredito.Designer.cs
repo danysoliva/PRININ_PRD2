@@ -41,6 +41,7 @@ namespace PRININ.Notas_UNITE
             this.coltotal_linea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad_u = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad_kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dateFechaVence = new DevExpress.XtraEditors.DateEdit();
@@ -54,7 +55,6 @@ namespace PRININ.Notas_UNITE
             this.txtCuenta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
@@ -178,6 +178,15 @@ namespace PRININ.Notas_UNITE
             this.colcantidad_kg.Visible = true;
             this.colcantidad_kg.VisibleIndex = 3;
             this.colcantidad_kg.Width = 69;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            this.colcodigo.Width = 63;
             // 
             // labelControl3
             // 
@@ -337,15 +346,6 @@ namespace PRININ.Notas_UNITE
             this.memoObservaciones.Size = new System.Drawing.Size(386, 82);
             this.memoObservaciones.TabIndex = 52;
             // 
-            // colcodigo
-            // 
-            this.colcodigo.Caption = "Código";
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 63;
-            // 
             // frmTipoNotaCredito
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -413,7 +413,7 @@ namespace PRININ.Notas_UNITE
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtCuenta;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.MemoEdit memoObservaciones;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        public DevExpress.XtraEditors.MemoEdit memoObservaciones;
     }
 }

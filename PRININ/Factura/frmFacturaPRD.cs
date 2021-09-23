@@ -179,6 +179,7 @@ namespace PRININ.Factura
                 fact1.aditional_line4 = txtLineaAdicional4.Text;
                 fact1.aditional_line5 = txtLineaAdicional5.Text;
                 fact1.aditional_line6 = txtLineaAdicional6.Text;
+                fact1.cust_po_number = lblOrdenCompra.Text;
                 fact1.RegistroExoneradoC = txtRegistroExoneradoC.Text;
                 fact1.OC_Exenta = txtOC_Excenta.Text;
                 fact1.ID_SAG = txtID_SAG.Text;

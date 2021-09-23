@@ -86,7 +86,6 @@ namespace PRININ.Factura
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.lblUser = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.lblOrdenCompra = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.lblTerminoCredito = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
@@ -114,6 +113,7 @@ namespace PRININ.Factura
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtTotalISV = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.lblOrdenCompra = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -740,18 +740,6 @@ namespace PRININ.Factura
             this.labelControl16.TabIndex = 22;
             this.labelControl16.Text = "Usuario______________________";
             // 
-            // lblOrdenCompra
-            // 
-            this.lblOrdenCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblOrdenCompra.Appearance.Options.UseFont = true;
-            this.lblOrdenCompra.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblOrdenCompra.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblOrdenCompra.Location = new System.Drawing.Point(575, 142);
-            this.lblOrdenCompra.Name = "lblOrdenCompra";
-            this.lblOrdenCompra.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.lblOrdenCompra.Size = new System.Drawing.Size(314, 24);
-            this.lblOrdenCompra.TabIndex = 25;
-            // 
             // labelControl18
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -1104,12 +1092,21 @@ namespace PRININ.Factura
             this.labelControl19.TabIndex = 52;
             this.labelControl19.Text = "ISV____________________________";
             // 
+            // lblOrdenCompra
+            // 
+            this.lblOrdenCompra.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblOrdenCompra.Location = new System.Drawing.Point(575, 141);
+            this.lblOrdenCompra.Name = "lblOrdenCompra";
+            this.lblOrdenCompra.Size = new System.Drawing.Size(314, 25);
+            this.lblOrdenCompra.TabIndex = 54;
+            // 
             // frmFacturaPRD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(895, 663);
+            this.Controls.Add(this.lblOrdenCompra);
             this.Controls.Add(this.txtTotalISV);
             this.Controls.Add(this.labelControl19);
             this.Controls.Add(this.txtTotalDescuento);
@@ -1136,7 +1133,6 @@ namespace PRININ.Factura
             this.Controls.Add(this.labelControl22);
             this.Controls.Add(this.lblTerminoCredito);
             this.Controls.Add(this.labelControl20);
-            this.Controls.Add(this.lblOrdenCompra);
             this.Controls.Add(this.labelControl18);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.labelControl16);
@@ -1210,7 +1206,6 @@ namespace PRININ.Factura
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl lblUser;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.LabelControl lblOrdenCompra;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl lblTerminoCredito;
         private DevExpress.XtraEditors.LabelControl labelControl20;
@@ -1274,5 +1269,6 @@ namespace PRININ.Factura
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.TextEdit txtTotalISV;
         private DevExpress.XtraEditors.LabelControl labelControl19;
+        public System.Windows.Forms.TextBox lblOrdenCompra;
     }
 }
