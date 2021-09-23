@@ -46,12 +46,13 @@ namespace PRININ.Numeracion_Fiscal
             this.luEstado = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.cbxTipoDocumento = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tsSecuencia = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.lueTypeDoc = new DevExpress.XtraEditors.LookUpEdit();
             this.estadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNumeracionFiscal = new PRININ.Numeracion_Fiscal.dsNumeracionFiscal();
+            this.typedocBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCAI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaEmision.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaEmision.Properties)).BeginInit();
@@ -60,10 +61,11 @@ namespace PRININ.Numeracion_Fiscal
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIni.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luEstado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxTipoDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsSecuencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueTypeDoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNumeracionFiscal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typedocBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCAI
@@ -256,23 +258,6 @@ namespace PRININ.Numeracion_Fiscal
             this.labelControl7.TabIndex = 15;
             this.labelControl7.Text = "Tipo Documento:";
             // 
-            // cbxTipoDocumento
-            // 
-            this.cbxTipoDocumento.Location = new System.Drawing.Point(186, 281);
-            this.cbxTipoDocumento.Name = "cbxTipoDocumento";
-            this.cbxTipoDocumento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxTipoDocumento.Properties.Appearance.Options.UseFont = true;
-            this.cbxTipoDocumento.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxTipoDocumento.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cbxTipoDocumento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxTipoDocumento.Properties.Items.AddRange(new object[] {
-            "FAC",
-            "NC",
-            "ND"});
-            this.cbxTipoDocumento.Size = new System.Drawing.Size(153, 26);
-            this.cbxTipoDocumento.TabIndex = 6;
-            // 
             // tsSecuencia
             // 
             this.tsSecuencia.Location = new System.Drawing.Point(186, 316);
@@ -302,6 +287,29 @@ namespace PRININ.Numeracion_Fiscal
             this.labelControl10.TabIndex = 21;
             this.labelControl10.Text = "Numeración Fiscal";
             // 
+            // lueTypeDoc
+            // 
+            this.lueTypeDoc.Location = new System.Drawing.Point(186, 275);
+            this.lueTypeDoc.Name = "lueTypeDoc";
+            this.lueTypeDoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lueTypeDoc.Properties.Appearance.Options.UseFont = true;
+            this.lueTypeDoc.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueTypeDoc.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lueTypeDoc.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueTypeDoc.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lueTypeDoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueTypeDoc.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 36, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TypeDoc", "Type Doc", 77, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descripcion", "Tipo Documento", 89, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueTypeDoc.Properties.DataSource = this.typedocBindingSource;
+            this.lueTypeDoc.Properties.DisplayMember = "TypeDoc";
+            this.lueTypeDoc.Properties.NullText = "";
+            this.lueTypeDoc.Properties.ValueMember = "id";
+            this.lueTypeDoc.Size = new System.Drawing.Size(153, 26);
+            this.lueTypeDoc.TabIndex = 23;
+            // 
             // estadoBindingSource
             // 
             this.estadoBindingSource.DataMember = "Estado";
@@ -312,15 +320,20 @@ namespace PRININ.Numeracion_Fiscal
             this.dsNumeracionFiscal.DataSetName = "dsNumeracionFiscal";
             this.dsNumeracionFiscal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // typedocBindingSource
+            // 
+            this.typedocBindingSource.DataMember = "typedoc";
+            this.typedocBindingSource.DataSource = this.dsNumeracionFiscal;
+            // 
             // frmNumeracionFiscalCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 457);
+            this.Controls.Add(this.lueTypeDoc);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.tsSecuencia);
-            this.Controls.Add(this.cbxTipoDocumento);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.luEstado);
@@ -351,10 +364,11 @@ namespace PRININ.Numeracion_Fiscal
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIni.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luEstado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxTipoDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsSecuencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueTypeDoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNumeracionFiscal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typedocBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,9 +393,10 @@ namespace PRININ.Numeracion_Fiscal
         private dsNumeracionFiscal dsNumeracionFiscal;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ComboBoxEdit cbxTipoDocumento;
         private DevExpress.XtraEditors.ToggleSwitch tsSecuencia;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LookUpEdit lueTypeDoc;
+        private System.Windows.Forms.BindingSource typedocBindingSource;
     }
 }
