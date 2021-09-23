@@ -30,8 +30,7 @@
         {
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNotaD_UNITE));
-<<<<<<< HEAD
-=======
+
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -46,13 +45,13 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
->>>>>>> 10be8901ceb3ce25ab290999a5339594668e5753
+            //DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-<<<<<<< HEAD
+
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -63,8 +62,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
-=======
->>>>>>> 10be8901ceb3ce25ab290999a5339594668e5753
+
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsNotasUNITE1 = new PRININ.Notas_UNITE.dsNotasUNITE();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -101,10 +99,8 @@
             this.tgMostrarCerradas = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
-<<<<<<< HEAD
-=======
+
             this.coldue_date = new DevExpress.XtraGrid.Columns.GridColumn();
->>>>>>> 10be8901ceb3ce25ab290999a5339594668e5753
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -467,8 +463,7 @@
             this.cmdCerrar.Text = "Cerrar";
             this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
             // 
-<<<<<<< HEAD
-=======
+
             // coldue_date
             // 
             this.coldue_date.Caption = "Fecha Vencimiento";
@@ -479,7 +474,6 @@
             this.coldue_date.VisibleIndex = 7;
             this.coldue_date.Width = 62;
             // 
->>>>>>> 10be8901ceb3ce25ab290999a5339594668e5753
             // frmNotaD_UNITE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
