@@ -231,6 +231,17 @@ namespace PRININ.Factura
                 DataTable table1 = new DataTable();
                 datos.Tables.Add(table1);
                 adat.Fill(datos.Tables[0]);
+                if (datos.Tables[0].Rows.Count <= 10)
+                {
+                    int conta = datos.Tables[0].Rows.Count;
+                    while (conta < 10)
+                    {
+                        DataRow row = datos.Tables[0].NewRow();//  dsCompras.oc_d_normal.Newoc_d_normalRow();
+                        datos.Tables[0].Rows.Add(row);// dsCompras.oc_d_normal.Addoc_d_normalRow(row1);
+                        datos.Tables[0].AcceptChanges();//dsCompras.AcceptChanges();
+                        conta++;
+                    }
+                }
                 conn.Close();
             }
             catch (Exception ec)
