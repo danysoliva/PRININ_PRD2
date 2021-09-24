@@ -50,6 +50,10 @@ namespace PRININ.Classes
         public static string prinin_ServerName = $"AQFSVR007";
         public static string prinin_ActiveDB = "PRININ_DEV";
 
+        //public static string prinin_ServerAddress = $"EUCEDA\\SQLEXPRESS";
+        //public static string prinin_ServerName = $"EUCEDA";
+        //public static string prinin_ActiveDB = "PRININ_DEV";
+
         public static string prinin_DB_User = "sa";
         public static string prinin_DB_Pass = "AquaF33dHN2014";
 
