@@ -1802,6 +1802,8 @@ namespace PRININ.Notas_UNITE {
             
             private global::System.Data.DataColumn columncodigo;
             
+            private global::System.Data.DataColumn columnum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_notaDataTable() {
@@ -1901,6 +1903,14 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn umColumn {
+                get {
+                    return this.columnum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1936,7 +1946,7 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_notaRow Adddetalle_notaRow(string cuenta, string descripcion, decimal cantidad_kg, decimal precio, decimal total_linea, decimal cantidad_u, int id, string codigo) {
+            public detalle_notaRow Adddetalle_notaRow(string cuenta, string descripcion, decimal cantidad_kg, decimal precio, decimal total_linea, decimal cantidad_u, int id, string codigo, string um) {
                 detalle_notaRow rowdetalle_notaRow = ((detalle_notaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         cuenta,
@@ -1946,7 +1956,8 @@ namespace PRININ.Notas_UNITE {
                         total_linea,
                         cantidad_u,
                         id,
-                        codigo};
+                        codigo,
+                        um};
                 rowdetalle_notaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_notaRow);
                 return rowdetalle_notaRow;
@@ -1977,6 +1988,7 @@ namespace PRININ.Notas_UNITE {
                 this.columncantidad_u = base.Columns["cantidad_u"];
                 this.columnid = base.Columns["id"];
                 this.columncodigo = base.Columns["codigo"];
+                this.columnum = base.Columns["um"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1998,6 +2010,8 @@ namespace PRININ.Notas_UNITE {
                 base.Columns.Add(this.columnid);
                 this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo);
+                this.columnum = new global::System.Data.DataColumn("um", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnum);
                 this.columncuenta.Caption = "Cuenta";
                 this.columndescripcion.Caption = "Descripción";
                 this.columncantidad_kg.Caption = "Cantidad Kg";
@@ -2147,6 +2161,10 @@ namespace PRININ.Notas_UNITE {
             
             private global::System.Data.DataColumn columntotal_linea;
             
+            private global::System.Data.DataColumn columncantidad_u;
+            
+            private global::System.Data.DataColumn columnum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_nota_printDataTable() {
@@ -2222,6 +2240,22 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidad_uColumn {
+                get {
+                    return this.columncantidad_u;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn umColumn {
+                get {
+                    return this.columnum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2257,14 +2291,16 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_nota_printRow Adddetalle_nota_printRow(string codigo, string descripcion, decimal cantidad, decimal precio, decimal total_linea) {
+            public detalle_nota_printRow Adddetalle_nota_printRow(string codigo, string descripcion, decimal cantidad, decimal precio, decimal total_linea, string cantidad_u, string um) {
                 detalle_nota_printRow rowdetalle_nota_printRow = ((detalle_nota_printRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
                         descripcion,
                         cantidad,
                         precio,
-                        total_linea};
+                        total_linea,
+                        cantidad_u,
+                        um};
                 rowdetalle_nota_printRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_nota_printRow);
                 return rowdetalle_nota_printRow;
@@ -2292,6 +2328,8 @@ namespace PRININ.Notas_UNITE {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnprecio = base.Columns["precio"];
                 this.columntotal_linea = base.Columns["total_linea"];
+                this.columncantidad_u = base.Columns["cantidad_u"];
+                this.columnum = base.Columns["um"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2307,6 +2345,10 @@ namespace PRININ.Notas_UNITE {
                 base.Columns.Add(this.columnprecio);
                 this.columntotal_linea = new global::System.Data.DataColumn("total_linea", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal_linea);
+                this.columncantidad_u = new global::System.Data.DataColumn("cantidad_u", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_u);
+                this.columnum = new global::System.Data.DataColumn("um", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnum);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3882,6 +3924,22 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string um {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_nota.umColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'um\' in table \'detalle_nota\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_nota.umColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscuentaNull() {
                 return this.IsNull(this.tabledetalle_nota.cuentaColumn);
             }
@@ -3974,6 +4032,18 @@ namespace PRININ.Notas_UNITE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcodigoNull() {
                 this[this.tabledetalle_nota.codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsumNull() {
+                return this.IsNull(this.tabledetalle_nota.umColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetumNull() {
+                this[this.tabledetalle_nota.umColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4073,6 +4143,38 @@ namespace PRININ.Notas_UNITE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cantidad_u {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_nota_print.cantidad_uColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad_u\' in table \'detalle_nota_print\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_nota_print.cantidad_uColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string um {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_nota_print.umColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'um\' in table \'detalle_nota_print\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_nota_print.umColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscodigoNull() {
                 return this.IsNull(this.tabledetalle_nota_print.codigoColumn);
             }
@@ -4129,6 +4231,30 @@ namespace PRININ.Notas_UNITE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settotal_lineaNull() {
                 this[this.tabledetalle_nota_print.total_lineaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscantidad_uNull() {
+                return this.IsNull(this.tabledetalle_nota_print.cantidad_uColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcantidad_uNull() {
+                this[this.tabledetalle_nota_print.cantidad_uColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsumNull() {
+                return this.IsNull(this.tabledetalle_nota_print.umColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetumNull() {
+                this[this.tabledetalle_nota_print.umColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -137,6 +137,8 @@
               &lt;xs:element name="cantidad" type="xs:decimal" minOccurs="0" /&gt;
               &lt;xs:element name="precio" type="xs:decimal" minOccurs="0" /&gt;
               &lt;xs:element name="total_linea" type="xs:decimal" minOccurs="0" /&gt;
+              &lt;xs:element name="cantidad_u" type="xs:decimal" minOccurs="0" /&gt;
+              &lt;xs:element name="um" type="xs:string" minOccurs="0" /&gt;
             &lt;/xs:sequence&gt;
           &lt;/xs:complexType&gt;
         &lt;/xs:element&gt;

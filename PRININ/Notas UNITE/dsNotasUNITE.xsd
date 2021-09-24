@@ -36,7 +36,7 @@
               <xs:element name="factura_id" msprop:Generator_ColumnVarNameInTable="columnfactura_id" msprop:Generator_ColumnPropNameInRow="factura_id" msprop:Generator_ColumnPropNameInTable="factura_idColumn" msprop:Generator_UserColumnName="factura_id" type="xs:int" minOccurs="0" />
               <xs:element name="id_doc_fiscal" msprop:Generator_ColumnVarNameInTable="columnid_doc_fiscal" msprop:Generator_ColumnPropNameInRow="id_doc_fiscal" msprop:Generator_ColumnPropNameInTable="id_doc_fiscalColumn" msprop:Generator_UserColumnName="id_doc_fiscal" type="xs:int" minOccurs="0" />
               <xs:element name="due_date" msprop:Generator_ColumnVarNameInTable="columndue_date" msprop:Generator_ColumnPropNameInRow="due_date" msprop:Generator_ColumnPropNameInTable="due_dateColumn" msprop:Generator_UserColumnName="due_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="obs" msprop:Generator_ColumnVarNameInTable="columnobs" msprop:Generator_ColumnPropNameInRow="obs" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInTable="obsColumn" msprop:Generator_UserColumnName="obs" type="xs:string" minOccurs="0" />
+              <xs:element name="obs" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="obs" msprop:Generator_ColumnVarNameInTable="columnobs" msprop:Generator_ColumnPropNameInTable="obsColumn" msprop:Generator_UserColumnName="obs" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -86,6 +86,7 @@
               <xs:element name="cantidad_u" msdata:Caption="Cant. Unidades" msprop:Generator_ColumnVarNameInTable="columncantidad_u" msprop:Generator_ColumnPropNameInRow="cantidad_u" msprop:Generator_ColumnPropNameInTable="cantidad_uColumn" msprop:Generator_UserColumnName="cantidad_u" type="xs:decimal" minOccurs="0" />
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="codigo" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="um" msprop:Generator_ColumnVarNameInTable="columnum" msprop:Generator_ColumnPropNameInRow="um" msprop:Generator_ColumnPropNameInTable="umColumn" msprop:Generator_UserColumnName="um" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -97,6 +98,8 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
               <xs:element name="precio" msprop:Generator_ColumnVarNameInTable="columnprecio" msprop:Generator_ColumnPropNameInRow="precio" msprop:Generator_ColumnPropNameInTable="precioColumn" msprop:Generator_UserColumnName="precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="total_linea" msprop:Generator_ColumnVarNameInTable="columntotal_linea" msprop:Generator_ColumnPropNameInRow="total_linea" msprop:Generator_ColumnPropNameInTable="total_lineaColumn" msprop:Generator_UserColumnName="total_linea" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cantidad_u" msprop:Generator_ColumnVarNameInTable="columncantidad_u" msprop:Generator_ColumnPropNameInRow="cantidad_u" msprop:Generator_ColumnPropNameInTable="cantidad_uColumn" msprop:Generator_UserColumnName="cantidad_u" type="xs:string" minOccurs="0" />
+              <xs:element name="um" msprop:Generator_ColumnVarNameInTable="columnum" msprop:Generator_ColumnPropNameInRow="um" msprop:Generator_ColumnPropNameInTable="umColumn" msprop:Generator_UserColumnName="um" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

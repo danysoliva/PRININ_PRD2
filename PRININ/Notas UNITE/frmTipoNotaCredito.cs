@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using PRININ.Classes;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace PRININ.Notas_UNITE
         int FactId;
         DateTime FechaDocumento;
         int IdNota;
-        public frmTipoNotaCredito(int pFact_id, DateTime pFechaDocumento, int pIdNota, string pConcepto)
+        public frmTipoNotaCredito(int pFact_id, DateTime pFechaDocumento, int pIdNota, string pConcepto, decimal pMonto)
         {
             InitializeComponent();
             FechaDocumento = pFechaDocumento;
@@ -26,11 +27,13 @@ namespace PRININ.Notas_UNITE
             IdNota = pIdNota;
             txtConcepto.Text = pConcepto;
 
-            FacturaH fact = new FacturaH();
-            if (fact.RecuperarRegistro(FactId))
-            {
-                spinEdit1.Value = fact.TotalFacturaUSD;
-            }
+
+            //FacturaH fact = new FacturaH();
+            //if (fact.RecuperarRegistro(FactId))
+            //{
+            //    spinEdit1.Value = fact.TotalFacturaUSD;
+            //}
+            spinEdit1.Value = pMonto;
         }
 
         public string CodeWindow { get { return "WD0002"; } }
@@ -39,7 +42,7 @@ namespace PRININ.Notas_UNITE
         {
             try
             {
-                string sql = @"[sp_get_detalles_factura_para_notas_credito]";
+                string sql = @"[sp_get_detalles_factura_para_notas_creditov2]";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -66,11 +69,13 @@ namespace PRININ.Notas_UNITE
             if (toggleSwitch1.IsOn)//Si es de articulos
             {
                 gridControl1.Enabled = true;
+                txtCuenta.Enabled = false;
                 LoadLineas();
             }
             else
             {
                 gridControl1.Enabled = false;
+                txtCuenta.Enabled = true;
             }
         }
 
@@ -109,7 +114,7 @@ namespace PRININ.Notas_UNITE
                 //}
                 try
                 {
-                    string sql = @"sp_insert_note_lines";
+                    string sql = @"[sp_insert_note_linesv2]";
                     DBOperations dp = new DBOperations();
                     //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                     string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -122,6 +127,12 @@ namespace PRININ.Notas_UNITE
                         cmd.Parameters.AddWithValue("@id_nota", IdNota);
                         cmd.Parameters.AddWithValue("@id_invoice_line", row.id);
                         cmd.Parameters.AddWithValue("@cuenta", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("@units", row.cantidad_u);
+                        cmd.Parameters.AddWithValue("@kg", row.cantidad_kg);
+                        cmd.Parameters.AddWithValue("@price", row.precio);
+                        cmd.Parameters.AddWithValue("@total_line", row.total_linea);
+                        cmd.Parameters.AddWithValue("@um", row.um);
                         cmd.ExecuteNonQuery();
                     }
                     conn.Close();
@@ -198,6 +209,32 @@ namespace PRININ.Notas_UNITE
 
            
 
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsNotasUNITE.detalle_notaRow)gridView.GetFocusedDataRow();
+            decimal valor = 0;
+            switch (e.Column.FieldName)
+            {
+                case "cantidad_kg":
+                case "cantidad_u":
+                case "precio":
+                    switch (row.um)
+                    {
+                        case "MT":
+                            valor = ((row.cantidad_kg / 1000) * row.precio);
+                            break;
+                        default:
+                            valor = (row.cantidad_u * row.precio);
+                            break;
+                    }
+                    row.total_linea = valor;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

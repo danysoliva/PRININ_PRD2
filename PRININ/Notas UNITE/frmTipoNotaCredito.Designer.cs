@@ -55,6 +55,7 @@ namespace PRININ.Notas_UNITE
             this.txtCuenta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
+            this.colum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
@@ -106,7 +107,7 @@ namespace PRININ.Notas_UNITE
             this.gridControl1.Location = new System.Drawing.Point(3, 218);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(570, 200);
+            this.gridControl1.Size = new System.Drawing.Size(570, 204);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -125,9 +126,11 @@ namespace PRININ.Notas_UNITE
             this.coltotal_linea,
             this.colcantidad_u,
             this.colcantidad_kg,
-            this.colcodigo});
+            this.colcodigo,
+            this.colum});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // colcuenta
             // 
@@ -138,7 +141,6 @@ namespace PRININ.Notas_UNITE
             // 
             this.coldescripcion.FieldName = "descripcion";
             this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 1;
             this.coldescripcion.Width = 205;
@@ -147,36 +149,32 @@ namespace PRININ.Notas_UNITE
             // 
             this.colprecio.FieldName = "precio";
             this.colprecio.Name = "colprecio";
-            this.colprecio.OptionsColumn.AllowEdit = false;
             this.colprecio.Visible = true;
-            this.colprecio.VisibleIndex = 4;
+            this.colprecio.VisibleIndex = 5;
             this.colprecio.Width = 60;
             // 
             // coltotal_linea
             // 
             this.coltotal_linea.FieldName = "total_linea";
             this.coltotal_linea.Name = "coltotal_linea";
-            this.coltotal_linea.OptionsColumn.AllowEdit = false;
             this.coltotal_linea.Visible = true;
-            this.coltotal_linea.VisibleIndex = 5;
+            this.coltotal_linea.VisibleIndex = 6;
             this.coltotal_linea.Width = 88;
             // 
             // colcantidad_u
             // 
             this.colcantidad_u.FieldName = "cantidad_u";
             this.colcantidad_u.Name = "colcantidad_u";
-            this.colcantidad_u.OptionsColumn.AllowEdit = false;
             this.colcantidad_u.Visible = true;
-            this.colcantidad_u.VisibleIndex = 2;
+            this.colcantidad_u.VisibleIndex = 3;
             this.colcantidad_u.Width = 67;
             // 
             // colcantidad_kg
             // 
             this.colcantidad_kg.FieldName = "cantidad_kg";
             this.colcantidad_kg.Name = "colcantidad_kg";
-            this.colcantidad_kg.OptionsColumn.AllowEdit = false;
             this.colcantidad_kg.Visible = true;
-            this.colcantidad_kg.VisibleIndex = 3;
+            this.colcantidad_kg.VisibleIndex = 4;
             this.colcantidad_kg.Width = 69;
             // 
             // colcodigo
@@ -346,6 +344,15 @@ namespace PRININ.Notas_UNITE
             this.memoObservaciones.Size = new System.Drawing.Size(386, 82);
             this.memoObservaciones.TabIndex = 52;
             // 
+            // colum
+            // 
+            this.colum.Caption = "UM";
+            this.colum.FieldName = "um";
+            this.colum.Name = "colum";
+            this.colum.OptionsColumn.AllowEdit = false;
+            this.colum.Visible = true;
+            this.colum.VisibleIndex = 2;
+            // 
             // frmTipoNotaCredito
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -415,5 +422,6 @@ namespace PRININ.Notas_UNITE
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         public DevExpress.XtraEditors.MemoEdit memoObservaciones;
+        private DevExpress.XtraGrid.Columns.GridColumn colum;
     }
 }

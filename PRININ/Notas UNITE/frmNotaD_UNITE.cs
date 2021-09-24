@@ -189,7 +189,7 @@ namespace PRININ.Notas
                     //Cargar detalle de articulos
                     try
                     {
-                        string sql = @"sp_get_detalle_lineas_nota_credito";
+                        string sql = @"[sp_get_detalle_lineas_nota_creditov2]";
                         DBOperations dp = new DBOperations();
                         //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                         string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -516,7 +516,7 @@ namespace PRININ.Notas
             
                     if (row.tipo_nota == 1)//Nota Crédito
                     {
-                        frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto);
+                        frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto, row.monto);
                         if(frm2.ShowDialog() == DialogResult.OK)
                         {
                             row.due_date = frm2.dateFechaVence.DateTime;
@@ -606,6 +606,11 @@ namespace PRININ.Notas
         }
 
         private void cmdDesvincular_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+           
+        }
+
+        private void cmdDesvinculo__ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //Boton Desvincular
             DialogResult r = CajaDialogo.Pregunta("Realmente desea desvincular la factura de ésta Nota?");
