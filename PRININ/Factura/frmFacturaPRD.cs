@@ -179,6 +179,7 @@ namespace PRININ.Factura
                 fact1.aditional_line4 = txtLineaAdicional4.Text;
                 fact1.aditional_line5 = txtLineaAdicional5.Text;
                 fact1.aditional_line6 = txtLineaAdicional6.Text;
+                fact1.cust_po_number = lblOrdenCompra.Text;
                 fact1.RegistroExoneradoC = txtRegistroExoneradoC.Text;
                 fact1.OC_Exenta = txtOC_Excenta.Text;
                 fact1.ID_SAG = txtID_SAG.Text;
@@ -230,6 +231,17 @@ namespace PRININ.Factura
                 DataTable table1 = new DataTable();
                 datos.Tables.Add(table1);
                 adat.Fill(datos.Tables[0]);
+                if (datos.Tables[0].Rows.Count <= 10)
+                {
+                    int conta = datos.Tables[0].Rows.Count;
+                    while (conta < 10)
+                    {
+                        DataRow row = datos.Tables[0].NewRow();//  dsCompras.oc_d_normal.Newoc_d_normalRow();
+                        datos.Tables[0].Rows.Add(row);// dsCompras.oc_d_normal.Addoc_d_normalRow(row1);
+                        datos.Tables[0].AcceptChanges();//dsCompras.AcceptChanges();
+                        conta++;
+                    }
+                }
                 conn.Close();
             }
             catch (Exception ec)

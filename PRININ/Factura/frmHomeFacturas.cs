@@ -76,7 +76,10 @@ namespace PRININ.Factura
 
             frmFacturaPRD frm = new frmFacturaPRD(row.id);
             frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.Show();
+            if(frm.ShowDialog()!= DialogResult.Abort)
+            {
+                row.cust_po_number = frm.lblOrdenCompra.Text;
+            }
 
         }
     }

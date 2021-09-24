@@ -95,7 +95,7 @@ namespace PRININ.Notas
                                 ,[fecha_doc]
                                 ,[id_doc_fiscal]
                                 ,[tasa]
-                                ,obs
+                                ,coalesce(obs,'')as obs
                         FROM [dbo].[NOTAS]
                         WHERE id = " + row.id;
                 DBOperations dp = new DBOperations();
@@ -520,6 +520,7 @@ namespace PRININ.Notas
                         if(frm2.ShowDialog() == DialogResult.OK)
                         {
                             row.due_date = frm2.dateFechaVence.DateTime;
+                            row.obs = frm2.memoObservaciones.Text;
                         }
                         else
                         {

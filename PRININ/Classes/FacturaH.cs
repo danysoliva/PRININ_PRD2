@@ -169,7 +169,7 @@ namespace PRININ.Classes
             bool val = false;
             try
             {
-                string sql = @"sp_set_update_aditionals_data_invoiceh";
+                string sql = @"[sp_set_update_aditionals_data_invoiceh_v2]";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -194,6 +194,7 @@ namespace PRININ.Classes
                 cmd.Parameters.AddWithValue("@sag", ID_SAG);
                 cmd.Parameters.AddWithValue("@invoice_number_fiscal", invoice_number_fiscal);
                 cmd.Parameters.AddWithValue("@exchange_rate", TasaCambio);
+                cmd.Parameters.AddWithValue("@purchase_order", cust_po_number);
                 cmd.ExecuteNonQuery();
                 val = true;
                 conn.Close();
