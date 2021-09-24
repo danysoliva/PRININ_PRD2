@@ -60,8 +60,6 @@ namespace PRININ.Classes
         //public static string prinin_DB_User = "sa";
         //public static string prinin_DB_Pass = "AquaF33dHN2014";
 
-        //public static string prinin_DB_User = "sa";
-        //public static string prinin_DB_Pass = "AquaF33dHN2014";
 
         #endregion
 
