@@ -39,8 +39,12 @@ namespace PRININ.RPTS
             lblRTN.Text = CRTN;
             txtConcepto.Text = pConcepto;
             lblLeyenda.Text = leyenda;
-            ConversorNumALetrasDolares conver = new ConversorNumALetrasDolares(pNum);
-            lblValorLetras.Text = conver.NumeroEnLetras;
+            //ConversorNumALetrasDolares conver = new ConversorNumALetrasDolares(pNum);
+            lblValorHNL.Text = string.Format("{0:###,##0.00}", (pNum * pTasa));
+            ConversorNumALetras ConverHNL = new ConversorNumALetras((pNum * pTasa));
+            //lblValorLetras.Text = conver.NumeroEnLetras;
+            lblValorLetras.Text = ConverHNL.NumeroEnLetras;
+            //lblValorLetras.Text = conver.NumeroEnLetras;
             lblFechaLimite.Text = string.Format("{0:MM/dd/yyyy}", FechaL);
             lblNumeroInicial.Text = inicial;
             lblNumeroFinal.Text = final;
