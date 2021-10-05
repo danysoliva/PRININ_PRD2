@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>132</ApplicationRevision>
+    <ApplicationRevision>133</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -434,6 +434,12 @@
     <Compile Include="Gestion de Usuarios\frmUser.Designer.cs">
       <DependentUpon>frmUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestion de Usuarios\TEst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Usuarios\TEst.Designer.cs">
+      <DependentUpon>TEst.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice_Re_Print.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -823,6 +829,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Usuarios\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion de Usuarios\TEst.resx">
+      <DependentUpon>TEst.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice_Re_Print.resx">
       <DependentUpon>Invoice_Re_Print.cs</DependentUpon>
