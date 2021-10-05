@@ -122,8 +122,12 @@ namespace PRININ.Classes
                     //
                     if (!dr.IsDBNull(dr.GetOrdinal("invoice_number_fiscal")))
                         invoice_number_fiscal = dr.GetString(24);
+
+
+
                     Credit_term_description = dr.GetString(25);
                     CurrencyDescripcion = dr.GetString(26);
+                    
                     PaisNombre = dr.GetString(27);
                     if (!dr.IsDBNull(dr.GetOrdinal("exchange_rate")))
                         TasaCambio = dr.GetDecimal(28);

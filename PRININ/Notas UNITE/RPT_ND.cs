@@ -33,6 +33,7 @@ namespace PRININ.RPTS
             lblFechaVence.Text = string.Format("{0:MM/dd/yyyy}", pfechaVence);
             lblTituloDocumento.Text = Titulo;
             lblMonto.Text = string.Format("{0:###,##0.00}", pNum);
+            lblValorLempiras.Text = string.Format("{0:###,##0.00}", (pNum* pTasa));
             lblTasaCambio.Text = string.Format("{0:###,##0.0000}", pTasa);
             lblCodigoCliente.Text = CCode;
             lblNombreCLiente.Text = CNombre;
@@ -40,7 +41,9 @@ namespace PRININ.RPTS
             txtConcepto.Text = pConcepto;
             lblLeyenda.Text = leyenda;
             ConversorNumALetrasDolares conver = new ConversorNumALetrasDolares(pNum);
-            lblValorLetras.Text = conver.NumeroEnLetras;
+            ConversorNumALetras ConverHNL = new ConversorNumALetras((pNum * pTasa));
+            //lblValorLetras.Text = conver.NumeroEnLetras;
+            lblValorLetras.Text = ConverHNL.NumeroEnLetras;
             lblFechaLimite.Text = string.Format("{0:MM/dd/yyyy}", FechaL);
             lblNumeroInicial.Text = inicial;
             lblNumeroFinal.Text = final;
