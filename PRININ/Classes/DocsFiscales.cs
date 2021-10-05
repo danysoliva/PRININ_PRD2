@@ -68,7 +68,7 @@ namespace PRININ.Classes
                                     ,[gen_corr]
                                     ,[correlative]
                                     ,[TypeDoc]
-                                FROM [PRININ_DEV].[dbo].[z_INVREGDAT]
+                                FROM [dbo].[z_INVREGDAT]
                                 where TypeDoc = @type
                                     and estado = 'a'";
                 DBOperations dp = new DBOperations();
