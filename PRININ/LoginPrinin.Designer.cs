@@ -112,7 +112,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(86, 91);
             this.simpleButton1.TabIndex = 16;
             this.simpleButton1.Text = "Break Login";
-            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // pictureEdit2
