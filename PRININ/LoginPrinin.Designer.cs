@@ -107,10 +107,11 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(248, 81);
+            this.simpleButton1.Location = new System.Drawing.Point(248, 65);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(86, 75);
+            this.simpleButton1.Size = new System.Drawing.Size(86, 91);
             this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Text = "Break Login";
             this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
