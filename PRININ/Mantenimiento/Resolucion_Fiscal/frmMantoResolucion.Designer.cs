@@ -37,6 +37,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.dsResolucion1 = new PRININ.Mantenimiento.Resolucion_Fiscal.dsResolucion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmdAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_i = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_f = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_ListaRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).BeginInit();
@@ -80,6 +86,13 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colcodigo,
+            this.coldescripcion,
+            this.colenable,
+            this.colfecha_i,
+            this.colfecha_f});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -95,6 +108,42 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.cmdAdd.Name = "cmdAdd";
             this.cmdAdd.Size = new System.Drawing.Size(44, 35);
             this.cmdAdd.TabIndex = 29;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Descripción";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 1;
+            // 
+            // colenable
+            // 
+            this.colenable.FieldName = "enable";
+            this.colenable.Name = "colenable";
+            // 
+            // colfecha_i
+            // 
+            this.colfecha_i.FieldName = "fecha_i";
+            this.colfecha_i.Name = "colfecha_i";
+            // 
+            // colfecha_f
+            // 
+            this.colfecha_f.FieldName = "fecha_f";
+            this.colfecha_f.Name = "colfecha_f";
             // 
             // frmMantoResolucion
             // 
@@ -123,5 +172,11 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private dsResolucion dsResolucion1;
         private System.Windows.Forms.BindingSource BS_ListaRes;
         private DevExpress.XtraEditors.SimpleButton cmdAdd;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colenable;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_i;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_f;
     }
 }
