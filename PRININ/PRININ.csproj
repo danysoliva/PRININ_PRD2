@@ -474,6 +474,13 @@
     <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.Designer.cs">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\Model\ResolucionFiscal.cs" />
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.Designer.cs">
+      <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento_Correlativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -850,6 +857,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.resx">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.resx">
+      <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento_Correlativo.resx">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
@@ -2539,7 +2549,9 @@
     <None Include="Resources\document-photo-icon32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resolucion Fiscal\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

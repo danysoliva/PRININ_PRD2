@@ -1,5 +1,8 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using PRININ.Classes;
+using PRININ.Mantenimiento.Resolucion_Fiscal;
+using PRININ.Mantenimiento.Resolucion_Fiscal.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,5 +50,116 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             }
         }
 
+        private void cmdAdd_Click(object sender, EventArgs e)
+        {
+            xfrmResolucionFiscalCRUD frm = new xfrmResolucionFiscalCRUD(null,1);
+
+            if (frm.ShowDialog()== DialogResult.OK)
+            {
+                LoadResoluciones();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void gridLookUpEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //gridLookUpEdit1
+        }
+
+        private void gridLookUpEdit1View_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            GridView gridView = sender as GridView;
+
+            try
+            {
+
+
+                ResolucionFiscal resolucionFiscal = new ResolucionFiscal();
+
+                if (e.Column.Caption == "Editar")
+                {
+                    resolucionFiscal.ID= Convert.ToInt32(gridView.GetFocusedRowCellValue(colID).ToString());
+                    resolucionFiscal.Descripcion = gridView.GetFocusedRowCellValue(colDescripcion).ToString();
+                    resolucionFiscal.Codigo=Convert.ToInt32( gridView.GetFocusedRowCellValue(colCodigo).ToString());
+                    resolucionFiscal.FechaInicio = Convert.ToDateTime(gridView.GetFocusedRowCellValue(colFechaInicial).ToString());
+                    resolucionFiscal.FechaFin = Convert.ToDateTime(gridView.GetFocusedRowCellValue(colFechaFinal).ToString());
+
+                    xfrmResolucionFiscalCRUD form = new xfrmResolucionFiscalCRUD(resolucionFiscal, 2);
+
+                    if (form.ShowDialog()== DialogResult.OK)
+                    {
+                        LoadResoluciones();
+                    }
+                }
+
+
+                if (e.Column.Caption=="Eliminar")
+                {
+                    if (XtraMessageBox.Show("DESEA ELIMINAR ESTE REGISTRO?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
+                    {
+                        try
+                        {
+                            DBOperations dp = new DBOperations();
+                            SqlConnection dbConnection = new SqlConnection(dp.ConnectionStringPRININ);
+
+
+                            using (SqlCommand command = new SqlCommand("dbo.sp_update_estado_resolucion_fiscal", dbConnection))
+                            {
+                                dbConnection.Open();
+                                command.CommandType = CommandType.StoredProcedure;
+                                command.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(gridView.GetFocusedRowCellValue(colID).ToString());
+
+                                command.ExecuteNonQuery();
+                                dbConnection.Close();
+
+                                LoadResoluciones();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridView gridView = sender as GridView;
+
+            //if (XtraMessageBox.Show("DESEA ELIMINAR ESTE REGISTRO?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
+            //{
+            //    try
+            //    {
+            //       DBOperations dp = new DBOperations();
+            //        SqlConnection dbConnection = new SqlConnection(dp.ConnectionStringPRININ);
+
+
+            //        using (SqlCommand command = new SqlCommand("dbo.sp_update_estado_resolucion_fiscal", dbConnection))
+            //        {
+            //            dbConnection.Open();
+            //            command.CommandType = CommandType.StoredProcedure;
+            //            command.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(gridView.GetFocusedRowCellValue(colID).ToString());
+
+            //            command.ExecuteNonQuery();
+            //            dbConnection.Close();
+
+            //            LoadResoluciones();
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+        }
     }
 }
