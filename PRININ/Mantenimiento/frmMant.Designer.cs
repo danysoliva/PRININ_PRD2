@@ -34,6 +34,7 @@
             this.cmdPermisos = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMantCAI = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // btnNumeracionFiscal
@@ -41,7 +42,7 @@
             this.btnNumeracionFiscal.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNumeracionFiscal.Appearance.Options.UseFont = true;
             this.btnNumeracionFiscal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNumeracionFiscal.ImageOptions.Image")));
-            this.btnNumeracionFiscal.Location = new System.Drawing.Point(14, 239);
+            this.btnNumeracionFiscal.Location = new System.Drawing.Point(14, 179);
             this.btnNumeracionFiscal.Name = "btnNumeracionFiscal";
             this.btnNumeracionFiscal.Size = new System.Drawing.Size(236, 44);
             this.btnNumeracionFiscal.TabIndex = 12;
@@ -53,7 +54,7 @@
             this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Appearance.Options.UseFont = true;
             this.cmdClose.ImageOptions.Image = global::PRININ.Properties.Resources.close_32;
-            this.cmdClose.Location = new System.Drawing.Point(14, 307);
+            this.cmdClose.Location = new System.Drawing.Point(14, 279);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(236, 44);
             this.cmdClose.TabIndex = 10;
@@ -65,7 +66,7 @@
             this.cmdPermisos.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdPermisos.Appearance.Options.UseFont = true;
             this.cmdPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdPermisos.ImageOptions.Image")));
-            this.cmdPermisos.Location = new System.Drawing.Point(14, 174);
+            this.cmdPermisos.Location = new System.Drawing.Point(14, 129);
             this.cmdPermisos.Name = "cmdPermisos";
             this.cmdPermisos.Size = new System.Drawing.Size(236, 44);
             this.cmdPermisos.TabIndex = 9;
@@ -77,7 +78,7 @@
             this.cmdUsuarios.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdUsuarios.Appearance.Options.UseFont = true;
             this.cmdUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUsuarios.ImageOptions.Image")));
-            this.cmdUsuarios.Location = new System.Drawing.Point(14, 103);
+            this.cmdUsuarios.Location = new System.Drawing.Point(14, 79);
             this.cmdUsuarios.Name = "cmdUsuarios";
             this.cmdUsuarios.Size = new System.Drawing.Size(236, 44);
             this.cmdUsuarios.TabIndex = 8;
@@ -97,11 +98,24 @@
             this.cmdMantCAI.Text = "Mant. CAI Proveedor";
             this.cmdMantCAI.Click += new System.EventHandler(this.cmdMantCAI_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(14, 229);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(236, 44);
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Text = "Resolución Fiscal";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmMant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(262, 524);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnNumeracionFiscal);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdPermisos);
@@ -120,5 +134,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdUsuarios;
         private DevExpress.XtraEditors.SimpleButton cmdMantCAI;
         private DevExpress.XtraEditors.SimpleButton btnNumeracionFiscal;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

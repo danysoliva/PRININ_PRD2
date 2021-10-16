@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using PRININ.Classes;
 using PRININ.Gestion_de_Usuarios;
 using PRININ.Numeracion_Fiscal;
+using PRININ.Mantenimiento.Resolucion_Fiscal;
 
 namespace PRININ.Mantenimiento
 {
@@ -58,6 +59,13 @@ namespace PRININ.Mantenimiento
         private void btnNumeracionFiscal_Click(object sender, EventArgs e)
         {
             frmNumeracionFiscal frm = new frmNumeracionFiscal(UsuarioLogueado);
+
+            frm.Show();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmMantoResolucion frm = new frmMantoResolucion(UsuarioLogueado);
 
             frm.Show();
         }
