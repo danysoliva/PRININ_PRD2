@@ -181,6 +181,7 @@ namespace PRININ
         private void cmdMantenimiento_Click(object sender, EventArgs e)
         {
             frmMant frm = new frmMant(UsuarioLogueado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
 
             //if (UsuarioLogueado.ValidarNivelPermisos(9))
