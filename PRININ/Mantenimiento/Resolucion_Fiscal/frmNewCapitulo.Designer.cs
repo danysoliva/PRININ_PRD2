@@ -145,6 +145,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
+            this.gridLookUpEdit1View.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl4
@@ -198,6 +200,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl5
@@ -308,7 +312,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.coldescripcion.FieldName = "descripcion";
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 0;
+            this.coldescripcion.VisibleIndex = 1;
             this.coldescripcion.Width = 534;
             // 
             // colenable
@@ -326,6 +330,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colcodigo_cap.Caption = "Código";
             this.colcodigo_cap.FieldName = "codigo_cap";
             this.colcodigo_cap.Name = "colcodigo_cap";
+            this.colcodigo_cap.Visible = true;
+            this.colcodigo_cap.VisibleIndex = 0;
             this.colcodigo_cap.Width = 111;
             // 
             // colenable1
