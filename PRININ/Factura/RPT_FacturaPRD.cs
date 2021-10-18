@@ -62,13 +62,13 @@ namespace PRININ.RPTS
             lblTotalwordsUSD.Text = UDS_Nums.NumeroEnLetras;
             lblTasaCambio.Text = string.Format("{0:###,##0.0000}", fact1.TasaCambio);
             if (fact1.TotalISV > 0)
-                lblSubGravado.Text = string.Format("{0:###,##0.00}", fact1.TotalFacturaUSD - fact1.TotalISV);
+                lblSubGravado.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD - fact1.TotalISV);
             else
                 lblSubGravado.Text = "0.00";
-            lblSub.Text = string.Format("{0:###,##0.00}", fact1.TotalFacturaUSD - fact1.TotalISV);
-            lblISV.Text = string.Format("{0:###,##0.00}", fact1.TotalISV);
-            lblTotalUSD.Text = string.Format("{0:###,##0.00}", fact1.TotalFacturaUSD);
-            lblTotalLPS.Text = string.Format("{0:###,##0.00}", fact1.TotalFacturaUSD * fact1.TasaCambio);
+            lblSub.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD - fact1.TotalISV);
+            lblISV.Text = string.Format("{0:###,##0.000}", fact1.TotalISV);
+            lblTotalUSD.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD);
+            lblTotalLPS.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD * fact1.TasaCambio);
 
             lblId_SAG.Text = fact1.ID_SAG;
             lblNumRegExonerado.Text = fact1.RegistroExoneradoC;

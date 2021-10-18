@@ -468,11 +468,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsResolucion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.Designer.cs">
+      <DependentUpon>frmDetalleOC_fromCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.Designer.cs">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.Designer.cs">
+      <DependentUpon>frmEditCapitulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.cs">
       <SubType>Form</SubType>
@@ -861,8 +873,14 @@
     <EmbeddedResource Include="Mantenimiento\frmMant.resx">
       <DependentUpon>frmMant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.resx">
+      <DependentUpon>frmDetalleOC_fromCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.resx">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.resx">
+      <DependentUpon>frmEditCapitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.resx">
       <DependentUpon>frmNewCapitulo.cs</DependentUpon>

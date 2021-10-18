@@ -270,7 +270,7 @@
             this.xrTableCell20.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseFont = false;
-            this.xrTableCell20.TextFormatString = "{0:n2}";
+            this.xrTableCell20.TextFormatString = "{0:n3}";
             this.xrTableCell20.Weight = 0.70510916031105986D;
             // 
             // TopMargin
@@ -880,7 +880,7 @@
             this.lblTotalLPS.StylePriority.UseFont = false;
             this.lblTotalLPS.StylePriority.UseTextAlignment = false;
             this.lblTotalLPS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblTotalLPS.TextFormatString = "{0:#,###,###.00}";
+            this.lblTotalLPS.TextFormatString = "{0:#,###,###.000}";
             // 
             // lblNumRegExonerado
             // 
@@ -1479,7 +1479,7 @@
             this.lblTotalUSD.StylePriority.UseFont = false;
             this.lblTotalUSD.StylePriority.UseTextAlignment = false;
             this.lblTotalUSD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblTotalUSD.TextFormatString = "{0:n2}";
+            this.lblTotalUSD.TextFormatString = "{0:n3}";
             // 
             // lblSub
             // 
@@ -1491,7 +1491,7 @@
             this.lblSub.StylePriority.UseFont = false;
             this.lblSub.StylePriority.UseTextAlignment = false;
             this.lblSub.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblSub.TextFormatString = "{0:n2}";
+            this.lblSub.TextFormatString = "{0:n3}";
             // 
             // xrLabel29
             // 

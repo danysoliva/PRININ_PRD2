@@ -171,6 +171,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
 
         private void cmdExcel_Click(object sender, EventArgs e)
         {
+            if(dsResolucion1.resolucion_detalle.Rows.Count < 1)
+            {
+                CajaDialogo.Error("No hay registros disponibles para exportar!");
+                return;
+            }
+
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Excel File (.xlsx)|*.xlsx";
             dialog.FilterIndex = 0;
@@ -191,8 +197,29 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                //LoadResoluciones();
+                LoadDetalleCaps();
             }
+        }
+
+        private void cmdEdit__ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsResolucion.resolucion_detalleRow)gridView.GetFocusedDataRow();
+            frmEditCapitulo frm = new frmEditCapitulo(row.id_resolucion, gridLookUpEdit1.Text, row.id_rub, row.id, row.id_cap);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadDetalleCaps();
+            }
+        }
+
+        private void cmdVerOC_lista_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsResolucion.resolucion_detalleRow)gridView.GetFocusedDataRow();
+            frmDetalleOC_fromCap frm = new frmDetalleOC_fromCap(row.id_cap);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

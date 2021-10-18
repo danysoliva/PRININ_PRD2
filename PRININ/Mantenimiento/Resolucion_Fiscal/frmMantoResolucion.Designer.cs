@@ -30,8 +30,23 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantoResolucion));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -41,11 +56,6 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -71,11 +81,14 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colRubro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCódigoCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCapítulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdVerOC_lista = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colSaldoInicial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaldoDisponible = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdEdit_ = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colsaldo_actual = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
@@ -88,23 +101,25 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerOC_lista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEdit_)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -253,9 +268,9 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
@@ -269,7 +284,10 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridControl1.Location = new System.Drawing.Point(4, 87);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(991, 495);
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdEdit_,
+            this.cmdVerOC_lista});
+            this.gridControl1.Size = new System.Drawing.Size(1067, 495);
             this.gridControl1.TabIndex = 30;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -291,7 +309,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colSaldoDisponible,
             this.gridColumn2,
             this.gridColumn3,
-            this.colEditar});
+            this.colEditar,
+            this.colsaldo_actual});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -334,12 +353,21 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             // 
             // colCapítulo
             // 
+            this.colCapítulo.ColumnEdit = this.cmdVerOC_lista;
             this.colCapítulo.FieldName = "Capítulo";
             this.colCapítulo.Name = "colCapítulo";
-            this.colCapítulo.OptionsColumn.AllowEdit = false;
             this.colCapítulo.Visible = true;
             this.colCapítulo.VisibleIndex = 3;
             this.colCapítulo.Width = 255;
+            // 
+            // cmdVerOC_lista
+            // 
+            this.cmdVerOC_lista.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.cmdVerOC_lista.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdVerOC_lista.Name = "cmdVerOC_lista";
+            this.cmdVerOC_lista.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdVerOC_lista_ButtonClick);
             // 
             // colSaldoInicial
             // 
@@ -360,7 +388,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colSaldoDisponible.Name = "colSaldoDisponible";
             this.colSaldoDisponible.OptionsColumn.AllowEdit = false;
             this.colSaldoDisponible.Visible = true;
-            this.colSaldoDisponible.VisibleIndex = 5;
+            this.colSaldoDisponible.VisibleIndex = 6;
             this.colSaldoDisponible.Width = 89;
             // 
             // gridColumn2
@@ -369,7 +397,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 7;
             this.gridColumn2.Width = 71;
             // 
             // gridColumn3
@@ -378,16 +406,38 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 7;
+            this.gridColumn3.VisibleIndex = 8;
             this.gridColumn3.Width = 64;
             // 
             // colEditar
             // 
+            this.colEditar.ColumnEdit = this.cmdEdit_;
             this.colEditar.FieldName = "Editar";
             this.colEditar.Name = "colEditar";
             this.colEditar.Visible = true;
-            this.colEditar.VisibleIndex = 8;
-            this.colEditar.Width = 32;
+            this.colEditar.VisibleIndex = 9;
+            this.colEditar.Width = 44;
+            // 
+            // cmdEdit_
+            // 
+            this.cmdEdit_.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            this.cmdEdit_.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdEdit_.Name = "cmdEdit_";
+            this.cmdEdit_.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdEdit_.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEdit__ButtonClick);
+            // 
+            // colsaldo_actual
+            // 
+            this.colsaldo_actual.Caption = "Saldo Actual";
+            this.colsaldo_actual.DisplayFormat.FormatString = "n2";
+            this.colsaldo_actual.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colsaldo_actual.FieldName = "saldo_actual";
+            this.colsaldo_actual.Name = "colsaldo_actual";
+            this.colsaldo_actual.OptionsColumn.AllowEdit = false;
+            this.colsaldo_actual.Visible = true;
+            this.colsaldo_actual.VisibleIndex = 5;
             // 
             // simpleButton1
             // 
@@ -397,7 +447,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(950, 49);
+            this.simpleButton1.Location = new System.Drawing.Point(1026, 49);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(44, 35);
             this.simpleButton1.TabIndex = 31;
@@ -405,11 +455,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             // 
             // cmdExcel
             // 
+            this.cmdExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdExcel.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdExcel.Appearance.Options.UseFont = true;
             this.cmdExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdExcel.ImageOptions.Image = global::PRININ.Properties.Resources.excel64px;
-            this.cmdExcel.Location = new System.Drawing.Point(774, 49);
+            this.cmdExcel.Location = new System.Drawing.Point(850, 49);
             this.cmdExcel.Name = "cmdExcel";
             this.cmdExcel.Size = new System.Drawing.Size(170, 35);
             this.cmdExcel.TabIndex = 32;
@@ -423,10 +474,10 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 584);
+            this.ClientSize = new System.Drawing.Size(1073, 584);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cmdExcel);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cmdAdd);
             this.Controls.Add(this.gridLookUpEdit1);
             this.Controls.Add(this.labelControl1);
@@ -444,6 +495,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVerOC_lista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEdit_)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +537,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn colEditar;
         private DevExpress.XtraEditors.SimpleButton cmdExcel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEdit_;
+        private DevExpress.XtraGrid.Columns.GridColumn colsaldo_actual;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdVerOC_lista;
     }
 }

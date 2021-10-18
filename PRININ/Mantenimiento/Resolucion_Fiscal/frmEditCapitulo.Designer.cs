@@ -1,7 +1,7 @@
 ﻿
 namespace PRININ.Mantenimiento.Resolucion_Fiscal
 {
-    partial class frmNewCapitulo
+    partial class frmEditCapitulo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,30 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewCapitulo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditCapitulo));
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grLookEdit_Rubro = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.BS_RUbros = new System.Windows.Forms.BindingSource(this.components);
+            this.dsResolucion1 = new PRININ.Mantenimiento.Resolucion_Fiscal.dsResolucion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblResolucion = new DevExpress.XtraEditors.LabelControl();
             this.grLookEdit_Capitulo = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.BS_Caps = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_cap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.spinEditSaldoInicial = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -47,32 +61,21 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.spinEditSaldoDisponible = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.spinEditPagos = new DevExpress.XtraEditors.SpinEdit();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo_cap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colenable1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.BS_Caps = new System.Windows.Forms.BindingSource(this.components);
-            this.dsResolucion1 = new PRININ.Mantenimiento.Resolucion_Fiscal.dsResolucion();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.BS_RUbros = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.grLookEdit_Rubro.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_RUbros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grLookEdit_Capitulo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Caps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSaldoInicial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSaldoDisponible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPagos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Caps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_RUbros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -83,7 +86,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.btnCancelar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btnCancelar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnCancelar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancelar.ImageOptions.SvgImage")));
-            this.btnCancelar.Location = new System.Drawing.Point(208, 210);
+            this.btnCancelar.Location = new System.Drawing.Point(209, 247);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 58);
             this.btnCancelar.TabIndex = 16;
@@ -98,7 +101,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.btnGuardar.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(110, 210);
+            this.btnGuardar.Location = new System.Drawing.Point(111, 247);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(92, 58);
             this.btnGuardar.TabIndex = 15;
@@ -129,12 +132,23 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.grLookEdit_Rubro.Properties.PopupFormSize = new System.Drawing.Size(500, 150);
             this.grLookEdit_Rubro.Properties.PopupView = this.gridLookUpEdit1View;
             this.grLookEdit_Rubro.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.ContentWidth;
+            this.grLookEdit_Rubro.Properties.ReadOnly = true;
             this.grLookEdit_Rubro.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnDelete});
             this.grLookEdit_Rubro.Properties.ValueMember = "id";
             this.grLookEdit_Rubro.Size = new System.Drawing.Size(288, 24);
             this.grLookEdit_Rubro.TabIndex = 19;
             this.grLookEdit_Rubro.EditValueChanged += new System.EventHandler(this.grLookEdit_Rubro_EditValueChanged);
+            // 
+            // BS_RUbros
+            // 
+            this.BS_RUbros.DataMember = "master_rubros";
+            this.BS_RUbros.DataSource = this.dsResolucion1;
+            // 
+            // dsResolucion1
+            // 
+            this.dsResolucion1.DataSetName = "dsResolucion";
+            this.dsResolucion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -149,6 +163,41 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            this.colcodigo.Width = 104;
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Descripción";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 1;
+            this.coldescripcion.Width = 534;
+            // 
+            // colenable
+            // 
+            this.colenable.FieldName = "enable";
+            this.colenable.Name = "colenable";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // labelControl4
             // 
@@ -184,11 +233,17 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.grLookEdit_Capitulo.Properties.PopupFormSize = new System.Drawing.Size(500, 150);
             this.grLookEdit_Capitulo.Properties.PopupView = this.gridView1;
             this.grLookEdit_Capitulo.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.ContentWidth;
+            this.grLookEdit_Capitulo.Properties.ReadOnly = true;
             this.grLookEdit_Capitulo.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
             this.grLookEdit_Capitulo.Properties.ValueMember = "id";
             this.grLookEdit_Capitulo.Size = new System.Drawing.Size(288, 24);
             this.grLookEdit_Capitulo.TabIndex = 23;
+            // 
+            // BS_Caps
+            // 
+            this.BS_Caps.DataMember = "master_caps";
+            this.BS_Caps.DataSource = this.dsResolucion1;
             // 
             // gridView1
             // 
@@ -204,6 +259,46 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // colcodigo_cap
+            // 
+            this.colcodigo_cap.Caption = "Código";
+            this.colcodigo_cap.FieldName = "codigo_cap";
+            this.colcodigo_cap.Name = "colcodigo_cap";
+            this.colcodigo_cap.Visible = true;
+            this.colcodigo_cap.VisibleIndex = 0;
+            this.colcodigo_cap.Width = 111;
+            // 
+            // colenable1
+            // 
+            this.colenable1.FieldName = "enable";
+            this.colenable1.Name = "colenable1";
+            // 
+            // colid_rubro
+            // 
+            this.colid_rubro.FieldName = "id_rubro";
+            this.colid_rubro.Name = "colid_rubro";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Descripción";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 1;
+            this.coldescripcion1.Width = 527;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // labelControl5
             // 
@@ -307,102 +402,36 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.spinEditPagos.Size = new System.Drawing.Size(288, 24);
             this.spinEditPagos.TabIndex = 28;
             // 
-            // colid
+            // labelControl1
             // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(15, 215);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(98, 17);
+            this.labelControl1.TabIndex = 30;
+            this.labelControl1.Text = "Eliminar Capítulo";
             // 
-            // colcodigo
+            // toggleSwitch1
             // 
-            this.colcodigo.Caption = "Código";
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 104;
+            this.toggleSwitch1.Location = new System.Drawing.Point(120, 210);
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.OffText = "No";
+            this.toggleSwitch1.Properties.OnText = "Si";
+            this.toggleSwitch1.Size = new System.Drawing.Size(126, 28);
+            this.toggleSwitch1.TabIndex = 31;
+            this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "Descripción";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 1;
-            this.coldescripcion.Width = 534;
-            // 
-            // colenable
-            // 
-            this.colenable.FieldName = "enable";
-            this.colenable.Name = "colenable";
-            // 
-            // colid1
-            // 
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
-            // 
-            // colcodigo_cap
-            // 
-            this.colcodigo_cap.Caption = "Código";
-            this.colcodigo_cap.FieldName = "codigo_cap";
-            this.colcodigo_cap.Name = "colcodigo_cap";
-            this.colcodigo_cap.Visible = true;
-            this.colcodigo_cap.VisibleIndex = 0;
-            this.colcodigo_cap.Width = 111;
-            // 
-            // colenable1
-            // 
-            this.colenable1.FieldName = "enable";
-            this.colenable1.Name = "colenable1";
-            // 
-            // colid_rubro
-            // 
-            this.colid_rubro.FieldName = "id_rubro";
-            this.colid_rubro.Name = "colid_rubro";
-            // 
-            // coldescripcion1
-            // 
-            this.coldescripcion1.Caption = "Descripción";
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 1;
-            this.coldescripcion1.Width = 527;
-            // 
-            // BS_Caps
-            // 
-            this.BS_Caps.DataMember = "master_caps";
-            this.BS_Caps.DataSource = this.dsResolucion1;
-            // 
-            // dsResolucion1
-            // 
-            this.dsResolucion1.DataSetName = "dsResolucion";
-            this.dsResolucion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // BS_RUbros
-            // 
-            this.BS_RUbros.DataMember = "master_rubros";
-            this.BS_RUbros.DataSource = this.dsResolucion1;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // frmNewCapitulo
+            // frmEditCapitulo
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 277);
+            this.ClientSize = new System.Drawing.Size(418, 308);
+            this.Controls.Add(this.toggleSwitch1);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.spinEditPagos);
             this.Controls.Add(this.labelControl7);
@@ -419,20 +448,21 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.Controls.Add(this.labelControl3);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmNewCapitulo";
+            this.Name = "frmEditCapitulo";
             this.Text = "Nuevo Saldo Inicial";
             ((System.ComponentModel.ISupportInitialize)(this.grLookEdit_Rubro.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_RUbros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grLookEdit_Capitulo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Caps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSaldoInicial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSaldoDisponible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPagos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Caps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_RUbros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +500,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private DevExpress.XtraGrid.Columns.GridColumn colenable1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_rubro;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
     }
 }
