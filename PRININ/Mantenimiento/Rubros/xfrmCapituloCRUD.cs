@@ -129,9 +129,21 @@ namespace PRININ.Mantenimiento.Rubros
 
         private void xfrmCapituloCRUD_Load(object sender, EventArgs e)
         {
-            txtCodigo.Text = capitulo.Codigo;
-            txtDescripcion.Text = capitulo.Descripcion;
-            lueRubro.EditValue = capitulo.RubroID;
+
+            try
+            {
+
+                if (modoForm == 2)
+                {
+                    txtCodigo.Text = capitulo.Codigo;
+                    txtDescripcion.Text = capitulo.Descripcion;
+                    lueRubro.EditValue = capitulo.RubroID;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 
