@@ -24,6 +24,44 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="resolucion_detalle" msprop:Generator_TableClassName="resolucion_detalleDataTable" msprop:Generator_TableVarName="tableresolucion_detalle" msprop:Generator_RowChangedName="resolucion_detalleRowChanged" msprop:Generator_TablePropName="resolucion_detalle" msprop:Generator_RowDeletingName="resolucion_detalleRowDeleting" msprop:Generator_RowChangingName="resolucion_detalleRowChanging" msprop:Generator_RowEvHandlerName="resolucion_detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="resolucion_detalleRowDeleted" msprop:Generator_RowClassName="resolucion_detalleRow" msprop:Generator_UserTableName="resolucion_detalle" msprop:Generator_RowEvArgName="resolucion_detalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_resolucion" msprop:Generator_ColumnVarNameInTable="columnid_resolucion" msprop:Generator_ColumnPropNameInRow="id_resolucion" msprop:Generator_ColumnPropNameInTable="id_resolucionColumn" msprop:Generator_UserColumnName="id_resolucion" type="xs:int" minOccurs="0" />
+              <xs:element name="Código_x0020_Rubro" msprop:Generator_ColumnVarNameInTable="columnCódigo_Rubro" msprop:Generator_ColumnPropNameInRow="Código_Rubro" msprop:Generator_ColumnPropNameInTable="Código_RubroColumn" msprop:Generator_UserColumnName="Código Rubro" type="xs:string" minOccurs="0" />
+              <xs:element name="Rubro" msprop:Generator_ColumnVarNameInTable="columnRubro" msprop:Generator_ColumnPropNameInRow="Rubro" msprop:Generator_ColumnPropNameInTable="RubroColumn" msprop:Generator_UserColumnName="Rubro" type="xs:string" minOccurs="0" />
+              <xs:element name="Código_x0020_Cap" msprop:Generator_ColumnVarNameInTable="columnCódigo_Cap" msprop:Generator_ColumnPropNameInRow="Código_Cap" msprop:Generator_ColumnPropNameInTable="Código_CapColumn" msprop:Generator_UserColumnName="Código Cap" type="xs:string" minOccurs="0" />
+              <xs:element name="Capítulo" msprop:Generator_ColumnVarNameInTable="columnCapítulo" msprop:Generator_ColumnPropNameInRow="Capítulo" msprop:Generator_ColumnPropNameInTable="CapítuloColumn" msprop:Generator_UserColumnName="Capítulo" type="xs:string" minOccurs="0" />
+              <xs:element name="Saldo_x0020_Inicial" msprop:Generator_ColumnVarNameInTable="columnSaldo_Inicial" msprop:Generator_ColumnPropNameInRow="Saldo_Inicial" msprop:Generator_ColumnPropNameInTable="Saldo_InicialColumn" msprop:Generator_UserColumnName="Saldo Inicial" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Saldo_x0020_Disponible" msprop:Generator_ColumnVarNameInTable="columnSaldo_Disponible" msprop:Generator_ColumnPropNameInRow="Saldo_Disponible" msprop:Generator_ColumnPropNameInTable="Saldo_DisponibleColumn" msprop:Generator_UserColumnName="Saldo Disponible" type="xs:decimal" minOccurs="0" />
+              <xs:element name="_x0023__x0020_Pago_x0020_Inicial" msprop:Generator_ColumnVarNameInTable="_column__Pago_Inicial" msprop:Generator_ColumnPropNameInRow="___Pago_Inicial" msprop:Generator_ColumnPropNameInTable="___Pago_InicialColumn" msprop:Generator_UserColumnName="# Pago Inicial" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0023__x0020_Pagos_x0020_Disp" msprop:Generator_ColumnVarNameInTable="_column__Pagos_Disp" msprop:Generator_ColumnPropNameInRow="___Pagos_Disp" msprop:Generator_ColumnPropNameInTable="___Pagos_DispColumn" msprop:Generator_UserColumnName="# Pagos Disp" type="xs:int" minOccurs="0" />
+              <xs:element name="Editar" msprop:Generator_ColumnVarNameInTable="columnEditar" msprop:Generator_ColumnPropNameInRow="Editar" msprop:Generator_ColumnPropNameInTable="EditarColumn" msprop:Generator_UserColumnName="Editar" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="master_rubros" msprop:Generator_TableClassName="master_rubrosDataTable" msprop:Generator_TableVarName="tablemaster_rubros" msprop:Generator_TablePropName="master_rubros" msprop:Generator_RowDeletingName="master_rubrosRowDeleting" msprop:Generator_RowChangingName="master_rubrosRowChanging" msprop:Generator_RowEvHandlerName="master_rubrosRowChangeEventHandler" msprop:Generator_RowDeletedName="master_rubrosRowDeleted" msprop:Generator_UserTableName="master_rubros" msprop:Generator_RowChangedName="master_rubrosRowChanged" msprop:Generator_RowEvArgName="master_rubrosRowChangeEvent" msprop:Generator_RowClassName="master_rubrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="master_caps" msprop:Generator_TableClassName="master_capsDataTable" msprop:Generator_TableVarName="tablemaster_caps" msprop:Generator_RowChangedName="master_capsRowChanged" msprop:Generator_TablePropName="master_caps" msprop:Generator_RowDeletingName="master_capsRowDeleting" msprop:Generator_RowChangingName="master_capsRowChanging" msprop:Generator_RowEvHandlerName="master_capsRowChangeEventHandler" msprop:Generator_RowDeletedName="master_capsRowDeleted" msprop:Generator_RowClassName="master_capsRow" msprop:Generator_UserTableName="master_caps" msprop:Generator_RowEvArgName="master_capsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_cap" msprop:Generator_ColumnVarNameInTable="columncodigo_cap" msprop:Generator_ColumnPropNameInRow="codigo_cap" msprop:Generator_ColumnPropNameInTable="codigo_capColumn" msprop:Generator_UserColumnName="codigo_cap" type="xs:string" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="id_rubro" msprop:Generator_ColumnVarNameInTable="columnid_rubro" msprop:Generator_ColumnPropNameInRow="id_rubro" msprop:Generator_ColumnPropNameInTable="id_rubroColumn" msprop:Generator_UserColumnName="id_rubro" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

@@ -18,9 +18,11 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
 {
     public partial class frmMantoResolucion : DevExpress.XtraEditors.XtraForm
     {
+        Users UsuarioLogeado;
         public frmMantoResolucion(Users pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
             LoadResoluciones();
         }
 
@@ -131,35 +133,66 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             }
         }
 
+
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            LoadDetalleCaps();
+        }
+
+        private void LoadDetalleCaps()
+        {
+            try
+            {
+                int idRes = Convert.ToInt32(gridLookUpEdit1.EditValue);
+                string sql = @"sp_get_detalle_saldos_resolucion_manto";
+                DBOperations dp = new DBOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_resolucion", idRes);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsResolucion1.resolucion_detalle.Clear();
+                adat.Fill(dsResolucion1.resolucion_detalle);
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            GridView gridView = sender as GridView;
 
-            //if (XtraMessageBox.Show("DESEA ELIMINAR ESTE REGISTRO?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
-            //{
-            //    try
-            //    {
-            //       DBOperations dp = new DBOperations();
-            //        SqlConnection dbConnection = new SqlConnection(dp.ConnectionStringPRININ);
+        }
 
+        private void cmdExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
 
-            //        using (SqlCommand command = new SqlCommand("dbo.sp_update_estado_resolucion_fiscal", dbConnection))
-            //        {
-            //            dbConnection.Open();
-            //            command.CommandType = CommandType.StoredProcedure;
-            //            command.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(gridView.GetFocusedRowCellValue(colID).ToString());
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                gridControl1.ExportToXlsx(dialog.FileName);
+            }
+        }
 
-            //            command.ExecuteNonQuery();
-            //            dbConnection.Close();
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(gridLookUpEdit1.Text))
+                return;
 
-            //            LoadResoluciones();
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
+            int idres = Convert.ToInt32(gridLookUpEdit1.EditValue);
+            frmNewCapitulo frm = new frmNewCapitulo(idres, gridLookUpEdit1.Text);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //LoadResoluciones();
+            }
         }
     }
 }

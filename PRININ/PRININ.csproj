@@ -474,6 +474,12 @@
     <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.Designer.cs">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.Designer.cs">
+      <DependentUpon>frmNewCapitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\Resolucion_Fiscal\Model\ResolucionFiscal.cs" />
     <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.cs">
       <SubType>Form</SubType>
@@ -857,6 +863,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.resx">
       <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.resx">
+      <DependentUpon>frmNewCapitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.resx">
       <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>

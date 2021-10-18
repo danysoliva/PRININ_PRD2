@@ -66,7 +66,7 @@ namespace PRININ.Mantenimiento
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frmMantoResolucion frm = new frmMantoResolucion(UsuarioLogueado);
-
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }
