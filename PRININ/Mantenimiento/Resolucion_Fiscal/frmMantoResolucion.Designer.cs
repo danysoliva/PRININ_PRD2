@@ -29,7 +29,6 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantoResolucion));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -60,7 +59,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.BS_ListaRes = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_ListaRes = new System.Windows.Forms.BindingSource();
             this.dsResolucion1 = new PRININ.Mantenimiento.Resolucion_Fiscal.dsResolucion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
