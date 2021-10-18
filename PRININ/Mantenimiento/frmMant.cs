@@ -12,6 +12,7 @@ using PRININ.Classes;
 using PRININ.Gestion_de_Usuarios;
 using PRININ.Numeracion_Fiscal;
 using PRININ.Mantenimiento.Resolucion_Fiscal;
+using PRININ.Mantenimiento.Rubros;
 
 namespace PRININ.Mantenimiento
 {
@@ -66,6 +67,20 @@ namespace PRININ.Mantenimiento
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frmMantoResolucion frm = new frmMantoResolucion(UsuarioLogueado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            xfrmRubros frm = new xfrmRubros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+           xfrmCapitulos frm = new xfrmCapitulos();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

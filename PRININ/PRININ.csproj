@@ -499,6 +499,36 @@
     <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.Designer.cs">
       <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Rubros\dsRubros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRubros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\Model\Capitulo.cs" />
+    <Compile Include="Mantenimiento\Rubros\xfrmCapituloCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapituloCRUD.Designer.cs">
+      <DependentUpon>xfrmCapituloCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapitulos.Designer.cs">
+      <DependentUpon>xfrmCapitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubros.Designer.cs">
+      <DependentUpon>xfrmRubros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubrosCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubrosCRUD.Designer.cs">
+      <DependentUpon>xfrmRubrosCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento_Correlativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -888,6 +918,18 @@
     <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.resx">
       <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmCapituloCRUD.resx">
+      <DependentUpon>xfrmCapituloCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmCapitulos.resx">
+      <DependentUpon>xfrmCapitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmRubros.resx">
+      <DependentUpon>xfrmRubros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmRubrosCRUD.resx">
+      <DependentUpon>xfrmRubrosCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento_Correlativo.resx">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1104,6 +1146,17 @@
     </None>
     <None Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.xss">
       <DependentUpon>dsResolucion.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xsc">
+      <DependentUpon>dsRubros.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRubros.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xss">
+      <DependentUpon>dsRubros.xsd</DependentUpon>
     </None>
     <None Include="Notas UNITE\dsNotasUNITE.xsc">
       <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
@@ -2576,9 +2629,7 @@
     <None Include="Resources\document-photo-icon32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resolucion Fiscal\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
