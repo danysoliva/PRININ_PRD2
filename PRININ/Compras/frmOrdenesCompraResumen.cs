@@ -413,5 +413,31 @@ namespace PRININ.Compras
             ReportPrintTool printReport = new ReportPrintTool(report);
             printReport.ShowPreview();
         }
+
+        private void button_cerrar_ButtonClick_1(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Anular una orden
+            DialogResult r = CajaDialogo.Pregunta("Realmente desea Cerrar (ANULAR) esta orden de compra?");
+            if (r != DialogResult.Yes)
+                return;
+
+            try
+            {
+                string sql = @"UPDATE [dbo].[ORDEN_COMPRA]
+                                  SET [cerrada] = true
+                               WHERE id = ";
+                DBOperations dp = new DBOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                CajaDialogo.Information("Transaccion exitosa!");
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
     }
 }

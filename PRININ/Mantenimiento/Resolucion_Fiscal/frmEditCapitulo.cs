@@ -27,7 +27,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             lblResolucion.Text = ResDescripcion;
             LoadRubros(pIdRes);
             grLookEdit_Rubro.EditValue = rub;
-            LoadCaps(rub);
+            LoadCaps(cap);
             grLookEdit_Capitulo.EditValue = cap;
             LoadSaldosSegunCap(pIdRes, cap);
         }
@@ -89,18 +89,18 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             }
         }
         //sp_get_detalle_rubro_capitulos_master_date
-        private void LoadCaps(int pidRubro_)
+        private void LoadCaps(int idCap)
         {
             try
             {
-                string sql = @"sp_get_detalle_rubro_capitulos_master_date";
+                string sql = @"[sp_get_detalle_rubro_capitulos_master_datev2]";
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 
-                cmd.Parameters.AddWithValue("@id_rubro", pidRubro_);
+                cmd.Parameters.AddWithValue("@idcap", idCap);
                 dsResolucion1.master_caps.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsResolucion1.master_caps);

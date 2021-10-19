@@ -20,9 +20,11 @@ namespace PRININ.Compras
         public decimal pagos;
         public int id;
         public string descripcion;
-        public frmseleccionarCapitulo(int pIdRubro)
+        public int IdResolucion;
+        public frmseleccionarCapitulo(int pIdRubro, int pidResolucion)
         {
             InitializeComponent();
+            IdResolucion = pidResolucion;
             LoadCapitulos(pIdRubro);
         }
 
@@ -39,6 +41,7 @@ namespace PRININ.Compras
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id_rub", pIdRubroSelected);
                 cmd.Parameters.AddWithValue("@id_rub", pIdRubroSelected);
+                cmd.Parameters.AddWithValue("@idresolucion", IdResolucion);
                 //dsCompras1.capitulos.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCompras1.capitulos);

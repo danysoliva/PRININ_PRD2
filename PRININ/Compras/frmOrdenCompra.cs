@@ -75,6 +75,7 @@ namespace PRININ.Compras
             {
                 string sql = @"SELECT [codigo]
                                      ,[descripcion]
+                                     ,id
                                FROM [dbo].[resolucion]";
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -157,7 +158,7 @@ namespace PRININ.Compras
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCompras1.rubros);
                 conn.Close();
-                this.grResolucion.Enabled = false;
+                //this.grResolucion.Enabled = false;
             }
             catch (Exception ec)
             {
@@ -234,7 +235,8 @@ namespace PRININ.Compras
                     // row1["saldo"] = getSaldoRubro(id);
                     //row1["saldo"] = getSaldoCapitulo(id);
                     //LoadCapitulos(id);
-                    frmseleccionarCapitulo frm = new frmseleccionarCapitulo(id);
+                    int idResolucion = Convert.ToInt32(grResolucion.EditValue);
+                    frmseleccionarCapitulo frm = new frmseleccionarCapitulo(id, idResolucion);
                     if(frm.ShowDialog()== DialogResult.OK)
                     {
                         //row1["saldo"] = frm.saldo;

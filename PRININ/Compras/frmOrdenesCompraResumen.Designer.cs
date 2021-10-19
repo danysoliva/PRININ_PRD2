@@ -34,6 +34,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridMain = new DevExpress.XtraGrid.GridControl();
             this.dsCompras1 = new PRININ.Compras.dsCompras();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -213,14 +218,18 @@
             // 
             // button_cerrar
             // 
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.button_cerrar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.button_cerrar.Name = "button_cerrar";
+            this.button_cerrar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.button_cerrar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.button_cerrar_ButtonClick_1);
             // 
             // colFactura
             // 
             this.colFactura.Caption = "# Factura";
             this.colFactura.FieldName = "num_factura";
             this.colFactura.Name = "colFactura";
-            this.colFactura.OptionsColumn.AllowEdit = false;
             this.colFactura.Visible = true;
             this.colFactura.VisibleIndex = 5;
             // 
@@ -229,7 +238,6 @@
             this.colOC.Caption = "# OC SAR";
             this.colOC.FieldName = "num_oc_sar";
             this.colOC.Name = "colOC";
-            this.colOC.OptionsColumn.AllowEdit = false;
             this.colOC.Visible = true;
             this.colOC.VisibleIndex = 6;
             // 

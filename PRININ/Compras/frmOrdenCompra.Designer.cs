@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenCompra));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -60,13 +59,13 @@
             this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.grMoneda = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsCompras1 = new PRININ.Compras.dsCompras();
             this.grResolucion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourceResoluciones = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceResoluciones = new System.Windows.Forms.BindingSource();
             this.label10 = new System.Windows.Forms.Label();
             this.txtObservaciones = new DevExpress.XtraEditors.TextEdit();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.label11 = new System.Windows.Forms.Label();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,14 +82,14 @@
             this.coltotal_f = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bindingSourceRubros = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceRubros = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_rubro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookupEditCapitulos = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bindingSourceCapitulos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceCapitulos = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -380,7 +379,7 @@
             this.cmdGuardar.Appearance.Options.UseFont = true;
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
-            this.cmdGuardar.Location = new System.Drawing.Point(289, 642);
+            this.cmdGuardar.Location = new System.Drawing.Point(746, 284);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(125, 35);
             this.cmdGuardar.TabIndex = 14;
@@ -393,7 +392,7 @@
             this.cmdCancelar.Appearance.Options.UseFont = true;
             this.cmdCancelar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
-            this.cmdCancelar.Location = new System.Drawing.Point(499, 642);
+            this.cmdCancelar.Location = new System.Drawing.Point(877, 284);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(125, 35);
             this.cmdCancelar.TabIndex = 15;
@@ -450,7 +449,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grResolucion.Properties.DataSource = this.bindingSourceResoluciones;
             this.grResolucion.Properties.DisplayMember = "descripcion";
-            this.grResolucion.Properties.ValueMember = "codigo";
+            this.grResolucion.Properties.ValueMember = "id";
             this.grResolucion.Size = new System.Drawing.Size(125, 24);
             this.grResolucion.TabIndex = 8;
             this.grResolucion.TextChanged += new System.EventHandler(this.grResolucion_TextChanged);
@@ -534,7 +533,7 @@
             this.repositoryItemGridLookUpEdit1,
             this.gridLookupEditCapitulos,
             this.repositoryItemButtonDelete});
-            this.gridMain.Size = new System.Drawing.Size(1014, 311);
+            this.gridMain.Size = new System.Drawing.Size(1014, 254);
             this.gridMain.TabIndex = 13;
             this.gridMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -543,7 +542,7 @@
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -808,7 +807,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 680);
+            this.ClientSize = new System.Drawing.Size(1014, 580);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.grMoneda);

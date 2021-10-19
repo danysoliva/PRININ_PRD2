@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrinin));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnComprobanteRetencion = new DevExpress.XtraEditors.SimpleButton();
@@ -80,9 +79,9 @@
             // 
             this.btnComprobanteRetencion.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprobanteRetencion.Appearance.Options.UseFont = true;
-            this.btnComprobanteRetencion.Location = new System.Drawing.Point(12, 366);
+            this.btnComprobanteRetencion.Location = new System.Drawing.Point(12, 297);
             this.btnComprobanteRetencion.Name = "btnComprobanteRetencion";
-            this.btnComprobanteRetencion.Size = new System.Drawing.Size(264, 44);
+            this.btnComprobanteRetencion.Size = new System.Drawing.Size(264, 39);
             this.btnComprobanteRetencion.TabIndex = 12;
             this.btnComprobanteRetencion.Text = "Comprobante Retención";
             this.btnComprobanteRetencion.Click += new System.EventHandler(this.btnComprobanteRetencion_Click);
@@ -92,9 +91,9 @@
             this.simpleButton7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.ImageOptions.Image = global::PRININ.Properties.Resources.document_photo_icon32px;
-            this.simpleButton7.Location = new System.Drawing.Point(12, 611);
+            this.simpleButton7.Location = new System.Drawing.Point(12, 465);
             this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton7.Size = new System.Drawing.Size(264, 39);
             this.simpleButton7.TabIndex = 11;
             this.simpleButton7.Text = "Notas UNITED";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
@@ -104,9 +103,9 @@
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Image = global::PRININ.Properties.Resources.invoice_321;
-            this.simpleButton3.Location = new System.Drawing.Point(12, 562);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 423);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton3.Size = new System.Drawing.Size(264, 39);
             this.simpleButton3.TabIndex = 10;
             this.simpleButton3.Text = "Facturas UNITED";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -116,9 +115,9 @@
             this.cmdPedidos.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdPedidos.Appearance.Options.UseFont = true;
             this.cmdPedidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdPedidos.ImageOptions.Image")));
-            this.cmdPedidos.Location = new System.Drawing.Point(12, 317);
+            this.cmdPedidos.Location = new System.Drawing.Point(12, 255);
             this.cmdPedidos.Name = "cmdPedidos";
-            this.cmdPedidos.Size = new System.Drawing.Size(264, 44);
+            this.cmdPedidos.Size = new System.Drawing.Size(264, 39);
             this.cmdPedidos.TabIndex = 9;
             this.cmdPedidos.Text = "Pedidos";
             this.cmdPedidos.Click += new System.EventHandler(this.cmdPedidos_Click);
@@ -128,9 +127,9 @@
             this.cmdMantenimiento.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdMantenimiento.Appearance.Options.UseFont = true;
             this.cmdMantenimiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdMantenimiento.ImageOptions.Image")));
-            this.cmdMantenimiento.Location = new System.Drawing.Point(12, 464);
+            this.cmdMantenimiento.Location = new System.Drawing.Point(12, 381);
             this.cmdMantenimiento.Name = "cmdMantenimiento";
-            this.cmdMantenimiento.Size = new System.Drawing.Size(264, 44);
+            this.cmdMantenimiento.Size = new System.Drawing.Size(264, 39);
             this.cmdMantenimiento.TabIndex = 8;
             this.cmdMantenimiento.Text = "Mantenimiento";
             this.cmdMantenimiento.Click += new System.EventHandler(this.cmdMantenimiento_Click);
@@ -140,9 +139,9 @@
             this.cmdRptsNotas.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRptsNotas.Appearance.Options.UseFont = true;
             this.cmdRptsNotas.ImageOptions.Image = global::PRININ.Properties.Resources.debitnote_32;
-            this.cmdRptsNotas.Location = new System.Drawing.Point(12, 415);
+            this.cmdRptsNotas.Location = new System.Drawing.Point(12, 339);
             this.cmdRptsNotas.Name = "cmdRptsNotas";
-            this.cmdRptsNotas.Size = new System.Drawing.Size(264, 44);
+            this.cmdRptsNotas.Size = new System.Drawing.Size(264, 39);
             this.cmdRptsNotas.TabIndex = 7;
             this.cmdRptsNotas.Text = "Reporte de Notas";
             this.cmdRptsNotas.Click += new System.EventHandler(this.cmdRptsNotas_Click);
@@ -152,9 +151,9 @@
             this.cmdOrdenesCompra.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdOrdenesCompra.Appearance.Options.UseFont = true;
             this.cmdOrdenesCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdOrdenesCompra.ImageOptions.Image")));
-            this.cmdOrdenesCompra.Location = new System.Drawing.Point(12, 268);
+            this.cmdOrdenesCompra.Location = new System.Drawing.Point(12, 213);
             this.cmdOrdenesCompra.Name = "cmdOrdenesCompra";
-            this.cmdOrdenesCompra.Size = new System.Drawing.Size(264, 44);
+            this.cmdOrdenesCompra.Size = new System.Drawing.Size(264, 39);
             this.cmdOrdenesCompra.TabIndex = 6;
             this.cmdOrdenesCompra.Text = "Ordenes de Compra";
             this.cmdOrdenesCompra.Click += new System.EventHandler(this.cmdOrdenesCompra_Click);
@@ -164,9 +163,9 @@
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.ImageOptions.Image = global::PRININ.Properties.Resources.close_32;
-            this.simpleButton6.Location = new System.Drawing.Point(12, 513);
+            this.simpleButton6.Location = new System.Drawing.Point(12, 510);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton6.Size = new System.Drawing.Size(264, 39);
             this.simpleButton6.TabIndex = 5;
             this.simpleButton6.Text = "Cerrar";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
@@ -176,9 +175,9 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ImageOptions.Image = global::PRININ.Properties.Resources.Bank_Check_icon32px;
-            this.simpleButton5.Location = new System.Drawing.Point(12, 219);
+            this.simpleButton5.Location = new System.Drawing.Point(12, 171);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton5.Size = new System.Drawing.Size(264, 39);
             this.simpleButton5.TabIndex = 4;
             this.simpleButton5.Text = "Cheques";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -188,9 +187,9 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ImageOptions.Image = global::PRININ.Properties.Resources.print_32;
-            this.simpleButton4.Location = new System.Drawing.Point(12, 170);
+            this.simpleButton4.Location = new System.Drawing.Point(12, 129);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton4.Size = new System.Drawing.Size(264, 39);
             this.simpleButton4.TabIndex = 3;
             this.simpleButton4.Text = "Reimpresión";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -200,9 +199,9 @@
             this.cmdResumenNotas.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdResumenNotas.Appearance.Options.UseFont = true;
             this.cmdResumenNotas.ImageOptions.Image = global::PRININ.Properties.Resources.creditnote_32;
-            this.cmdResumenNotas.Location = new System.Drawing.Point(12, 121);
+            this.cmdResumenNotas.Location = new System.Drawing.Point(12, 87);
             this.cmdResumenNotas.Name = "cmdResumenNotas";
-            this.cmdResumenNotas.Size = new System.Drawing.Size(264, 44);
+            this.cmdResumenNotas.Size = new System.Drawing.Size(264, 39);
             this.cmdResumenNotas.TabIndex = 2;
             this.cmdResumenNotas.Text = "Resumen de Notas";
             this.cmdResumenNotas.Click += new System.EventHandler(this.cmdResumenNotas_Click);
@@ -212,9 +211,9 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Image = global::PRININ.Properties.Resources.debitnote_32;
-            this.simpleButton2.Location = new System.Drawing.Point(12, 72);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 44);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton2.Size = new System.Drawing.Size(264, 39);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "NC / ND";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -224,9 +223,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = global::PRININ.Properties.Resources.invoice_321;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 23);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 2);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(264, 44);
+            this.simpleButton1.Size = new System.Drawing.Size(264, 39);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Facturas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -235,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 677);
+            this.ClientSize = new System.Drawing.Size(282, 553);
             this.Controls.Add(this.btnComprobanteRetencion);
             this.Controls.Add(this.simpleButton7);
             this.Controls.Add(this.simpleButton3);

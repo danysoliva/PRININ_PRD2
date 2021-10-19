@@ -29,13 +29,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditCapitulo));
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grLookEdit_Rubro = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.BS_RUbros = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_RUbros = new System.Windows.Forms.BindingSource();
             this.dsResolucion1 = new PRININ.Mantenimiento.Resolucion_Fiscal.dsResolucion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +45,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.lblResolucion = new DevExpress.XtraEditors.LabelControl();
             this.grLookEdit_Capitulo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.BS_Caps = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Caps = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_cap = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -346,9 +345,9 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(15, 153);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(72, 17);
+            this.labelControl7.Size = new System.Drawing.Size(88, 17);
             this.labelControl7.TabIndex = 27;
-            this.labelControl7.Text = "Saldo Actual";
+            this.labelControl7.Text = "Saldo Utilizado";
             // 
             // spinEditSaldoDisponible
             // 
