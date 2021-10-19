@@ -217,7 +217,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsResolucion.resolucion_detalleRow)gridView.GetFocusedDataRow();
-            frmDetalleOC_fromCap frm = new frmDetalleOC_fromCap(row.id_cap);
+            frmDetalleOC_fromCap frm = new frmDetalleOC_fromCap(row.id);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

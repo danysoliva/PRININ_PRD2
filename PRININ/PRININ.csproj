@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>140</ApplicationRevision>
+    <ApplicationRevision>142</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1009,7 +1009,6 @@
     <EmbeddedResource Include="Pedidos\RptPedidos.resx">
       <DependentUpon>RptPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

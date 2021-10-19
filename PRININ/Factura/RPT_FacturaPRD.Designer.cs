@@ -901,7 +901,7 @@
             this.lblSubGravado.Multiline = true;
             this.lblSubGravado.Name = "lblSubGravado";
             this.lblSubGravado.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblSubGravado.SizeF = new System.Drawing.SizeF(119.33F, 18F);
+            this.lblSubGravado.SizeF = new System.Drawing.SizeF(118.8298F, 18F);
             this.lblSubGravado.StylePriority.UseFont = false;
             this.lblSubGravado.StylePriority.UseTextAlignment = false;
             this.lblSubGravado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1491,7 +1491,7 @@
             this.lblSub.StylePriority.UseFont = false;
             this.lblSub.StylePriority.UseTextAlignment = false;
             this.lblSub.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            this.lblSub.TextFormatString = "{0:n3}";
+            this.lblSub.TextFormatString = "{0:n2}";
             // 
             // xrLabel29
             // 

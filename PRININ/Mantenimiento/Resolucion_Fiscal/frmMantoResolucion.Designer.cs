@@ -312,6 +312,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colsaldo_actual});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             // 
             // colid1
             // 
