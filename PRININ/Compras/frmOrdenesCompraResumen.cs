@@ -424,12 +424,16 @@ namespace PRININ.Compras
             try
             {
                 string sql = @"UPDATE [dbo].[ORDEN_COMPRA]
-                                  SET [cerrada] = true
-                               WHERE id = ";
+                                  SET [cerrada] = 1
+                               WHERE id = @id";
+                var gridView = (GridView)gridMain.FocusedView;
+                var row = (dsCompras.resumen_ocRow)gridView.GetFocusedDataRow();
+
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", row.id);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 CajaDialogo.Information("Transaccion exitosa!");

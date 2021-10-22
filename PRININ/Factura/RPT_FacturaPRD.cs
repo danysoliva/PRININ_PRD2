@@ -65,7 +65,7 @@ namespace PRININ.RPTS
                 lblSubGravado.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD - fact1.TotalISV);
             else
                 lblSubGravado.Text = "0.00";
-            lblSub.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD - fact1.TotalISV);
+            lblSub.Text = string.Format("{0:###,##0.00}", fact1.TotalFacturaUSD - fact1.TotalISV);
             lblISV.Text = string.Format("{0:###,##0.000}", fact1.TotalISV);
             lblTotalUSD.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD);
             lblTotalLPS.Text = string.Format("{0:###,##0.000}", fact1.TotalFacturaUSD * fact1.TasaCambio);
