@@ -36,6 +36,7 @@ namespace PRININ.Notas_UNITE
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dsFacturasPRD1 = new PRININ.Factura.dsFacturasPRD();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinvoice_number = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,11 +52,11 @@ namespace PRININ.Notas_UNITE
             this.colEdit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dsFacturasPRD1 = new PRININ.Factura.dsFacturasPRD();
+            this.colSource = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -74,6 +75,11 @@ namespace PRININ.Notas_UNITE
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // dsFacturasPRD1
+            // 
+            this.dsFacturasPRD1.DataSetName = "dsFacturasPRD";
+            this.dsFacturasPRD1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -95,7 +101,8 @@ namespace PRININ.Notas_UNITE
             this.colshipping_country,
             this.colid_currency,
             this.colnumero_factura_hn,
-            this.colEdit});
+            this.colEdit,
+            this.colSource});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -180,7 +187,7 @@ namespace PRININ.Notas_UNITE
             this.colshipping_country.Name = "colshipping_country";
             this.colshipping_country.OptionsColumn.AllowEdit = false;
             this.colshipping_country.Visible = true;
-            this.colshipping_country.VisibleIndex = 7;
+            this.colshipping_country.VisibleIndex = 8;
             this.colshipping_country.Width = 60;
             // 
             // colid_currency
@@ -190,7 +197,7 @@ namespace PRININ.Notas_UNITE
             this.colid_currency.Name = "colid_currency";
             this.colid_currency.OptionsColumn.AllowEdit = false;
             this.colid_currency.Visible = true;
-            this.colid_currency.VisibleIndex = 8;
+            this.colid_currency.VisibleIndex = 9;
             this.colid_currency.Width = 69;
             // 
             // colnumero_factura_hn
@@ -209,7 +216,7 @@ namespace PRININ.Notas_UNITE
             this.colEdit.ColumnEdit = this.cmdEditar;
             this.colEdit.Name = "colEdit";
             this.colEdit.Visible = true;
-            this.colEdit.VisibleIndex = 9;
+            this.colEdit.VisibleIndex = 10;
             this.colEdit.Width = 92;
             // 
             // cmdEditar
@@ -232,10 +239,13 @@ namespace PRININ.Notas_UNITE
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Seleccione una Factura";
             // 
-            // dsFacturasPRD1
+            // colSource
             // 
-            this.dsFacturasPRD1.DataSetName = "dsFacturasPRD";
-            this.dsFacturasPRD1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.colSource.Caption = "Sistema Origen";
+            this.colSource.FieldName = "Source";
+            this.colSource.Name = "colSource";
+            this.colSource.Visible = true;
+            this.colSource.VisibleIndex = 7;
             // 
             // frmExploreFactura
             // 
@@ -247,9 +257,9 @@ namespace PRININ.Notas_UNITE
             this.Name = "frmExploreFactura";
             this.Text = "Buscar Factura";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +284,6 @@ namespace PRININ.Notas_UNITE
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEditar;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Factura.dsFacturasPRD dsFacturasPRD1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSource;
     }
 }

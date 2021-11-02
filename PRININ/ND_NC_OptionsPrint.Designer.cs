@@ -306,7 +306,7 @@
             this.cmb_wharehouse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_wharehouse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", 10, "Código"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "Alamacén")});
             this.cmb_wharehouse.Properties.DisplayMember = "name";
             this.cmb_wharehouse.Properties.ValueMember = "id";
@@ -332,8 +332,8 @@
             this.cmb_facility.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_facility.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", 10, "Código"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", 40, "Planta")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "Planta", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmb_facility.Properties.DisplayMember = "name";
             this.cmb_facility.Properties.ValueMember = "id";
             this.cmb_facility.Size = new System.Drawing.Size(225, 20);
@@ -358,9 +358,9 @@
             this.cmb_division.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_division.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", 10, "Código"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", 40, "División"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name2", 40, "División")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "División", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name2", "División", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmb_division.Properties.DisplayMember = "name";
             this.cmb_division.Properties.ValueMember = "id";
             this.cmb_division.Size = new System.Drawing.Size(225, 20);
@@ -386,7 +386,7 @@
             this.cmb_company.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_company.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", 10, "Código"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "Compañía")});
             this.cmb_company.Properties.DisplayMember = "name";
             this.cmb_company.Properties.ValueMember = "id";
@@ -473,9 +473,9 @@
             this.cmb_cai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_cai.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", 10, "Tipo C.A.I."),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cai", 40, "C.A.I."),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Código", 10, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo C.A.I.", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("cai", "C.A.I.", 40, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("emision", "Emisión"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("vencimiento", "Vencimiento")});
             this.cmb_cai.Properties.DisplayMember = "cai";

@@ -371,6 +371,10 @@ namespace PRININ.Factura {
             
             private global::System.Data.DataColumn columnnumero_factura_hn;
             
+            private global::System.Data.DataColumn columnSource;
+            
+            private global::System.Data.DataColumn columnsource_invoice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public home_facturasDataTable() {
@@ -494,6 +498,22 @@ namespace PRININ.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SourceColumn {
+                get {
+                    return this.columnSource;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn source_invoiceColumn {
+                get {
+                    return this.columnsource_invoice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -529,7 +549,7 @@ namespace PRININ.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public home_facturasRow Addhome_facturasRow(int id, string invoice_number, System.DateTime invoice_date, string customer_code, string customer_long_name, string customer_rtn, string cust_po_number, string shipping_addess, string shipping_country, string id_currency, string numero_factura_hn) {
+            public home_facturasRow Addhome_facturasRow(int id, string invoice_number, System.DateTime invoice_date, string customer_code, string customer_long_name, string customer_rtn, string cust_po_number, string shipping_addess, string shipping_country, string id_currency, string numero_factura_hn, string Source, int source_invoice) {
                 home_facturasRow rowhome_facturasRow = ((home_facturasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -542,7 +562,9 @@ namespace PRININ.Factura {
                         shipping_addess,
                         shipping_country,
                         id_currency,
-                        numero_factura_hn};
+                        numero_factura_hn,
+                        Source,
+                        source_invoice};
                 rowhome_facturasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowhome_facturasRow);
                 return rowhome_facturasRow;
@@ -576,6 +598,8 @@ namespace PRININ.Factura {
                 this.columnshipping_country = base.Columns["shipping_country"];
                 this.columnid_currency = base.Columns["id_currency"];
                 this.columnnumero_factura_hn = base.Columns["numero_factura_hn"];
+                this.columnSource = base.Columns["Source"];
+                this.columnsource_invoice = base.Columns["source_invoice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -603,6 +627,10 @@ namespace PRININ.Factura {
                 base.Columns.Add(this.columnid_currency);
                 this.columnnumero_factura_hn = new global::System.Data.DataColumn("numero_factura_hn", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_factura_hn);
+                this.columnSource = new global::System.Data.DataColumn("Source", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSource);
+                this.columnsource_invoice = new global::System.Data.DataColumn("source_invoice", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsource_invoice);
                 this.columnnumero_factura_hn.Caption = "Num Factura Fiscal";
             }
             
@@ -1640,6 +1668,38 @@ namespace PRININ.Factura {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Source {
+                get {
+                    try {
+                        return ((string)(this[this.tablehome_facturas.SourceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Source\' in table \'home_facturas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablehome_facturas.SourceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int source_invoice {
+                get {
+                    try {
+                        return ((int)(this[this.tablehome_facturas.source_invoiceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'source_invoice\' in table \'home_facturas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablehome_facturas.source_invoiceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablehome_facturas.idColumn);
             }
@@ -1768,6 +1828,30 @@ namespace PRININ.Factura {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnumero_factura_hnNull() {
                 this[this.tablehome_facturas.numero_factura_hnColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSourceNull() {
+                return this.IsNull(this.tablehome_facturas.SourceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSourceNull() {
+                this[this.tablehome_facturas.SourceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issource_invoiceNull() {
+                return this.IsNull(this.tablehome_facturas.source_invoiceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsource_invoiceNull() {
+                this[this.tablehome_facturas.source_invoiceColumn] = global::System.Convert.DBNull;
             }
         }
         

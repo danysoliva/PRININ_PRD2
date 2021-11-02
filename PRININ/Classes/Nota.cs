@@ -16,11 +16,40 @@ namespace PRININ.Classes
         public int TipoNotaCredito;//1 Articulos
                                    //2 Concepto
 
+        public int SourceId;
+
         public Nota()
         {
 
         }
         public string CodeWindow { get { return "WD0002"; } }
+
+        public int NotaSource(int pId)
+        {
+            //
+            try
+            {
+                string sql = @"SELECT coalesce([source_id],0)
+                                FROM [dbo].[NOTAS]
+                                where id =" + pId;
+                DBOperations dp = new DBOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idnote", pId);
+                SourceId = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                return SourceId;
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return 0;
+        }
         public bool IsNotaArticulos(int pId)
         {
             //

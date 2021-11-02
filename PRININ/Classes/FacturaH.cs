@@ -168,6 +168,117 @@ namespace PRININ.Classes
             return Recuperado;
         }
 
+        public bool RecuperarRegistroForM3_Invoice(int pId)
+        {
+            try
+            {
+                string sql = @"[sp_get_factura_from_M3_by_id]";
+                DBOperations dp = new DBOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pId);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = pId;
+                    invoice_number = dr.GetString(0);
+                    //due_date = dr.GetDateTime(1);
+                    invoice_date = dr.GetDateTime(1);
+                    if (!dr.IsDBNull(dr.GetOrdinal("customer_code")))
+                        customer_code = dr.GetString(2);
+
+                    customer_long_name = dr.GetString(3);
+                    customer_rtn = dr.GetString(4);
+                    if (!dr.IsDBNull(dr.GetOrdinal("numero_factura_hn")))
+                        invoice_number_fiscal = dr.GetString(5);
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line1")))
+                    //    aditional_line1 = dr.GetString(7);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line2")))
+                    //    aditional_line2 = dr.GetString(8);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line3")))
+                    //    aditional_line3 = dr.GetString(9);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line4")))
+                    //    aditional_line4 = dr.GetString(10);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line5")))
+                    //    aditional_line5 = dr.GetString(11);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("aditional_line6")))
+                    //    aditional_line6 = dr.GetString(12);
+
+                    //created_by = dr.GetString(13);
+
+                    //created_date = dr.GetDateTime(14);
+                    //
+                    //if (!dr.IsDBNull(dr.GetOrdinal("created_from")))
+                    //    created_from = dr.GetString(15);
+
+                    //cust_po_number = dr.GetString(16);
+
+                    //id_credit_term = dr.GetInt32(17);
+
+                    //shipping_addess = dr.GetString(18);
+
+                    //shipping_country = dr.GetString(19);
+
+                    //record_ex = dr.GetString(20);
+
+                    //credit_days = dr.GetInt32(21);
+                    //canceled = dr.GetBoolean(22);
+
+                    //id_currency = dr.GetString(23);
+                    ////
+                    
+
+
+
+                    //Credit_term_description = dr.GetString(25);
+                    //CurrencyDescripcion = dr.GetString(26);
+
+                    //PaisNombre = dr.GetString(27);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("exchange_rate")))
+                    //    TasaCambio = dr.GetDecimal(28);
+                    //else
+                    //    TasaCambio = 1;
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("total_fact_usd")))
+                    //    TotalFacturaUSD = dr.GetDecimal(29);
+                    //else
+                    //    TotalFacturaUSD = 1;
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("reg_exo")))
+                    //    RegistroExoneradoC = dr.GetString(30);
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("oc_exenta")))
+                    //    OC_Exenta = dr.GetString(31);
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("reg_sag")))
+                    //    ID_SAG = dr.GetString(32);
+
+                    //if (!dr.IsDBNull(dr.GetOrdinal("sub")))
+                    //    SubTotal = dr.GetDecimal(33);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("discount")))
+                    //    TotalDiscount = dr.GetDecimal(34);
+                    //if (!dr.IsDBNull(dr.GetOrdinal("isv")))
+                    //    TotalISV = dr.GetDecimal(35);
+
+
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+
         public bool UpdateRegistro(int pId)
         {
             bool val = false;

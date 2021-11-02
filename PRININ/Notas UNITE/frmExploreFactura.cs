@@ -18,6 +18,7 @@ namespace PRININ.Notas_UNITE
     public partial class frmExploreFactura : DevExpress.XtraEditors.XtraForm
     {
         public int IdFactura;
+        public int IdSistemaFactura;//1 Unite y 2 M3
         public string FacturaNum;
         public frmExploreFactura()
         {
@@ -30,7 +31,7 @@ namespace PRININ.Notas_UNITE
         {
             try
             {
-                string sql = @"[sp_get_home_facturas_united_selection]";
+                string sql = @"[sp_get_home_facturas_united_selection_v2]";
                 DBOperations dp = new DBOperations();
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
                 SqlConnection conn = new SqlConnection(ConnectionString);
@@ -58,6 +59,7 @@ namespace PRININ.Notas_UNITE
 
             IdFactura = row.id;
             FacturaNum = row.numero_factura_hn;
+            IdSistemaFactura = row.source_invoice;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

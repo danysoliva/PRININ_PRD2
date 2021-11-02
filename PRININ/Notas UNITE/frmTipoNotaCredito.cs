@@ -19,13 +19,16 @@ namespace PRININ.Notas_UNITE
         int FactId;
         DateTime FechaDocumento;
         int IdNota;
-        public frmTipoNotaCredito(int pFact_id, DateTime pFechaDocumento, int pIdNota, string pConcepto, decimal pMonto)
+        public int IdSource;
+
+        public frmTipoNotaCredito(int pFact_id, DateTime pFechaDocumento, int pIdNota, string pConcepto, decimal pMonto, int pIdSource)
         {
             InitializeComponent();
             FechaDocumento = pFechaDocumento;
             FactId = pFact_id;
             IdNota = pIdNota;
             txtConcepto.Text = pConcepto;
+            IdSource = pIdSource;
 
 
             //FacturaH fact = new FacturaH();
@@ -42,7 +45,12 @@ namespace PRININ.Notas_UNITE
         {
             try
             {
-                string sql = @"[sp_get_detalles_factura_para_notas_creditov2]";
+                string sql = @"";
+                if (IdSource == 1)
+                    sql = @"[sp_get_detalles_factura_para_notas_creditov2]";
+                else
+                    sql = @"[sp_get_detalles_factura_para_notas_creditov3]";
+
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -125,7 +133,18 @@ namespace PRININ.Notas_UNITE
                         SqlCommand cmd = new SqlCommand(sql, conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_nota", IdNota);
-                        cmd.Parameters.AddWithValue("@id_invoice_line", row.id);
+                        int id_detalle_fact = 0;
+                        try
+                        {
+                            id_detalle_fact = row.id;
+                        }
+                        catch{}
+
+                        if(id_detalle_fact == 0)
+                            cmd.Parameters.AddWithValue("@id_invoice_line", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_invoice_line", row.id);
+
                         cmd.Parameters.AddWithValue("@cuenta", DBNull.Value);
 
                         cmd.Parameters.AddWithValue("@units", row.cantidad_u);

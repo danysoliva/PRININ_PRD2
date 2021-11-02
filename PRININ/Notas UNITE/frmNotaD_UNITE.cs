@@ -185,11 +185,15 @@ namespace PRININ.Notas
                 if (Note1.IsNotaArticulos(row.id))
                 {
                     //Es de articulos
-
                     //Cargar detalle de articulos
                     try
                     {
                         string sql = @"[sp_get_detalle_lineas_nota_creditov2]";
+                        if(Note1.NotaSource(row.id) == 1)
+                            sql = @"[sp_get_detalle_lineas_nota_creditov2]";
+                        else
+                            sql = @"[]";
+
                         DBOperations dp = new DBOperations();
                         //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                         string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -508,101 +512,211 @@ namespace PRININ.Notas
             frmExploreFactura frm = new frmExploreFactura();
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                FacturaH Fact = new FacturaH();
-                if (Fact.RecuperarRegistro(frm.IdFactura))
+                if (frm.IdSistemaFactura == 1)//UNITE
                 {
-                    //**********NUMERO FISCAL ND Y NC***********-
-                    //Generar numeracion Fiscal PRININ para el SAR
-            
-                    if (row.tipo_nota == 1)//Nota Crédito
+                    FacturaH Fact = new FacturaH();
+                    if (Fact.RecuperarRegistro(frm.IdFactura))
                     {
-                        frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto, row.monto);
-                        if(frm2.ShowDialog() == DialogResult.OK)
-                        {
-                            row.due_date = frm2.dateFechaVence.DateTime;
-                            row.obs = frm2.memoObservaciones.Text;
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        frmDueDateND frm2 = new frmDueDateND();// (frm.IdFactura, row.fecha_doc, row.id, row.concepto);
-                        if (frm2.ShowDialog() == DialogResult.OK)
-                        {
-                            row.due_date = frm2.dateFechaVence.DateTime;
-                            row.obs = frm2.memoObservaciones.Text;
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
+                        //**********NUMERO FISCAL ND Y NC***********-
+                        //Generar numeracion Fiscal PRININ para el SAR
 
-
-                    if (string.IsNullOrEmpty(row.num_documento))
-                    {
-                        DocsFiscales docs = new DocsFiscales();
-                        DocsFiscales.DocType TypeDoc;
-                        if (row.tipo_nota == 1)
-                            TypeDoc = DocsFiscales.DocType.NotaCredito;
-                        else
-                            TypeDoc = DocsFiscales.DocType.NotaDebito;
-
-                        if (docs.RecuperarRegistro(TypeDoc))
+                        if (row.tipo_nota == 1)//Nota Crédito
                         {
-                            row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
-                            row.cai = docs.CAI;
-                            decimal valor_ = 0;
-                            if (row.tipo_nota == 1)
-                                valor_ = row.credito;
+                            frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto, row.monto,1);
+                            if (frm2.ShowDialog() == DialogResult.OK)
+                            {
+                                row.due_date = frm2.dateFechaVence.DateTime;
+                                row.obs = frm2.memoObservaciones.Text;
+                            }
                             else
-                                valor_ = row.debito;
-
-                            ConversorNumALetras ConverLetras = new ConversorNumALetras(valor_);
-                            row.monto_letras = ConverLetras.NumeroEnLetras;
-                            row.id_doc_fiscal = docs.Id;
+                            {
+                                return;
+                            }
                         }
-                    }
+                        else
+                        {
+                            frmDueDateND frm2 = new frmDueDateND();// (frm.IdFactura, row.fecha_doc, row.id, row.concepto);
+                            if (frm2.ShowDialog() == DialogResult.OK)
+                            {
+                                row.due_date = frm2.dateFechaVence.DateTime;
+                                row.obs = frm2.memoObservaciones.Text;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
 
-                    row.cliente = Fact.customer_long_name;
-                    row.num_fact = Fact.invoice_number_fiscal;
-                    row.cod_cliente = Fact.customer_code;
-                    row.factura_id = Fact.Id;
 
-                    //Update Nota
-                    try
-                    {
-                        string sql = @"sp_update_note_with_invoice_foreign";
-                        DBOperations dp = new DBOperations();
-                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                        string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
-                        SqlConnection conn = new SqlConnection(ConnectionString);
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand(sql, conn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", row.id);//Id note
-                        cmd.Parameters.AddWithValue("@factura_id", row.factura_id);
-                        cmd.Parameters.AddWithValue("@cod_cliente", row.cod_cliente);
-                        cmd.Parameters.AddWithValue("@rtn", Fact.customer_rtn);
-                        cmd.Parameters.AddWithValue("@cai", row.cai);
-                        cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
-                        cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
-                        cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
-                        cmd.Parameters.AddWithValue("@duedate", row.due_date);
-                        cmd.Parameters.AddWithValue("@obs", row.obs);
+                        if (string.IsNullOrEmpty(row.num_documento))
+                        {
+                            DocsFiscales docs = new DocsFiscales();
+                            DocsFiscales.DocType TypeDoc;
+                            if (row.tipo_nota == 1)
+                                TypeDoc = DocsFiscales.DocType.NotaCredito;
+                            else
+                                TypeDoc = DocsFiscales.DocType.NotaDebito;
 
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                    }
-                    catch (Exception ec)
-                    {
-                        CajaDialogo.Error(ec.Message);
+                            if (docs.RecuperarRegistro(TypeDoc))
+                            {
+                                row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
+                                row.cai = docs.CAI;
+                                decimal valor_ = 0;
+                                if (row.tipo_nota == 1)
+                                    valor_ = row.credito;
+                                else
+                                    valor_ = row.debito;
+
+                                ConversorNumALetras ConverLetras = new ConversorNumALetras(valor_);
+                                row.monto_letras = ConverLetras.NumeroEnLetras;
+                                row.id_doc_fiscal = docs.Id;
+                            }
+                        }
+
+                        row.cliente = Fact.customer_long_name;
+                        row.num_fact = Fact.invoice_number_fiscal;
+                        row.cod_cliente = Fact.customer_code;
+                        row.factura_id = Fact.Id;
+
+                        //Update Nota
+                        try
+                        {
+                            string sql = @"[sp_update_note_with_invoice_foreign_v2]";
+                            DBOperations dp = new DBOperations();
+                            //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                            string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                            SqlConnection conn = new SqlConnection(ConnectionString);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand(sql, conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id", row.id);//Id note
+                            cmd.Parameters.AddWithValue("@factura_id", row.factura_id);
+                            cmd.Parameters.AddWithValue("@cod_cliente", row.cod_cliente);
+                            cmd.Parameters.AddWithValue("@rtn", Fact.customer_rtn);
+                            cmd.Parameters.AddWithValue("@cai", row.cai);
+                            cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
+                            cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
+                            cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
+                            cmd.Parameters.AddWithValue("@duedate", row.due_date);
+                            cmd.Parameters.AddWithValue("@obs", row.obs);
+                            cmd.Parameters.AddWithValue("@source_id", 1);//Unite
+
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
                     }
                 }
-            }
+                else
+                {
+                    FacturaH Fact2 = new FacturaH();
+                    if (Fact2.RecuperarRegistroForM3_Invoice(frm.IdFactura))
+                    {
+                        //**********NUMERO FISCAL ND Y NC***********-
+                        //Generar numeracion Fiscal PRININ para el SAR
+
+                        if (row.tipo_nota == 1)//Nota Crédito
+                        {
+                            frmTipoNotaCredito frm2 = new frmTipoNotaCredito(frm.IdFactura, row.fecha_doc, row.id, row.concepto, row.monto,2);
+                            if (frm2.ShowDialog() == DialogResult.OK)
+                            {
+                                row.due_date = frm2.dateFechaVence.DateTime;
+                                row.obs = frm2.memoObservaciones.Text;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            frmDueDateND frm2 = new frmDueDateND();// (frm.IdFactura, row.fecha_doc, row.id, row.concepto);
+                            if (frm2.ShowDialog() == DialogResult.OK)
+                            {
+                                row.due_date = frm2.dateFechaVence.DateTime;
+                                row.obs = frm2.memoObservaciones.Text;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+
+
+                        if (string.IsNullOrEmpty(row.num_documento))
+                        {
+                            DocsFiscales docs = new DocsFiscales();
+                            DocsFiscales.DocType TypeDoc;
+                            if (row.tipo_nota == 1)
+                                TypeDoc = DocsFiscales.DocType.NotaCredito;
+                            else
+                                TypeDoc = DocsFiscales.DocType.NotaDebito;
+
+                            if (docs.RecuperarRegistro(TypeDoc))
+                            {
+                                row.num_documento = docs.Leyenda + GetLastEight(row.unite_doc_num);
+                                row.cai = docs.CAI;
+                                decimal valor_ = 0;
+                                if (row.tipo_nota == 1)
+                                    valor_ = row.credito;
+                                else
+                                    valor_ = row.debito;
+
+                                ConversorNumALetras ConverLetras = new ConversorNumALetras(valor_);
+                                row.monto_letras = ConverLetras.NumeroEnLetras;
+                                row.id_doc_fiscal = docs.Id;
+                            }
+                        }
+
+                        row.cliente = Fact2.customer_long_name;
+                        row.num_fact = Fact2.invoice_number_fiscal;
+                        row.cod_cliente = Fact2.customer_code;
+                        row.factura_id = Fact2.Id;
+
+                        //Update Nota
+                        try
+                        {
+                            string sql = @"[sp_update_note_with_invoice_foreign_v2]";
+                            DBOperations dp = new DBOperations();
+                            //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                            string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                            SqlConnection conn = new SqlConnection(ConnectionString);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand(sql, conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id", row.id);//Id note
+                            cmd.Parameters.AddWithValue("@factura_id", row.factura_id);
+                            
+                            if(string.IsNullOrEmpty(row.cod_cliente))
+                                cmd.Parameters.AddWithValue("@cod_cliente", " ");
+                            else
+                                cmd.Parameters.AddWithValue("@cod_cliente", row.cod_cliente);
+
+                            cmd.Parameters.AddWithValue("@rtn", Fact2.customer_rtn);
+                            cmd.Parameters.AddWithValue("@cai", row.cai);
+                            cmd.Parameters.AddWithValue("@num_documento", row.num_documento);
+                            cmd.Parameters.AddWithValue("@monto_letras", row.monto_letras);
+                            cmd.Parameters.AddWithValue("@id_docs_fiscal", row.id_doc_fiscal);
+                            cmd.Parameters.AddWithValue("@duedate", row.due_date);
+                            cmd.Parameters.AddWithValue("@obs", row.obs);
+                            cmd.Parameters.AddWithValue("@source_id", 2);//M3
+
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+                        }
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
+                    }
+                }
+
+
+
+            }//End ShowDialog
         }
 
         private void cmdDesvincular_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
