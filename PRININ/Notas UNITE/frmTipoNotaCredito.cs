@@ -122,7 +122,7 @@ namespace PRININ.Notas_UNITE
                 //}
                 try
                 {
-                    string sql = @"[sp_insert_note_linesv2]";
+                    string sql = @"[sp_insert_note_linesv3]";
                     DBOperations dp = new DBOperations();
                     //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                     string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -152,6 +152,8 @@ namespace PRININ.Notas_UNITE
                         cmd.Parameters.AddWithValue("@price", row.precio);
                         cmd.Parameters.AddWithValue("@total_line", row.total_linea);
                         cmd.Parameters.AddWithValue("@um", row.um);
+                        cmd.Parameters.AddWithValue("@desc", row.descripcion);
+                        cmd.Parameters.AddWithValue("@code", row.codigo);
                         cmd.ExecuteNonQuery();
                     }
                     conn.Close();

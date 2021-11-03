@@ -42,6 +42,7 @@ namespace PRININ.Notas_UNITE
             this.colcantidad_u = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dateFechaVence = new DevExpress.XtraEditors.DateEdit();
@@ -55,7 +56,6 @@ namespace PRININ.Notas_UNITE
             this.txtCuenta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.memoObservaciones = new DevExpress.XtraEditors.MemoEdit();
-            this.colum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNotasUNITE1)).BeginInit();
@@ -185,6 +185,15 @@ namespace PRININ.Notas_UNITE
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
             this.colcodigo.Width = 63;
+            // 
+            // colum
+            // 
+            this.colum.Caption = "UM";
+            this.colum.FieldName = "um";
+            this.colum.Name = "colum";
+            this.colum.OptionsColumn.AllowEdit = false;
+            this.colum.Visible = true;
+            this.colum.VisibleIndex = 2;
             // 
             // labelControl3
             // 
@@ -343,15 +352,6 @@ namespace PRININ.Notas_UNITE
             this.memoObservaciones.Name = "memoObservaciones";
             this.memoObservaciones.Size = new System.Drawing.Size(386, 82);
             this.memoObservaciones.TabIndex = 52;
-            // 
-            // colum
-            // 
-            this.colum.Caption = "UM";
-            this.colum.FieldName = "um";
-            this.colum.Name = "colum";
-            this.colum.OptionsColumn.AllowEdit = false;
-            this.colum.Visible = true;
-            this.colum.VisibleIndex = 2;
             // 
             // frmTipoNotaCredito
             // 

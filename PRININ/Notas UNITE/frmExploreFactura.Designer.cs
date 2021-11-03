@@ -51,8 +51,8 @@ namespace PRININ.Notas_UNITE
             this.colnumero_factura_hn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEdit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.colSource = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFacturasPRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -229,6 +229,14 @@ namespace PRININ.Notas_UNITE
             this.cmdEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEditar_ButtonClick);
             // 
+            // colSource
+            // 
+            this.colSource.Caption = "Sistema Origen";
+            this.colSource.FieldName = "Source";
+            this.colSource.Name = "colSource";
+            this.colSource.Visible = true;
+            this.colSource.VisibleIndex = 7;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,14 +246,6 @@ namespace PRININ.Notas_UNITE
             this.labelControl1.Size = new System.Drawing.Size(196, 25);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Seleccione una Factura";
-            // 
-            // colSource
-            // 
-            this.colSource.Caption = "Sistema Origen";
-            this.colSource.FieldName = "Source";
-            this.colSource.Name = "colSource";
-            this.colSource.Visible = true;
-            this.colSource.VisibleIndex = 7;
             // 
             // frmExploreFactura
             // 

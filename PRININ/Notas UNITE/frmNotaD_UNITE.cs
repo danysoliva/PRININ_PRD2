@@ -33,7 +33,7 @@ namespace PRININ.Notas
                 if (tgMostrarCerradas.IsOn)
                     show_closed = 1;
                 
-                string sql = @"[ft_get_resumen_notas_credito_debito_unite]";
+                string sql = @"[ft_get_resumen_notas_credito_debito_unitev2]";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
@@ -188,11 +188,11 @@ namespace PRININ.Notas
                     //Cargar detalle de articulos
                     try
                     {
-                        string sql = @"[sp_get_detalle_lineas_nota_creditov2]";
+                        string sql = @"";
                         if(Note1.NotaSource(row.id) == 1)
                             sql = @"[sp_get_detalle_lineas_nota_creditov2]";
                         else
-                            sql = @"[]";
+                            sql = @"[sp_get_detalle_lineas_nota_creditov3]";
 
                         DBOperations dp = new DBOperations();
                         //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
@@ -481,6 +481,11 @@ namespace PRININ.Notas
         }
         private string GetLastEight(string invoice_number)
         {
+            if (string.IsNullOrEmpty(invoice_number))
+            {
+                return "";
+            }
+
             if (invoice_number.Length < 8)
             {
                 return "Error: 03";
@@ -501,11 +506,11 @@ namespace PRININ.Notas
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsNotasUNITE.notas_resumenRow)gridView.GetFocusedDataRow();
 
-            if(row.unite_doc_num== null)
-            {
-                CajaDialogo.Error("Solo se puede aplicar a Notas generadas mediante UNITE!");
-                return;
-            }
+            //if(row.unite_doc_num== null)
+            //{
+            //    CajaDialogo.Error("Solo se puede aplicar a Notas generadas mediante UNITE!");
+            //    return;
+            //}
 
 
             //CajaDialogo.Information("Go!");
