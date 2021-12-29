@@ -76,7 +76,8 @@ namespace PRININ.Compras
                 string sql = @"SELECT [codigo]
                                      ,[descripcion]
                                      ,id
-                               FROM [dbo].[resolucion]";
+                               FROM [dbo].[resolucion]
+                                where enable = 1";
                 DBOperations dp = new DBOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
                 conn.Open();
@@ -307,12 +308,12 @@ namespace PRININ.Compras
             repositoryItemGridLookUpEdit1.View.PopulateColumns(repositoryItemGridLookUpEdit1.DataSource);
             repositoryItemGridLookUpEdit1.View.Columns[0].Visible =false;
 
-            var combo = ((PRININ.Compras.dsCompras.resolucionRow)((System.Data.DataRowView)grResolucion.GetSelectedDataRow()).Row).codigo;//sender as GridLookUpEdit;
+            //var combo =  ((PRININ.Compras.dsCompras.resolucionRow)((System.Data.DataRowView)grResolucion.GetSelectedDataRow()).Row).codigo;//sender as GridLookUpEdit;
             //var combo = grResolucion.Properties.s;//sender as GridLookUpEdit;
             // this.LoadRubrosRes(combo);
             // var click = combo.GetSelectedDataRow.Text;
 
-
+            var combo = grResolucion.EditValue.ToString();
             //int iclick = Convert.ToInt32(click);
             this.LoadRubrosRes(combo);
         }
