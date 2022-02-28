@@ -891,13 +891,10 @@ namespace PRININ.Compras
         {
             //var combo = sender as GridLookUpEdit;
             //var click = combo.GetSelectedDataRow.Text;
-
-
             //int iclick = Convert.ToInt32(click);
             //this.LoadRubrosRes(iclick);
             //var gridView = (GridView)grResolucion.focu;
             //var row = (dsCompras.resolucionRow)gridView.GetFocusedDataRow();
-
             LoadRubrosRes(grResolucion.EditValue.ToString());
         }
 
