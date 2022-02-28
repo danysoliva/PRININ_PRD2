@@ -42,6 +42,7 @@ namespace PRININ.Numeracion_Fiscal
 
             tipo_transaccion = t_transaccion;
             numeracionFiscal = pNumeracionFiscal;
+            load_typedoc();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
