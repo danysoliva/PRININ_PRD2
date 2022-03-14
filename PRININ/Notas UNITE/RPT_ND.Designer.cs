@@ -33,6 +33,8 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblValorLempiras = new DevExpress.XtraReports.UI.XRLabel();
             this.txtObservaciones_ = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
@@ -79,14 +81,12 @@
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtConcepto = new DevExpress.XtraReports.UI.XRLabel();
             this.lblAnulada = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
             this.CAI_Header = new DevExpress.XtraReports.UI.CalculatedField();
             this.CAI_Header_num = new DevExpress.XtraReports.UI.CalculatedField();
             this.total_words_mask = new DevExpress.XtraReports.UI.CalculatedField();
             this.xrCrossBandBox1 = new DevExpress.XtraReports.UI.XRCrossBandBox();
             this.Texto = new DevExpress.XtraReports.UI.CalculatedField();
-            this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblValorLempiras = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -165,6 +165,30 @@
             this.ReportHeader.HeightF = 768.8334F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrLabel20
+            // 
+            this.xrLabel20.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(401.0413F, 334.4167F);
+            this.xrLabel20.Name = "xrLabel20";
+            this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel20.SizeF = new System.Drawing.SizeF(62.5F, 23F);
+            this.xrLabel20.StylePriority.UseFont = false;
+            this.xrLabel20.StylePriority.UseTextAlignment = false;
+            this.xrLabel20.Text = "L.";
+            this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lblValorLempiras
+            // 
+            this.lblValorLempiras.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblValorLempiras.LocationFloat = new DevExpress.Utils.PointFloat(463.5413F, 334.4167F);
+            this.lblValorLempiras.Name = "lblValorLempiras";
+            this.lblValorLempiras.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblValorLempiras.SizeF = new System.Drawing.SizeF(230.7293F, 23F);
+            this.lblValorLempiras.StylePriority.UseFont = false;
+            this.lblValorLempiras.StylePriority.UseTextAlignment = false;
+            this.lblValorLempiras.Text = "100.00";
+            this.lblValorLempiras.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // txtObservaciones_
             // 
             this.txtObservaciones_.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
@@ -222,7 +246,7 @@
             this.xrLabel51.SizeF = new System.Drawing.SizeF(699.9998F, 16F);
             this.xrLabel51.StylePriority.UseFont = false;
             this.xrLabel51.StylePriority.UseTextAlignment = false;
-            this.xrLabel51.Text = "E-MAIL: danelia.ramos@skretting.com";
+            this.xrLabel51.Text = "E-MAIL: honduras.notificaciones@skretting.com";
             this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // lblOtras
@@ -707,6 +731,20 @@
             this.lblAnulada.Text = "ANULADA";
             this.lblAnulada.Visible = false;
             // 
+            // xrLabel18
+            // 
+            this.xrLabel18.Angle = 45F;
+            this.xrLabel18.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel18.ForeColor = System.Drawing.Color.Salmon;
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(91.62512F, 161.9584F);
+            this.xrLabel18.Name = "xrLabel18";
+            this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel18.SizeF = new System.Drawing.SizeF(551.396F, 518.9584F);
+            this.xrLabel18.StylePriority.UseFont = false;
+            this.xrLabel18.StylePriority.UseForeColor = false;
+            this.xrLabel18.Text = "ANULADA";
+            this.xrLabel18.Visible = false;
+            // 
             // CAI_Header
             // 
             this.CAI_Header.Expression = "concat(\'CAI:\', [cai],\' desde: \',SUBSTRING([fecha_emision],0,10), \' hasta: \', SUBS" +
@@ -739,44 +777,6 @@
     "REDITANDO\', \'DEBITANDO\'), \' a su apreciable cuenta los valores antes mencionado " +
     "por el siguiente concepto:\')";
             this.Texto.Name = "Texto";
-            // 
-            // xrLabel18
-            // 
-            this.xrLabel18.Angle = 45F;
-            this.xrLabel18.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel18.ForeColor = System.Drawing.Color.Salmon;
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(91.62512F, 161.9584F);
-            this.xrLabel18.Name = "xrLabel18";
-            this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel18.SizeF = new System.Drawing.SizeF(551.396F, 518.9584F);
-            this.xrLabel18.StylePriority.UseFont = false;
-            this.xrLabel18.StylePriority.UseForeColor = false;
-            this.xrLabel18.Text = "ANULADA";
-            this.xrLabel18.Visible = false;
-            // 
-            // xrLabel20
-            // 
-            this.xrLabel20.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(401.0413F, 334.4167F);
-            this.xrLabel20.Name = "xrLabel20";
-            this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel20.SizeF = new System.Drawing.SizeF(62.5F, 23F);
-            this.xrLabel20.StylePriority.UseFont = false;
-            this.xrLabel20.StylePriority.UseTextAlignment = false;
-            this.xrLabel20.Text = "L.";
-            this.xrLabel20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lblValorLempiras
-            // 
-            this.lblValorLempiras.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblValorLempiras.LocationFloat = new DevExpress.Utils.PointFloat(463.5413F, 334.4167F);
-            this.lblValorLempiras.Name = "lblValorLempiras";
-            this.lblValorLempiras.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblValorLempiras.SizeF = new System.Drawing.SizeF(230.7293F, 23F);
-            this.lblValorLempiras.StylePriority.UseFont = false;
-            this.lblValorLempiras.StylePriority.UseTextAlignment = false;
-            this.lblValorLempiras.Text = "100.00";
-            this.lblValorLempiras.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // RPT_ND
             // 

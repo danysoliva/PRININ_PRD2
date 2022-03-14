@@ -40,6 +40,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.lblLeyenda = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -83,7 +84,6 @@
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFechaLimite = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblLeyenda = new DevExpress.XtraReports.UI.XRLabel();
             this.lblValorLetras = new DevExpress.XtraReports.UI.XRLabel();
             this.lblMonto = new DevExpress.XtraReports.UI.XRLabel();
             this.lblSignoMoneda = new DevExpress.XtraReports.UI.XRLabel();
@@ -253,6 +253,16 @@
             this.ReportHeader.HeightF = 388.5416F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // lblLeyenda
+            // 
+            this.lblLeyenda.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.lblLeyenda.LocationFloat = new DevExpress.Utils.PointFloat(4.250908F, 268.0833F);
+            this.lblLeyenda.Name = "lblLeyenda";
+            this.lblLeyenda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblLeyenda.SizeF = new System.Drawing.SizeF(697.7078F, 54F);
+            this.lblLeyenda.StylePriority.UseFont = false;
+            this.lblLeyenda.Text = "txtConcepto";
+            // 
             // xrTable2
             // 
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)));
@@ -372,7 +382,7 @@
             this.xrLabel51.SizeF = new System.Drawing.SizeF(354.8948F, 16F);
             this.xrLabel51.StylePriority.UseFont = false;
             this.xrLabel51.StylePriority.UseTextAlignment = false;
-            this.xrLabel51.Text = "E-MAIL: danelia.ramos@skretting.com";
+            this.xrLabel51.Text = "E-MAIL: honduras.notificaciones@skretting.com";
             this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // lblOtras
@@ -750,16 +760,6 @@
             this.lblFechaLimite.StylePriority.UseTextAlignment = false;
             this.lblFechaLimite.Text = "XX-XX-XXXX";
             this.lblFechaLimite.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lblLeyenda
-            // 
-            this.lblLeyenda.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.lblLeyenda.LocationFloat = new DevExpress.Utils.PointFloat(4.250908F, 268.0833F);
-            this.lblLeyenda.Name = "lblLeyenda";
-            this.lblLeyenda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLeyenda.SizeF = new System.Drawing.SizeF(697.7078F, 54F);
-            this.lblLeyenda.StylePriority.UseFont = false;
-            this.lblLeyenda.Text = "txtConcepto";
             // 
             // lblValorLetras
             // 

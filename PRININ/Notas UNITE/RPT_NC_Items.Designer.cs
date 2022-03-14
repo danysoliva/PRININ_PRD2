@@ -440,7 +440,7 @@
             this.xrLabel51.SizeF = new System.Drawing.SizeF(354.8948F, 16F);
             this.xrLabel51.StylePriority.UseFont = false;
             this.xrLabel51.StylePriority.UseTextAlignment = false;
-            this.xrLabel51.Text = "E-MAIL: danelia.ramos@skretting.com";
+            this.xrLabel51.Text = "E-MAIL: honduras.notificaciones@skretting.com";
             this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // lblOtras
