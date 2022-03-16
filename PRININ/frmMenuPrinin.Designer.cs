@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrinin));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnComprobanteRetencion = new DevExpress.XtraEditors.SimpleButton();

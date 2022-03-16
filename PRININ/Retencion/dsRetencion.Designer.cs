@@ -814,6 +814,8 @@ namespace PRININ.Retencion {
             
             private global::System.Data.DataColumn columnenable;
             
+            private global::System.Data.DataColumn columnprv_key;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public retencionDataTable() {
@@ -937,6 +939,14 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn prv_keyColumn {
+                get {
+                    return this.columnprv_key;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -972,7 +982,7 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public retencionRow AddretencionRow(int id, int id_proveedor, string proveedor, string rtn, System.DateTime fecha_creacion, System.DateTime fecha_emision, string cai, decimal total, string correlativo, int id_z_INVREGDAT, bool enable) {
+            public retencionRow AddretencionRow(int id, int id_proveedor, string proveedor, string rtn, System.DateTime fecha_creacion, System.DateTime fecha_emision, string cai, decimal total, string correlativo, int id_z_INVREGDAT, bool enable, string prv_key) {
                 retencionRow rowretencionRow = ((retencionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -985,7 +995,8 @@ namespace PRININ.Retencion {
                         total,
                         correlativo,
                         id_z_INVREGDAT,
-                        enable};
+                        enable,
+                        prv_key};
                 rowretencionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowretencionRow);
                 return rowretencionRow;
@@ -1019,6 +1030,7 @@ namespace PRININ.Retencion {
                 this.columncorrelativo = base.Columns["correlativo"];
                 this.columnid_z_INVREGDAT = base.Columns["id_z_INVREGDAT"];
                 this.columnenable = base.Columns["enable"];
+                this.columnprv_key = base.Columns["prv_key"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1046,6 +1058,9 @@ namespace PRININ.Retencion {
                 base.Columns.Add(this.columnid_z_INVREGDAT);
                 this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable);
+                this.columnprv_key = new global::System.Data.DataColumn("prv_key", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprv_key);
+                this.columnprv_key.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1349,6 +1364,7 @@ namespace PRININ.Retencion {
                 base.Columns.Add(this.columnporcentaje_retencion);
                 this.columnimporte_total_retenido = new global::System.Data.DataColumn("importe_total_retenido", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimporte_total_retenido);
+                this.columndescripcion.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1502,6 +1518,8 @@ namespace PRININ.Retencion {
             
             private global::System.Data.DataColumn columnfecha;
             
+            private global::System.Data.DataColumn columnprv_key;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProveedorDataTable() {
@@ -1617,6 +1635,14 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn prv_keyColumn {
+                get {
+                    return this.columnprv_key;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1652,7 +1678,7 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProveedorRow AddProveedorRow(int id, string proveedor, string rtn, string telefono, string telefono_2, string pais, string direccion, string contact_name, string phone_contact_name, System.DateTime fecha) {
+            public ProveedorRow AddProveedorRow(int id, string proveedor, string rtn, string telefono, string telefono_2, string pais, string direccion, string contact_name, string phone_contact_name, System.DateTime fecha, string prv_key) {
                 ProveedorRow rowProveedorRow = ((ProveedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1664,7 +1690,8 @@ namespace PRININ.Retencion {
                         direccion,
                         contact_name,
                         phone_contact_name,
-                        fecha};
+                        fecha,
+                        prv_key};
                 rowProveedorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProveedorRow);
                 return rowProveedorRow;
@@ -1697,6 +1724,7 @@ namespace PRININ.Retencion {
                 this.columncontact_name = base.Columns["contact_name"];
                 this.columnphone_contact_name = base.Columns["phone_contact_name"];
                 this.columnfecha = base.Columns["fecha"];
+                this.columnprv_key = base.Columns["prv_key"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1722,6 +1750,8 @@ namespace PRININ.Retencion {
                 base.Columns.Add(this.columnphone_contact_name);
                 this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
+                this.columnprv_key = new global::System.Data.DataColumn("prv_key", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprv_key);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2638,6 +2668,22 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string prv_key {
+                get {
+                    if (this.Isprv_keyNull()) {
+                        return "";
+                    }
+                    else {
+                        return ((string)(this[this.tableretencion.prv_keyColumn]));
+                    }
+                }
+                set {
+                    this[this.tableretencion.prv_keyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableretencion.idColumn);
             }
@@ -2767,6 +2813,18 @@ namespace PRININ.Retencion {
             public void SetenableNull() {
                 this[this.tableretencion.enableColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isprv_keyNull() {
+                return this.IsNull(this.tableretencion.prv_keyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setprv_keyNull() {
+                this[this.tableretencion.prv_keyColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2803,11 +2861,11 @@ namespace PRININ.Retencion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string descripcion {
                 get {
-                    try {
-                        return ((string)(this[this.tableretencion_d.descripcionColumn]));
+                    if (this.IsdescripcionNull()) {
+                        return "";
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'retencion_d\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableretencion_d.descripcionColumn]));
                     }
                 }
                 set {
@@ -3100,6 +3158,22 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string prv_key {
+                get {
+                    try {
+                        return ((string)(this[this.tableProveedor.prv_keyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prv_key\' in table \'Proveedor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProveedor.prv_keyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableProveedor.idColumn);
             }
@@ -3216,6 +3290,18 @@ namespace PRININ.Retencion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaNull() {
                 this[this.tableProveedor.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isprv_keyNull() {
+                return this.IsNull(this.tableProveedor.prv_keyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setprv_keyNull() {
+                this[this.tableProveedor.prv_keyColumn] = global::System.Convert.DBNull;
             }
         }
         

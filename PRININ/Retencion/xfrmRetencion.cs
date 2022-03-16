@@ -46,7 +46,7 @@ namespace PRININ.Retencion
 
                     dsRetencion.retencion.Clear();
 
-                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_retenciones]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_retenciones_V2]", cnx);
                     da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
                     da.Fill(dsRetencion.retencion);

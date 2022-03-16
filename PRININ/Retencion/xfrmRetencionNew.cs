@@ -84,7 +84,7 @@ namespace PRININ.Retencion
 
                     dsRetencion.Proveedor.Clear();
 
-                    SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_proveedores", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_proveedores_V2", cnx);
                     da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
                     da.Fill(dsRetencion.Proveedor);
@@ -160,11 +160,11 @@ namespace PRININ.Retencion
 
                 transaction = cnx.BeginTransaction();
 
-                SqlCommand cmd = new SqlCommand("dbo.sp_insert_retencion_h",transaction.Connection);
+                SqlCommand cmd = new SqlCommand("dbo.sp_insert_retencion_h_V2", transaction.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = transaction;
 
-                cmd.Parameters.Add("@id_proveedor", SqlDbType.Int).Value = slueProveedor.EditValue;
+                cmd.Parameters.Add("@id_proveedor", SqlDbType.NVarChar).Value = slueProveedor.EditValue;
                 cmd.Parameters.Add("@fecha_creacion", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@fecha_emision", SqlDbType.DateTime).Value = deFecha.EditValue;
                 cmd.Parameters.Add("@numero_fiscal", SqlDbType.VarChar).Value = txtNumFiscal.Text;
@@ -209,6 +209,11 @@ namespace PRININ.Retencion
         }
 
         private void GuardarDatos()
+        {
+
+        }
+
+        private void slueProveedor_EditValueChanged(object sender, EventArgs e)
         {
 
         }

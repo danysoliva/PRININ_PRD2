@@ -361,9 +361,10 @@ namespace PRININ.Retencion
             this.slueProveedor.Properties.DisplayMember = "proveedor";
             this.slueProveedor.Properties.NullText = "";
             this.slueProveedor.Properties.PopupView = this.searchLookUpEdit1View;
-            this.slueProveedor.Properties.ValueMember = "id";
+            this.slueProveedor.Properties.ValueMember = "prv_key";
             this.slueProveedor.Size = new System.Drawing.Size(386, 26);
             this.slueProveedor.TabIndex = 0;
+            this.slueProveedor.EditValueChanged += new System.EventHandler(this.slueProveedor_EditValueChanged);
             // 
             // proveedorBindingSource
             // 
