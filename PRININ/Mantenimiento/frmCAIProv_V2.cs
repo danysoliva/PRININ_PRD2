@@ -56,17 +56,24 @@ namespace PRININ.Mantenimiento
 
         private void cmdAddCai_Click(object sender, EventArgs e)
         {
-
-            if (searchLookUpEdit1.EditValue==null)
+            try
             {
-                CajaDialogo.Error("DEBE SELECCIONAR UN PROVEEDOR");
+
+                if (searchLookUpEdit1.EditValue == null)
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR UN PROVEEDOR");
+                }
+                else
+                {
+
+                    dsMante.cai_prov_V2Row row1 = dsMante.cai_prov_V2.Newcai_prov_V2Row();
+                    dsMante.cai_prov_V2.Addcai_prov_V2Row(row1);
+                    dsMante.AcceptChanges();
+                }
             }
-            else
+            catch (Exception ex)
             {
-
-            dsMante.cai_prov_V2Row row1 = dsMante.cai_prov_V2.Newcai_prov_V2Row();
-            dsMante.cai_prov_V2.Addcai_prov_V2Row(row1);
-            dsMante.AcceptChanges();
+                CajaDialogo.Error(ex.Message);
             }
 
         }
@@ -149,96 +156,103 @@ namespace PRININ.Mantenimiento
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
-            if (gvCAI.DataRowCount == 0)
+            try
             {
-                CajaDialogo.Pregunta("Se va guardar sin haber ingresado ningun CAI?");
-                return;
-            }
 
-            //if (searchLookUpEdit1.Text == "")
-            //{
-            //    CajaDialogo.Error("Debe elegir un Proveedor");
-            //    gridProv.Focus();
-            //    return;
-            //}
-            //Validar que la informacion de los CAI no esta vacia
-            for (int i = 0; i < gvCAI.DataRowCount; i++)
-            {
-                DataRow row = gvCAI.GetDataRow(i);
-                if (row[1] != null)
+                if (gvCAI.DataRowCount == 0)
                 {
-                    if (string.IsNullOrEmpty(row[3].ToString()))
+                    CajaDialogo.Pregunta("Se va guardar sin haber ingresado ningun CAI?");
+                    return;
+                }
+
+                //if (searchLookUpEdit1.Text == "")
+                //{
+                //    CajaDialogo.Error("Debe elegir un Proveedor");
+                //    gridProv.Focus();
+                //    return;
+                //}
+                //Validar que la informacion de los CAI no esta vacia
+                for (int i = 0; i < gvCAI.DataRowCount; i++)
+                {
+                    DataRow row = gvCAI.GetDataRow(i);
+                    if (row[1] != null)
+                    {
+                        if (string.IsNullOrEmpty(row[3].ToString()))
+                        {
+                            CajaDialogo.Error("No se permite grabar en blanco!");
+                            return;
+                        }
+                    }
+                    else
                     {
                         CajaDialogo.Error("No se permite grabar en blanco!");
                         return;
                     }
-                }
-                else
-                {
-                    CajaDialogo.Error("No se permite grabar en blanco!");
-                    return;
-                }
-                if (row[2] != null)
-                {
-                    if (string.IsNullOrEmpty(row[3].ToString()))
+                    if (row[2] != null)
+                    {
+                        if (string.IsNullOrEmpty(row[3].ToString()))
+                        {
+                            CajaDialogo.Error("No se permite grabar en blanco!");
+                            return;
+                        }
+                    }
+                    else
                     {
                         CajaDialogo.Error("No se permite grabar en blanco!");
                         return;
                     }
-                }
-                else
-                {
-                    CajaDialogo.Error("No se permite grabar en blanco!");
-                    return;
-                }
-                if (row[3] != null)
-                {
-                    if (string.IsNullOrEmpty(row[3].ToString()))
+                    if (row[3] != null)
+                    {
+                        if (string.IsNullOrEmpty(row[3].ToString()))
+                        {
+                            CajaDialogo.Error("No se permite grabar en blanco!");
+                            return;
+                        }
+                    }
+                    else
                     {
                         CajaDialogo.Error("No se permite grabar en blanco!");
                         return;
                     }
+
                 }
-                else
+
+
+                DBOperations dp = new DBOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringPRININ);
+
+                cn.Open();
+                foreach (var item in dsMante.cai_prov_V2)
                 {
-                    CajaDialogo.Error("No se permite grabar en blanco!");
-                    return;
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandText = "dbo.sp_crud_cai_proveedor";
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@id", SqlDbType.Int).Value = item.id;
+                        cmd.Parameters.Add("@usuario", SqlDbType.Int).Value = usuarioLogueado.UserId;
+                        cmd.Parameters.Add("@prv_key", SqlDbType.VarChar).Value = searchLookUpEdit1.EditValue;
+                        cmd.Parameters.Add("@rango", SqlDbType.VarChar).Value = item.rango;
+                        cmd.Parameters.Add("@CAI", SqlDbType.VarChar).Value = item.cai;
+                        cmd.Parameters.Add("@fecha_limite", SqlDbType.DateTime).Value = item.fecha_limite;
+                        cmd.Parameters.Add("@fecha_creado", SqlDbType.DateTime).Value = DateTime.Now;
+
+                        cmd.ExecuteNonQuery();
+
+                    }
                 }
 
-            }
+                cn.Close();
 
-
-            DBOperations dp = new DBOperations();
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringPRININ);
-
-            cn.Open();
-            foreach (var item in dsMante.cai_prov_V2)
-            {
-                using (SqlCommand cmd =  new SqlCommand())
+                if (!string.IsNullOrEmpty(codProveedor))
                 {
-                    cmd.Connection = cn;
-                    cmd.CommandText = "dbo.sp_crud_cai_proveedor";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = item.id;
-                    cmd.Parameters.Add("@usuario", SqlDbType.Int).Value = usuarioLogueado.UserId;
-                    cmd.Parameters.Add("@prv_key", SqlDbType.VarChar).Value = searchLookUpEdit1.EditValue;
-                    cmd.Parameters.Add("@rango", SqlDbType.VarChar).Value = item.rango;
-                    cmd.Parameters.Add("@CAI", SqlDbType.VarChar).Value = item.cai;
-                    cmd.Parameters.Add("@fecha_limite", SqlDbType.DateTime).Value = item.fecha_limite;
-                    cmd.Parameters.Add("@fecha_creado", SqlDbType.DateTime).Value = DateTime.Now ;
-
-
-                    cmd.ExecuteNonQuery();
-
+                    this.DialogResult = DialogResult.OK;
                 }
             }
-
-            cn.Close();
-
-            if (!string.IsNullOrEmpty(codProveedor))
+            catch (Exception ex)
             {
-                this.DialogResult = DialogResult.OK;
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -315,20 +329,45 @@ namespace PRININ.Mantenimiento
 
         private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            LoadCAI(Convert.ToBoolean( TSCai.EditValue));
+            try
+            {
+
+                LoadCAI(Convert.ToBoolean(TSCai.EditValue));
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void frmCAIProv_V2_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(codProveedor))
+            try
             {
-                searchLookUpEdit1.EditValue = codProveedor;
+
+                if (!string.IsNullOrEmpty(codProveedor))
+                {
+                    searchLookUpEdit1.EditValue = codProveedor;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
 
         private void TSCai_Toggled(object sender, EventArgs e)
         {
+            try
+            {
             LoadCAI(Convert.ToBoolean(TSCai.EditValue));
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

@@ -260,11 +260,19 @@ namespace PRININ.Retencion
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmCAIProv_V2 frm = new frmCAIProv_V2(usuarioLogueado,slueProveedor.EditValue.ToString());
-
-            if (frm.ShowDialog()== DialogResult.OK)
+            try
             {
-                LoadCAI();
+
+                frmCAIProv_V2 frm = new frmCAIProv_V2(usuarioLogueado, slueProveedor.EditValue.ToString());
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCAI();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
