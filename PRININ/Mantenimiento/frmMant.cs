@@ -84,5 +84,11 @@ namespace PRININ.Mantenimiento
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnCAIProveedor_Click(object sender, EventArgs e)
+        {
+            frmCAIProv_V2 frm = new frmCAIProv_V2(UsuarioLogueado);
+            frm.Show();
+        }
     }
 }

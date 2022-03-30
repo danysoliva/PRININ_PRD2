@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using PRININ.Classes;
+using PRININ.Mantenimiento;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,7 +128,7 @@ namespace PRININ.Retencion
 
             }
 
-            if (string.IsNullOrEmpty(txtCAI.Text))
+            if (string.IsNullOrEmpty(lueCAI.Text))
             {
                 CajaDialogo.Error("DEBE INGRESAR EL CAI");
                 return;
@@ -168,7 +169,7 @@ namespace PRININ.Retencion
                 cmd.Parameters.Add("@fecha_creacion", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@fecha_emision", SqlDbType.DateTime).Value = deFecha.EditValue;
                 cmd.Parameters.Add("@numero_fiscal", SqlDbType.VarChar).Value = txtNumFiscal.Text;
-                cmd.Parameters.Add("@cai", SqlDbType.VarChar).Value =txtCAI.Text;
+                cmd.Parameters.Add("@cai", SqlDbType.VarChar).Value =lueCAI.Text;
                 cmd.Parameters.Add("@id_user", SqlDbType.Int).Value =  usuarioLogueado.UserId;
                 cmd.Parameters.Add("@ultimo_correlativo", SqlDbType.Int).Value =  ultimo_correlativo;
                 cmd.Parameters.Add("@total", SqlDbType.Int).Value = Convert.ToDecimal(colimporte_total_retenido.Summary[0].SummaryValue.ToString());
@@ -214,6 +215,60 @@ namespace PRININ.Retencion
         }
 
         private void slueProveedor_EditValueChanged(object sender, EventArgs e)
+        {
+            LoadCAI();
+        }
+
+
+        private void LoadCAI()
+        {
+            try
+            {
+
+                string sql = @"dbo.sp_get_cai_by_proveedor";
+                var row = (dsMante.cai_prov_V2Row)gvRetencion.GetFocusedDataRow();
+
+
+                if (slueProveedor.EditValue != null)
+                {
+
+                    DBOperations dp = new DBOperations();
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@key_prov", SqlDbType.VarChar).Value = slueProveedor.EditValue;
+                    cmd.Parameters.Add("@activo", SqlDbType.VarChar).Value = true;
+
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    dsMante.cai_prov_V2.Clear();
+                    adat.Fill(dsMante.cai_prov_V2);
+                    conn.Close();
+                }
+
+                if (dsMante.cai_prov_V2.Rows.Count>0)
+                {
+                    lueCAI.EditValue = dsMante.cai_prov_V2.ToList().FirstOrDefault().id;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmCAIProv_V2 frm = new frmCAIProv_V2(usuarioLogueado,slueProveedor.EditValue.ToString());
+
+            if (frm.ShowDialog()== DialogResult.OK)
+            {
+                LoadCAI();
+            }
+        }
+
+        private void xfrmRetencionNew_Load(object sender, EventArgs e)
         {
 
         }
