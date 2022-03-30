@@ -30,6 +30,33 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Proveedor" msprop:Generator_TableClassName="ProveedorDataTable" msprop:Generator_TableVarName="tableProveedor" msprop:Generator_RowChangedName="ProveedorRowChanged" msprop:Generator_TablePropName="Proveedor" msprop:Generator_RowDeletingName="ProveedorRowDeleting" msprop:Generator_RowChangingName="ProveedorRowChanging" msprop:Generator_RowEvHandlerName="ProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="ProveedorRowDeleted" msprop:Generator_RowClassName="ProveedorRow" msprop:Generator_UserTableName="Proveedor" msprop:Generator_RowEvArgName="ProveedorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="rtn" msprop:Generator_ColumnVarNameInTable="columnrtn" msprop:Generator_ColumnPropNameInRow="rtn" msprop:Generator_ColumnPropNameInTable="rtnColumn" msprop:Generator_UserColumnName="rtn" type="xs:string" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:string" minOccurs="0" />
+              <xs:element name="telefono_2" msprop:Generator_ColumnVarNameInTable="columntelefono_2" msprop:Generator_ColumnPropNameInRow="telefono_2" msprop:Generator_ColumnPropNameInTable="telefono_2Column" msprop:Generator_UserColumnName="telefono_2" type="xs:string" minOccurs="0" />
+              <xs:element name="pais" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" minOccurs="0" />
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" type="xs:string" minOccurs="0" />
+              <xs:element name="contact_name" msprop:Generator_ColumnVarNameInTable="columncontact_name" msprop:Generator_ColumnPropNameInRow="contact_name" msprop:Generator_ColumnPropNameInTable="contact_nameColumn" msprop:Generator_UserColumnName="contact_name" type="xs:string" minOccurs="0" />
+              <xs:element name="phone_contact_name" msprop:Generator_ColumnVarNameInTable="columnphone_contact_name" msprop:Generator_ColumnPropNameInRow="phone_contact_name" msprop:Generator_ColumnPropNameInTable="phone_contact_nameColumn" msprop:Generator_UserColumnName="phone_contact_name" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="prv_key" msprop:Generator_ColumnVarNameInTable="columnprv_key" msprop:Generator_ColumnPropNameInRow="prv_key" msprop:Generator_ColumnPropNameInTable="prv_keyColumn" msprop:Generator_UserColumnName="prv_key" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cai_prov_V2" msprop:Generator_TableClassName="cai_prov_V2DataTable" msprop:Generator_TableVarName="tablecai_prov_V2" msprop:Generator_TablePropName="cai_prov_V2" msprop:Generator_RowDeletingName="cai_prov_V2RowDeleting" msprop:Generator_RowChangingName="cai_prov_V2RowChanging" msprop:Generator_RowEvHandlerName="cai_prov_V2RowChangeEventHandler" msprop:Generator_RowDeletedName="cai_prov_V2RowDeleted" msprop:Generator_UserTableName="cai_prov_V2" msprop:Generator_RowChangedName="cai_prov_V2RowChanged" msprop:Generator_RowEvArgName="cai_prov_V2RowChangeEvent" msprop:Generator_RowClassName="cai_prov_V2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cai" msprop:Generator_ColumnVarNameInTable="columncai" msprop:Generator_ColumnPropNameInRow="cai" msprop:Generator_ColumnPropNameInTable="caiColumn" msprop:Generator_UserColumnName="cai" type="xs:string" minOccurs="0" />
+              <xs:element name="rango" msprop:Generator_ColumnVarNameInTable="columnrango" msprop:Generator_ColumnPropNameInRow="rango" msprop:Generator_ColumnPropNameInTable="rangoColumn" msprop:Generator_UserColumnName="rango" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_limite" msprop:Generator_ColumnVarNameInTable="columnfecha_limite" msprop:Generator_ColumnPropNameInRow="fecha_limite" msprop:Generator_ColumnPropNameInTable="fecha_limiteColumn" msprop:Generator_UserColumnName="fecha_limite" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

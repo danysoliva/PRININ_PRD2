@@ -30,8 +30,8 @@ namespace PRININ.Retencion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRetencionNew));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRetencionNew));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -49,7 +49,6 @@ namespace PRININ.Retencion
             this.deFecha = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCAI = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumFiscal = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -74,9 +73,16 @@ namespace PRININ.Retencion
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lueCAI = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.caiprovV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMante = new PRININ.Mantenimiento.dsMante();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCAI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.retenciondBindingSource)).BeginInit();
@@ -88,6 +94,10 @@ namespace PRININ.Retencion
             ((System.ComponentModel.ISupportInitialize)(this.slueProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCAI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caiprovV2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // deFecha
@@ -125,18 +135,6 @@ namespace PRININ.Retencion
             this.labelControl2.Size = new System.Drawing.Size(90, 19);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Proveedor:";
-            // 
-            // txtCAI
-            // 
-            this.txtCAI.Location = new System.Drawing.Point(130, 93);
-            this.txtCAI.Name = "txtCAI";
-            this.txtCAI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCAI.Properties.Appearance.Options.UseFont = true;
-            this.txtCAI.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCAI.Properties.Mask.EditMask = resources.GetString("txtCAI.Properties.Mask.EditMask");
-            this.txtCAI.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.txtCAI.Size = new System.Drawing.Size(386, 26);
-            this.txtCAI.TabIndex = 1;
             // 
             // labelControl3
             // 
@@ -410,11 +408,93 @@ namespace PRININ.Retencion
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
+            // lueCAI
+            // 
+            this.lueCAI.Location = new System.Drawing.Point(130, 93);
+            this.lueCAI.Name = "lueCAI";
+            this.lueCAI.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueCAI.Properties.Appearance.Options.UseFont = true;
+            this.lueCAI.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lueCAI.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lueCAI.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCAI.Properties.DataSource = this.caiprovV2BindingSource;
+            this.lueCAI.Properties.DisplayMember = "cai";
+            this.lueCAI.Properties.NullText = "";
+            this.lueCAI.Properties.PopupView = this.gridView1;
+            this.lueCAI.Properties.ValueMember = "id";
+            this.lueCAI.Size = new System.Drawing.Size(386, 26);
+            this.lueCAI.TabIndex = 35;
+            // 
+            // caiprovV2BindingSource
+            // 
+            this.caiprovV2BindingSource.DataMember = "cai_prov_V2";
+            this.caiprovV2BindingSource.DataSource = this.dsMante;
+            // 
+            // dsMante
+            // 
+            this.dsMante.DataSetName = "dsMante";
+            this.dsMante.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
+            this.gridColumn4,
+            this.gridColumn5});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "CAI";
+            this.gridColumn6.FieldName = "cai";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Rango";
+            this.gridColumn4.FieldName = "rango";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Fecha Límite";
+            this.gridColumn5.FieldName = "fecha_limite";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnAdd.Location = new System.Drawing.Point(522, 88);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(50, 35);
+            this.btnAdd.TabIndex = 36;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // xfrmRetencionNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 498);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.lueCAI);
             this.Controls.Add(this.slueProveedor);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmdCerrar);
@@ -426,7 +506,6 @@ namespace PRININ.Retencion
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.deFecha);
-            this.Controls.Add(this.txtCAI);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "xfrmRetencionNew";
@@ -434,7 +513,6 @@ namespace PRININ.Retencion
             this.Text = "Retención";
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCAI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.retenciondBindingSource)).EndInit();
@@ -446,6 +524,10 @@ namespace PRININ.Retencion
             ((System.ComponentModel.ISupportInitialize)(this.slueProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCAI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caiprovV2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,7 +538,6 @@ namespace PRININ.Retencion
         private DevExpress.XtraEditors.DateEdit deFecha;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtCAI;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtNumFiscal;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -481,5 +562,13 @@ namespace PRININ.Retencion
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SearchLookUpEdit lueCAI;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private System.Windows.Forms.BindingSource caiprovV2BindingSource;
+        private Mantenimiento.dsMante dsMante;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
     }
 }
