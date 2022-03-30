@@ -128,7 +128,6 @@
             // 
             this.cmdMantCAI.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdMantCAI.Appearance.Options.UseFont = true;
-            this.cmdMantCAI.Enabled = false;
             this.cmdMantCAI.ImageOptions.Image = global::PRININ.Properties.Resources.creditnote_32;
             this.cmdMantCAI.Location = new System.Drawing.Point(12, 457);
             this.cmdMantCAI.Name = "cmdMantCAI";
