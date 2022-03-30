@@ -89,7 +89,6 @@ namespace PRININ.Mantenimiento
             else
             {
 
-
                         Boolean activar_desactivar;
                         string mensaje;
 

@@ -267,5 +267,10 @@ namespace PRININ.Retencion
                 LoadCAI();
             }
         }
+
+        private void xfrmRetencionNew_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -481,7 +481,7 @@ namespace PRININ.Retencion
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAdd.ImageOptions.SvgImage")));
             this.btnAdd.Location = new System.Drawing.Point(522, 88);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 35);
@@ -511,6 +511,7 @@ namespace PRININ.Retencion
             this.Name = "xfrmRetencionNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retención";
+            this.Load += new System.EventHandler(this.xfrmRetencionNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumFiscal.Properties)).EndInit();
