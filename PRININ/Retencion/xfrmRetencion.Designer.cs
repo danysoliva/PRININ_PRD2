@@ -206,8 +206,6 @@ namespace PRININ.Retencion
             this.colcai.FieldName = "cai";
             this.colcai.Name = "colcai";
             this.colcai.OptionsColumn.AllowEdit = false;
-            this.colcai.Visible = true;
-            this.colcai.VisibleIndex = 5;
             this.colcai.Width = 304;
             // 
             // gridColumn1
@@ -217,7 +215,7 @@ namespace PRININ.Retencion
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 113;
             // 
             // btnImprimir
@@ -240,7 +238,7 @@ namespace PRININ.Retencion
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 5;
             this.gridColumn2.Width = 150;
             // 
             // gridColumn3
@@ -263,7 +261,7 @@ namespace PRININ.Retencion
             this.gridColumn5.ColumnEdit = this.btnAnular;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
+            this.gridColumn5.VisibleIndex = 7;
             // 
             // btnAnular
             // 

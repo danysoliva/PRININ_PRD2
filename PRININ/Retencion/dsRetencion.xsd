@@ -42,7 +42,7 @@
               <xs:element name="correlativo" msprop:Generator_ColumnVarNameInTable="columncorrelativo" msprop:Generator_ColumnPropNameInRow="correlativo" msprop:Generator_ColumnPropNameInTable="correlativoColumn" msprop:Generator_UserColumnName="correlativo" type="xs:string" minOccurs="0" />
               <xs:element name="id_z_INVREGDAT" msprop:Generator_ColumnVarNameInTable="columnid_z_INVREGDAT" msprop:Generator_ColumnPropNameInRow="id_z_INVREGDAT" msprop:Generator_ColumnPropNameInTable="id_z_INVREGDATColumn" msprop:Generator_UserColumnName="id_z_INVREGDAT" type="xs:int" minOccurs="0" />
               <xs:element name="enable" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
-              <xs:element name="prv_key" msprop:Generator_ColumnVarNameInTable="columnprv_key" msprop:Generator_ColumnPropNameInRow="prv_key" msprop:nullValue="" msprop:Generator_ColumnPropNameInTable="prv_keyColumn" msprop:Generator_UserColumnName="prv_key" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="prv_key" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="prv_key" msprop:Generator_ColumnVarNameInTable="columnprv_key" msprop:Generator_ColumnPropNameInTable="prv_keyColumn" msprop:Generator_UserColumnName="prv_key" type="xs:string" default="" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -53,7 +53,9 @@
               <xs:element name="descripcion" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" default="" minOccurs="0" />
               <xs:element name="base_disponible" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="base_disponible" msprop:Generator_ColumnVarNameInTable="columnbase_disponible" msprop:Generator_ColumnPropNameInTable="base_disponibleColumn" msprop:Generator_UserColumnName="base_disponible" type="xs:decimal" minOccurs="0" />
               <xs:element name="porcentaje_retencion" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="porcentaje_retencion" msprop:Generator_ColumnVarNameInTable="columnporcentaje_retencion" msprop:Generator_ColumnPropNameInTable="porcentaje_retencionColumn" msprop:Generator_UserColumnName="porcentaje_retencion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="numero_fiscal" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="numero_fiscal" msprop:Generator_ColumnVarNameInTable="columnnumero_fiscal" msprop:Generator_ColumnPropNameInTable="numero_fiscalColumn" msprop:Generator_UserColumnName="numero_fiscal" type="xs:string" default="" minOccurs="0" />
               <xs:element name="importe_total_retenido" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="importe_total_retenido" msprop:Generator_ColumnVarNameInTable="columnimporte_total_retenido" msprop:Generator_ColumnPropNameInTable="importe_total_retenidoColumn" msprop:Generator_UserColumnName="importe_total_retenido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cai" msprop:Generator_ColumnVarNameInTable="columncai" msprop:Generator_ColumnPropNameInRow="cai" msprop:Generator_ColumnPropNameInTable="caiColumn" msprop:Generator_UserColumnName="cai" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

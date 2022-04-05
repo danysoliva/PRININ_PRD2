@@ -1202,7 +1202,11 @@ namespace PRININ.Retencion {
             
             private global::System.Data.DataColumn columnporcentaje_retencion;
             
+            private global::System.Data.DataColumn columnnumero_fiscal;
+            
             private global::System.Data.DataColumn columnimporte_total_retenido;
+            
+            private global::System.Data.DataColumn columncai;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1271,9 +1275,25 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_fiscalColumn {
+                get {
+                    return this.columnnumero_fiscal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn importe_total_retenidoColumn {
                 get {
                     return this.columnimporte_total_retenido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn caiColumn {
+                get {
+                    return this.columncai;
                 }
             }
             
@@ -1314,14 +1334,16 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public retencion_dRow Addretencion_dRow(string correlativo, string descripcion, decimal base_disponible, decimal porcentaje_retencion, decimal importe_total_retenido) {
+            public retencion_dRow Addretencion_dRow(string correlativo, string descripcion, decimal base_disponible, decimal porcentaje_retencion, string numero_fiscal, decimal importe_total_retenido, string cai) {
                 retencion_dRow rowretencion_dRow = ((retencion_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         correlativo,
                         descripcion,
                         base_disponible,
                         porcentaje_retencion,
-                        importe_total_retenido};
+                        numero_fiscal,
+                        importe_total_retenido,
+                        cai};
                 rowretencion_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowretencion_dRow);
                 return rowretencion_dRow;
@@ -1348,7 +1370,9 @@ namespace PRININ.Retencion {
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnbase_disponible = base.Columns["base_disponible"];
                 this.columnporcentaje_retencion = base.Columns["porcentaje_retencion"];
+                this.columnnumero_fiscal = base.Columns["numero_fiscal"];
                 this.columnimporte_total_retenido = base.Columns["importe_total_retenido"];
+                this.columncai = base.Columns["cai"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1362,9 +1386,14 @@ namespace PRININ.Retencion {
                 base.Columns.Add(this.columnbase_disponible);
                 this.columnporcentaje_retencion = new global::System.Data.DataColumn("porcentaje_retencion", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnporcentaje_retencion);
+                this.columnnumero_fiscal = new global::System.Data.DataColumn("numero_fiscal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_fiscal);
                 this.columnimporte_total_retenido = new global::System.Data.DataColumn("importe_total_retenido", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimporte_total_retenido);
+                this.columncai = new global::System.Data.DataColumn("cai", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncai);
                 this.columndescripcion.DefaultValue = ((string)(""));
+                this.columnnumero_fiscal.DefaultValue = ((string)(""));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2907,6 +2936,22 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string numero_fiscal {
+                get {
+                    if (this.Isnumero_fiscalNull()) {
+                        return "";
+                    }
+                    else {
+                        return ((string)(this[this.tableretencion_d.numero_fiscalColumn]));
+                    }
+                }
+                set {
+                    this[this.tableretencion_d.numero_fiscalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal importe_total_retenido {
                 get {
                     if (this.Isimporte_total_retenidoNull()) {
@@ -2918,6 +2963,22 @@ namespace PRININ.Retencion {
                 }
                 set {
                     this[this.tableretencion_d.importe_total_retenidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cai {
+                get {
+                    try {
+                        return ((string)(this[this.tableretencion_d.caiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cai\' in table \'retencion_d\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableretencion_d.caiColumn] = value;
                 }
             }
             
@@ -2971,6 +3032,18 @@ namespace PRININ.Retencion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_fiscalNull() {
+                return this.IsNull(this.tableretencion_d.numero_fiscalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_fiscalNull() {
+                this[this.tableretencion_d.numero_fiscalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isimporte_total_retenidoNull() {
                 return this.IsNull(this.tableretencion_d.importe_total_retenidoColumn);
             }
@@ -2979,6 +3052,18 @@ namespace PRININ.Retencion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setimporte_total_retenidoNull() {
                 this[this.tableretencion_d.importe_total_retenidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscaiNull() {
+                return this.IsNull(this.tableretencion_d.caiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcaiNull() {
+                this[this.tableretencion_d.caiColumn] = global::System.Convert.DBNull;
             }
         }
         

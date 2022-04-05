@@ -23,7 +23,7 @@ namespace PRININ.RPTS
 
                 dsRetencion1.rpt_retencion_h.Clear();
 
-                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_rpt_get_retencion_h", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_rpt_get_retencion_h_V2", cnx);
                 da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
@@ -41,7 +41,7 @@ namespace PRININ.RPTS
 
                 dsRetencion1.retencion_d.Clear();
 
-                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_rpt_get_retencion_d_by_id", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_rpt_get_retencion_d_by_id_V2", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
 

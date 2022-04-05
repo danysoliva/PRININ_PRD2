@@ -128,18 +128,26 @@ namespace PRININ.Retencion
 
             }
 
-            if (string.IsNullOrEmpty(lueCAI.Text))
+            foreach (var item in dsRetencion.retencion_d)
             {
-                CajaDialogo.Error("DEBE INGRESAR EL CAI");
-                return;
+                if (string.IsNullOrEmpty( item.numero_fiscal))
+                {
+                    CajaDialogo.Error("EL CAMPO DE NUMERACIÓN FISCAL NO DEBE ESTAR VACÍO");
+                    return;
 
+                }
             }
 
-            if (string.IsNullOrEmpty(txtNumFiscal.Text))
-            {
-                CajaDialogo.Error("DEBE SELECCIONAR LA NUMERACIÓN FISCAL");
-                return;
-            }
+            //if (string.IsNullOrEmpty(lueCAI.Text))
+            //{
+            //    CajaDialogo.Error("DEBE INGRESAR EL CAI");
+            //    return;
+
+            //}
+
+            //if (string.IsNullOrEmpty(txtNumFiscal.Text))
+            //{
+            //}
 
             DBOperations dp = new DBOperations();
 
@@ -161,15 +169,15 @@ namespace PRININ.Retencion
 
                 transaction = cnx.BeginTransaction();
 
-                SqlCommand cmd = new SqlCommand("dbo.sp_insert_retencion_h_V2", transaction.Connection);
+                SqlCommand cmd = new SqlCommand("dbo.sp_insert_retencion_h_V3", transaction.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = transaction;
 
                 cmd.Parameters.Add("@id_proveedor", SqlDbType.NVarChar).Value = slueProveedor.EditValue;
                 cmd.Parameters.Add("@fecha_creacion", SqlDbType.DateTime).Value = DateTime.Now;
                 cmd.Parameters.Add("@fecha_emision", SqlDbType.DateTime).Value = deFecha.EditValue;
-                cmd.Parameters.Add("@numero_fiscal", SqlDbType.VarChar).Value = txtNumFiscal.Text;
-                cmd.Parameters.Add("@cai", SqlDbType.VarChar).Value =lueCAI.Text;
+                //cmd.Parameters.Add("@numero_fiscal", SqlDbType.VarChar).Value = txtNumFiscal.Text;
+                //cmd.Parameters.Add("@cai", SqlDbType.VarChar).Value =lueCAI.Text;
                 cmd.Parameters.Add("@id_user", SqlDbType.Int).Value =  usuarioLogueado.UserId;
                 cmd.Parameters.Add("@ultimo_correlativo", SqlDbType.Int).Value =  ultimo_correlativo;
                 cmd.Parameters.Add("@total", SqlDbType.Int).Value = Convert.ToDecimal(colimporte_total_retenido.Summary[0].SummaryValue.ToString());
@@ -179,13 +187,14 @@ namespace PRININ.Retencion
                 int count = 1; 
                 foreach (var item in dsRetencion.retencion_d)
                 {
-                    SqlCommand cmd2 = new SqlCommand("dbo.sp_insert_retencion_d", transaction.Connection);
+                    SqlCommand cmd2 = new SqlCommand("dbo.sp_insert_retencion_d_V2", transaction.Connection);
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Transaction = transaction;
 
                     cmd2.Parameters.Add("@id_h", SqlDbType.Int).Value = id_inserted;
                     cmd2.Parameters.Add("@correlativo", SqlDbType.Int).Value = count;
                     cmd2.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = item.descripcion;
+                    cmd2.Parameters.Add("@numeracion_fiscal", SqlDbType.VarChar).Value = item.numero_fiscal;
                     cmd2.Parameters.Add("@base_disponible", SqlDbType.Decimal).Value = item.base_disponible;
                     cmd2.Parameters.Add("@porcentaje_retencion", SqlDbType.Decimal).Value = item.porcentaje_retencion;
                     cmd2.Parameters.Add("@importe_total_retenido", SqlDbType.Decimal).Value = item.importe_total_retenido;
