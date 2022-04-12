@@ -90,6 +90,7 @@ namespace PRININ.RPTS
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrShape4 = new DevExpress.XtraReports.UI.XRShape();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRetencion1)).BeginInit();
@@ -153,6 +154,8 @@ namespace PRININ.RPTS
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[numero_fiscal]")});
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCell11.StylePriority.UsePadding = false;
             this.xrTableCell11.Text = "xrTableCell11";
             this.xrTableCell11.Weight = 0.640893604440259D;
             // 
@@ -162,6 +165,8 @@ namespace PRININ.RPTS
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[descripcion]")});
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCell2.StylePriority.UsePadding = false;
             this.xrTableCell2.Text = "xrTableCell2";
             this.xrTableCell2.Weight = 0.70797629043313959D;
             // 
@@ -365,7 +370,7 @@ namespace PRININ.RPTS
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel17.SizeF = new System.Drawing.SizeF(189.2918F, 23F);
+            this.xrLabel17.SizeF = new System.Drawing.SizeF(305.2498F, 23.00002F);
             this.xrLabel17.Text = "xrLabel17";
             this.xrLabel17.TextFormatString = "{0:d}";
             // 
@@ -453,9 +458,10 @@ namespace PRININ.RPTS
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(133.3333F, 23.00002F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(305.2498F, 23.00002F);
             this.xrLabel10.Text = "xrLabel10";
             this.xrLabel10.TextFormatString = "{0:d}";
+            this.xrLabel10.Visible = false;
             // 
             // xrLabel9
             // 
@@ -469,6 +475,7 @@ namespace PRININ.RPTS
             this.xrLabel9.StylePriority.UseTextAlignment = false;
             this.xrLabel9.Text = "Fecha:";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel9.Visible = false;
             // 
             // xrLabel8
             // 
@@ -583,7 +590,7 @@ namespace PRININ.RPTS
             this.xrLabel51.SizeF = new System.Drawing.SizeF(289.4166F, 16F);
             this.xrLabel51.StylePriority.UseFont = false;
             this.xrLabel51.StylePriority.UseTextAlignment = false;
-            this.xrLabel51.Text = "E-mail: judith.manzanares@skretting.com ";
+            this.xrLabel51.Text = "E-MAIL: honduras.notificaciones@skretting.com";
             this.xrLabel51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrPictureBox2
@@ -621,6 +628,8 @@ namespace PRININ.RPTS
             // 
             // xrShape3
             // 
+            this.xrShape3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[datos_numeracion_fiscal].[fecha_vence]")});
             this.xrShape3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrShape3.Name = "xrShape3";
             shapeRectangle2.Fillet = 12;
@@ -635,6 +644,7 @@ namespace PRININ.RPTS
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel28,
             this.xrLabel25,
             this.xrLabel24,
             this.xrLabel23,
@@ -643,7 +653,7 @@ namespace PRININ.RPTS
             this.xrLabel19,
             this.xrLabel30,
             this.xrShape4});
-            this.ReportFooter.HeightF = 142.2355F;
+            this.ReportFooter.HeightF = 149F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel25
@@ -652,14 +662,15 @@ namespace PRININ.RPTS
             this.xrLabel25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[datos_numeracion_fiscal].[fecha_vence]")});
             this.xrLabel25.Font = new System.Drawing.Font("Arial", 9F);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(171.875F, 55.12502F);
+            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(171.875F, 78.12506F);
             this.xrLabel25.Multiline = true;
             this.xrLabel25.Name = "xrLabel25";
             this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel25.SizeF = new System.Drawing.SizeF(63.75002F, 23F);
+            this.xrLabel25.SizeF = new System.Drawing.SizeF(128.125F, 23F);
             this.xrLabel25.StylePriority.UseFont = false;
             this.xrLabel25.Text = "xrLabel25";
-            this.xrLabel25.TextFormatString = "{0:d/M/yyyy}";
+            this.xrLabel25.TextFormatString = "{0:MM/dd/yyyy}";
+            this.xrLabel25.Visible = false;
             // 
             // xrLabel24
             // 
@@ -738,11 +749,26 @@ namespace PRININ.RPTS
             // 
             // xrShape4
             // 
+            this.xrShape4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[datos_numeracion_fiscal].[fecha_vence]")});
             this.xrShape4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12.00002F);
             this.xrShape4.Name = "xrShape4";
             shapeRectangle4.Fillet = 21;
             this.xrShape4.Shape = shapeRectangle4;
             this.xrShape4.SizeF = new System.Drawing.SizeF(748F, 114F);
+            // 
+            // xrLabel28
+            // 
+            this.xrLabel28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[datos_numeracion_fiscal].[fecha_vence]")});
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(171.875F, 55.12505F);
+            this.xrLabel28.Multiline = true;
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(128.125F, 23F);
+            this.xrLabel28.Text = "xrLabel28";
+            this.xrLabel28.TextFormatString = "{0:MM/dd/yyyy}";
+            this.xrLabel28.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrLabel28_BeforePrint);
             // 
             // RPT_Retencion_
             // 
@@ -824,5 +850,6 @@ namespace PRININ.RPTS
         private DevExpress.XtraReports.UI.XRShape xrShape4;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel28;
     }
 }

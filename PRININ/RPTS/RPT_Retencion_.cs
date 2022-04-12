@@ -29,6 +29,7 @@ namespace PRININ.RPTS
 
                 da.Fill(dsRetencion1.rpt_retencion_h);
 
+
                 cnx.Close();
 
             }
@@ -69,5 +70,16 @@ namespace PRININ.RPTS
             }
         }
 
+        private void xrLabel28_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                DateTime Datetime1 = Convert.ToDateTime(xrLabel28.Text);
+                xrLabel28.Text = string.Format("{0:MM/dd/yyyy}", Datetime1);
+            }
+            catch 
+            {
+            }
+        }
     }
 }
