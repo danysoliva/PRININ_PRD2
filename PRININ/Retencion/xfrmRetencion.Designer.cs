@@ -98,7 +98,7 @@ namespace PRININ.Retencion
             this.btnImprimir,
             this.btnAnular,
             this.cmdSearchInvoice});
-            this.gridControl1.Size = new System.Drawing.Size(1432, 462);
+            this.gridControl1.Size = new System.Drawing.Size(1261, 462);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRetencion});
@@ -115,11 +115,11 @@ namespace PRININ.Retencion
             // 
             // gvRetencion
             // 
-            this.gvRetencion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvRetencion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvRetencion.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvRetencion.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gvRetencion.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gvRetencion.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvRetencion.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvRetencion.Appearance.Row.Options.UseFont = true;
             this.gvRetencion.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -288,7 +288,7 @@ namespace PRININ.Retencion
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCerrar.ImageOptions.SvgImage")));
-            this.cmdCerrar.Location = new System.Drawing.Point(1323, 2);
+            this.cmdCerrar.Location = new System.Drawing.Point(1152, 13);
             this.cmdCerrar.Name = "cmdCerrar";
             this.cmdCerrar.Size = new System.Drawing.Size(111, 35);
             this.cmdCerrar.TabIndex = 32;
@@ -301,7 +301,7 @@ namespace PRININ.Retencion
             this.cmdNueva.Appearance.Options.UseFont = true;
             this.cmdNueva.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdNueva.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNueva.ImageOptions.Image")));
-            this.cmdNueva.Location = new System.Drawing.Point(25, 2);
+            this.cmdNueva.Location = new System.Drawing.Point(25, 13);
             this.cmdNueva.Name = "cmdNueva";
             this.cmdNueva.Size = new System.Drawing.Size(111, 35);
             this.cmdNueva.TabIndex = 31;
@@ -312,7 +312,7 @@ namespace PRININ.Retencion
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(570, 12);
+            this.labelControl2.Location = new System.Drawing.Point(449, 23);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(294, 25);
             this.labelControl2.TabIndex = 33;
@@ -322,7 +322,7 @@ namespace PRININ.Retencion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 514);
+            this.ClientSize = new System.Drawing.Size(1264, 514);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmdCerrar);
             this.Controls.Add(this.cmdNueva);
