@@ -186,7 +186,7 @@
             this.colPrint.ColumnEdit = this.repositoryItemButtonPrint;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 8;
+            this.colPrint.VisibleIndex = 7;
             this.colPrint.Width = 107;
             // 
             // repositoryItemButtonPrint
@@ -213,7 +213,7 @@
             this.colCerrar.ColumnEdit = this.button_cerrar;
             this.colCerrar.Name = "colCerrar";
             this.colCerrar.Visible = true;
-            this.colCerrar.VisibleIndex = 7;
+            this.colCerrar.VisibleIndex = 8;
             this.colCerrar.Width = 109;
             // 
             // button_cerrar

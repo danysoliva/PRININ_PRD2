@@ -48,6 +48,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalFila = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dsResolucion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -65,7 +66,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.cmdExcel.Appearance.Options.UseFont = true;
             this.cmdExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdExcel.ImageOptions.Image = global::PRININ.Properties.Resources.excel64px;
-            this.cmdExcel.Location = new System.Drawing.Point(700, 20);
+            this.cmdExcel.Location = new System.Drawing.Point(920, 20);
             this.cmdExcel.Name = "cmdExcel";
             this.cmdExcel.Size = new System.Drawing.Size(170, 35);
             this.cmdExcel.TabIndex = 33;
@@ -82,7 +83,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(870, 495);
+            this.gridControl1.Size = new System.Drawing.Size(1090, 540);
             this.gridControl1.TabIndex = 34;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -106,8 +107,14 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colPrecio,
             this.colTotalFila});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total Fila", this.colTotalFila, "(SUM OC={0:n2})")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNumOCPRININ, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colid
             // 
@@ -122,7 +129,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
             this.colProveedor.VisibleIndex = 1;
-            this.colProveedor.Width = 72;
+            this.colProveedor.Width = 109;
             // 
             // gridColumn1
             // 
@@ -131,7 +138,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 58;
+            this.gridColumn1.Width = 96;
             // 
             // colFecha
             // 
@@ -140,7 +147,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colFecha.OptionsColumn.AllowEdit = false;
             this.colFecha.Visible = true;
             this.colFecha.VisibleIndex = 2;
-            this.colFecha.Width = 72;
+            this.colFecha.Width = 92;
             // 
             // colmoneda
             // 
@@ -177,8 +184,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colNumFact.Name = "colNumFact";
             this.colNumFact.OptionsColumn.AllowEdit = false;
             this.colNumFact.Visible = true;
-            this.colNumFact.VisibleIndex = 4;
-            this.colNumFact.Width = 82;
+            this.colNumFact.VisibleIndex = 3;
+            this.colNumFact.Width = 126;
             // 
             // colNumOCSAR
             // 
@@ -186,8 +193,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colNumOCSAR.Name = "colNumOCSAR";
             this.colNumOCSAR.OptionsColumn.AllowEdit = false;
             this.colNumOCSAR.Visible = true;
-            this.colNumOCSAR.VisibleIndex = 5;
-            this.colNumOCSAR.Width = 86;
+            this.colNumOCSAR.VisibleIndex = 4;
+            this.colNumOCSAR.Width = 133;
             // 
             // colCódigo
             // 
@@ -195,8 +202,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colCódigo.Name = "colCódigo";
             this.colCódigo.OptionsColumn.AllowEdit = false;
             this.colCódigo.Visible = true;
-            this.colCódigo.VisibleIndex = 6;
-            this.colCódigo.Width = 45;
+            this.colCódigo.VisibleIndex = 5;
+            this.colCódigo.Width = 48;
             // 
             // colDescripción
             // 
@@ -204,8 +211,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colDescripción.Name = "colDescripción";
             this.colDescripción.OptionsColumn.AllowEdit = false;
             this.colDescripción.Visible = true;
-            this.colDescripción.VisibleIndex = 7;
-            this.colDescripción.Width = 80;
+            this.colDescripción.VisibleIndex = 6;
+            this.colDescripción.Width = 157;
             // 
             // colCantidad
             // 
@@ -215,8 +222,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colCantidad.Name = "colCantidad";
             this.colCantidad.OptionsColumn.AllowEdit = false;
             this.colCantidad.Visible = true;
-            this.colCantidad.VisibleIndex = 8;
-            this.colCantidad.Width = 53;
+            this.colCantidad.VisibleIndex = 7;
+            this.colCantidad.Width = 77;
             // 
             // colPrecio
             // 
@@ -226,8 +233,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.OptionsColumn.AllowEdit = false;
             this.colPrecio.Visible = true;
-            this.colPrecio.VisibleIndex = 9;
-            this.colPrecio.Width = 62;
+            this.colPrecio.VisibleIndex = 8;
+            this.colPrecio.Width = 92;
             // 
             // colTotalFila
             // 
@@ -239,14 +246,25 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             this.colTotalFila.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total Fila", "SUM={0: #,###,##0.00}")});
             this.colTotalFila.Visible = true;
-            this.colTotalFila.VisibleIndex = 10;
-            this.colTotalFila.Width = 88;
+            this.colTotalFila.VisibleIndex = 9;
+            this.colTotalFila.Width = 142;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(313, 21);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Detalle de Ordenes de Compra por Capitulo";
             // 
             // frmDetalleOC_fromCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 557);
+            this.ClientSize = new System.Drawing.Size(1092, 602);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cmdExcel);
             this.Name = "frmDetalleOC_fromCap";
@@ -255,6 +273,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -279,5 +298,6 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
         private DevExpress.XtraGrid.Columns.GridColumn colCantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colPrecio;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalFila;
+        private System.Windows.Forms.Label label1;
     }
 }

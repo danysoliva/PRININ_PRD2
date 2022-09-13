@@ -40,6 +40,8 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsResolucion1.detalle_oc_from_cap);
                 conn.Close();
+                gridView1.ExpandAllGroups();
+                gridView1.CollapseAllGroups();
             }
             catch (Exception ec)
             {

@@ -40,10 +40,10 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::PRININ.Properties.Resources.cancel_32;
-            this.simpleButton3.Location = new System.Drawing.Point(238, 170);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton3.Location = new System.Drawing.Point(159, 110);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(169, 64);
+            this.simpleButton3.Size = new System.Drawing.Size(113, 42);
             this.simpleButton3.TabIndex = 2;
             this.simpleButton3.Text = "Cancelar";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -54,10 +54,10 @@
             this.cmdOrdeneExoneradas.Appearance.Options.UseFont = true;
             this.cmdOrdeneExoneradas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdOrdeneExoneradas.ImageOptions.Image = global::PRININ.Properties.Resources.document_48;
-            this.cmdOrdeneExoneradas.Location = new System.Drawing.Point(69, 75);
-            this.cmdOrdeneExoneradas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmdOrdeneExoneradas.Location = new System.Drawing.Point(46, 49);
+            this.cmdOrdeneExoneradas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmdOrdeneExoneradas.Name = "cmdOrdeneExoneradas";
-            this.cmdOrdeneExoneradas.Size = new System.Drawing.Size(233, 70);
+            this.cmdOrdeneExoneradas.Size = new System.Drawing.Size(155, 45);
             this.cmdOrdeneExoneradas.TabIndex = 1;
             this.cmdOrdeneExoneradas.Text = "Exoneradas";
             this.cmdOrdeneExoneradas.Click += new System.EventHandler(this.cmdOrdeneExoneradas_Click);
@@ -68,26 +68,26 @@
             this.cmdOrdenesNormales.Appearance.Options.UseFont = true;
             this.cmdOrdenesNormales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdOrdenesNormales.ImageOptions.Image = global::PRININ.Properties.Resources.rp_invoice_48;
-            this.cmdOrdenesNormales.Location = new System.Drawing.Point(392, 75);
-            this.cmdOrdenesNormales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmdOrdenesNormales.Location = new System.Drawing.Point(261, 49);
+            this.cmdOrdenesNormales.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmdOrdenesNormales.Name = "cmdOrdenesNormales";
-            this.cmdOrdenesNormales.Size = new System.Drawing.Size(206, 70);
+            this.cmdOrdenesNormales.Size = new System.Drawing.Size(137, 45);
             this.cmdOrdenesNormales.TabIndex = 0;
             this.cmdOrdenesNormales.Text = "Normal";
             this.cmdOrdenesNormales.Click += new System.EventHandler(this.cmdOrdeneExenta_Click);
             // 
             // frmOrdenesC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(662, 284);
+            this.ClientSize = new System.Drawing.Size(441, 185);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.cmdOrdeneExoneradas);
             this.Controls.Add(this.cmdOrdenesNormales);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOrdenesC";
