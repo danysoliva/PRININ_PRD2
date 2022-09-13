@@ -229,7 +229,6 @@ namespace PRININ
             {
                 MessageBox.Show(string.Format("Error al guardar los datos.\n\nDetalle: {0}", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //Generate_Report("view");    // <-- TEMPORAL
 
         }
 
