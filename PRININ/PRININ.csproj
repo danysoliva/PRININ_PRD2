@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>158</ApplicationRevision>
+    <ApplicationRevision>159</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -89,7 +89,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>key_10_09_18.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -468,6 +469,9 @@
     </Compile>
     <Compile Include="Mantenimiento\frmMant.Designer.cs">
       <DependentUpon>frmMant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.cs">
+      <DependentUpon>dsResolucion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1142,7 +1146,6 @@
     <None Include="Gestion de Usuarios\dsUsers.xss">
       <DependentUpon>dsUsers.xsd</DependentUpon>
     </None>
-    <None Include="key_10_09_18.pfx" />
     <None Include="Mantenimiento\dsMante.xsc">
       <DependentUpon>dsMante.xsd</DependentUpon>
     </None>

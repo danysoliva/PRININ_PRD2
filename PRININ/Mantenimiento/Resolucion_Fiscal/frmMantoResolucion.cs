@@ -155,7 +155,36 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
                 cmd.Parameters.AddWithValue("@id_resolucion", idRes);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsResolucion1.resolucion_detalle.Clear();
+                dsResolucion1.resolucion_detalle2.Clear();
                 adat.Fill(dsResolucion1.resolucion_detalle);
+                adat.Fill(dsResolucion1.resolucion_detalle2);
+                LoadDetalleCaps_y_oc();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadDetalleCaps_y_oc()
+        {
+            try
+            {
+                int idRes = Convert.ToInt32(gridLookUpEdit1.EditValue);
+                string sql = @"sp_get_detalle_ordenes_from_cap_all";
+                DBOperations dp = new DBOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
+                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idres", idRes);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsResolucion1.detalle_oc_from_cap_and_rub.Clear();
+                adat.Fill(dsResolucion1.detalle_oc_from_cap_and_rub);
+                gridView2.ExpandAllGroups();
                 conn.Close();
             }
             catch (Exception ec)
@@ -181,9 +210,19 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             dialog.Filter = "Excel File (.xlsx)|*.xlsx";
             dialog.FilterIndex = 0;
 
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (xtraTabControl1.SelectedTabPageIndex == 0)
             {
-                gridControl1.ExportToXlsx(dialog.FileName);
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl1.ExportToXlsx(dialog.FileName);
+                }
+            }
+            else
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl2.ExportToXlsx(dialog.FileName);
+                }
             }
         }
 
@@ -220,6 +259,11 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal
             frmDetalleOC_fromCap frm = new frmDetalleOC_fromCap(row.id);
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
