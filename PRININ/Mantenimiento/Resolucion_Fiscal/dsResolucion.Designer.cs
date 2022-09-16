@@ -38,7 +38,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
         
         private resolucion_detalle2DataTable tableresolucion_detalle2;
         
-        private global::System.Data.DataRelation relationDetalle_de_OC_por_Rubro_y_CAP;
+        private global::System.Data.DataRelation relationDetalle_de_OC_por_Capitulo_y_Rubro;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -340,7 +340,7 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
                     this.tableresolucion_detalle2.InitVars();
                 }
             }
-            this.relationDetalle_de_OC_por_Rubro_y_CAP = this.Relations["Detalle de OC por Rubro y CAP"];
+            this.relationDetalle_de_OC_por_Capitulo_y_Rubro = this.Relations["Detalle de OC por Capitulo y Rubro"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -365,10 +365,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             base.Tables.Add(this.tabledetalle_oc_from_cap_and_rub);
             this.tableresolucion_detalle2 = new resolucion_detalle2DataTable();
             base.Tables.Add(this.tableresolucion_detalle2);
-            this.relationDetalle_de_OC_por_Rubro_y_CAP = new global::System.Data.DataRelation("Detalle de OC por Rubro y CAP", new global::System.Data.DataColumn[] {
-                        this.tableresolucion_detalle2.Código_RubroColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledetalle_oc_from_cap_and_rub.Rubro_CodColumn}, false);
-            this.Relations.Add(this.relationDetalle_de_OC_por_Rubro_y_CAP);
+            this.relationDetalle_de_OC_por_Capitulo_y_Rubro = new global::System.Data.DataRelation("Detalle de OC por Capitulo y Rubro", new global::System.Data.DataColumn[] {
+                        this.tableresolucion_detalle2.id_rubColumn,
+                        this.tableresolucion_detalle2.id_capColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledetalle_oc_from_cap_and_rub.rubro_idColumn,
+                        this.tabledetalle_oc_from_cap_and_rub.id_capColumn}, false);
+            this.Relations.Add(this.relationDetalle_de_OC_por_Capitulo_y_Rubro);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2329,9 +2331,11 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             
             private global::System.Data.DataColumn columnRubro_Cod;
             
-            private global::System.Data.DataColumn columnRubro;
+            private global::System.Data.DataColumn columnrubro_id;
             
             private global::System.Data.DataColumn columnCap_Cod;
+            
+            private global::System.Data.DataColumn columnid_cap;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2496,9 +2500,9 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RubroColumn {
+            public global::System.Data.DataColumn rubro_idColumn {
                 get {
-                    return this.columnRubro;
+                    return this.columnrubro_id;
                 }
             }
             
@@ -2507,6 +2511,14 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             public global::System.Data.DataColumn Cap_CodColumn {
                 get {
                     return this.columnCap_Cod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_capColumn {
+                get {
+                    return this.columnid_cap;
                 }
             }
             
@@ -2563,9 +2575,10 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
                         decimal Cantidad, 
                         decimal Precio, 
                         decimal Total_Fila, 
-                        resolucion_detalle2Row parentresolucion_detalle2RowByDetalle_de_OC_por_Rubro_y_CAP, 
-                        string Rubro, 
-                        string Cap_Cod) {
+                        string Rubro_Cod, 
+                        int rubro_id, 
+                        string Cap_Cod, 
+                        int id_cap) {
                 detalle_oc_from_cap_and_rubRow rowdetalle_oc_from_cap_and_rubRow = ((detalle_oc_from_cap_and_rubRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2583,12 +2596,10 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
                         Cantidad,
                         Precio,
                         Total_Fila,
-                        null,
-                        Rubro,
-                        Cap_Cod};
-                if ((parentresolucion_detalle2RowByDetalle_de_OC_por_Rubro_y_CAP != null)) {
-                    columnValuesArray[15] = parentresolucion_detalle2RowByDetalle_de_OC_por_Rubro_y_CAP[2];
-                }
+                        Rubro_Cod,
+                        rubro_id,
+                        Cap_Cod,
+                        id_cap};
                 rowdetalle_oc_from_cap_and_rubRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_oc_from_cap_and_rubRow);
                 return rowdetalle_oc_from_cap_and_rubRow;
@@ -2627,8 +2638,9 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
                 this.columnPrecio = base.Columns["Precio"];
                 this.columnTotal_Fila = base.Columns["Total Fila"];
                 this.columnRubro_Cod = base.Columns["Rubro_Cod"];
-                this.columnRubro = base.Columns["Rubro"];
+                this.columnrubro_id = base.Columns["rubro_id"];
                 this.columnCap_Cod = base.Columns["Cap_Cod"];
+                this.columnid_cap = base.Columns["id_cap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2668,10 +2680,12 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
                 base.Columns.Add(this.columnTotal_Fila);
                 this.columnRubro_Cod = new global::System.Data.DataColumn("Rubro_Cod", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRubro_Cod);
-                this.columnRubro = new global::System.Data.DataColumn("Rubro", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRubro);
+                this.columnrubro_id = new global::System.Data.DataColumn("rubro_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrubro_id);
                 this.columnCap_Cod = new global::System.Data.DataColumn("Cap_Cod", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCap_Cod);
+                this.columnid_cap = new global::System.Data.DataColumn("id_cap", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cap);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4863,18 +4877,18 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Rubro {
+            public int rubro_id {
                 get {
                     try {
-                        return ((string)(this[this.tabledetalle_oc_from_cap_and_rub.RubroColumn]));
+                        return ((int)(this[this.tabledetalle_oc_from_cap_and_rub.rubro_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Rubro\' de la tabla \'detalle_oc_from_cap_and_rub\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'rubro_id\' de la tabla \'detalle_oc_from_cap_and_rub\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tabledetalle_oc_from_cap_and_rub.RubroColumn] = value;
+                    this[this.tabledetalle_oc_from_cap_and_rub.rubro_idColumn] = value;
                 }
             }
             
@@ -4897,12 +4911,29 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resolucion_detalle2Row resolucion_detalle2Row {
+            public int id_cap {
                 get {
-                    return ((resolucion_detalle2Row)(this.GetParentRow(this.Table.ParentRelations["Detalle de OC por Rubro y CAP"])));
+                    try {
+                        return ((int)(this[this.tabledetalle_oc_from_cap_and_rub.id_capColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cap\' de la tabla \'detalle_oc_from_cap_and_rub\' es DBNu" +
+                                "ll.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Detalle de OC por Rubro y CAP"]);
+                    this[this.tabledetalle_oc_from_cap_and_rub.id_capColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resolucion_detalle2Row resolucion_detalle2RowParent {
+                get {
+                    return ((resolucion_detalle2Row)(this.GetParentRow(this.Table.ParentRelations["Detalle de OC por Capitulo y Rubro"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Detalle de OC por Capitulo y Rubro"]);
                 }
             }
             
@@ -5100,14 +5131,14 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsRubroNull() {
-                return this.IsNull(this.tabledetalle_oc_from_cap_and_rub.RubroColumn);
+            public bool Isrubro_idNull() {
+                return this.IsNull(this.tabledetalle_oc_from_cap_and_rub.rubro_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetRubroNull() {
-                this[this.tabledetalle_oc_from_cap_and_rub.RubroColumn] = global::System.Convert.DBNull;
+            public void Setrubro_idNull() {
+                this[this.tabledetalle_oc_from_cap_and_rub.rubro_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5120,6 +5151,18 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCap_CodNull() {
                 this[this.tabledetalle_oc_from_cap_and_rub.Cap_CodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_capNull() {
+                return this.IsNull(this.tabledetalle_oc_from_cap_and_rub.id_capColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_capNull() {
+                this[this.tabledetalle_oc_from_cap_and_rub.id_capColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5539,11 +5582,11 @@ namespace PRININ.Mantenimiento.Resolucion_Fiscal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_oc_from_cap_and_rubRow[] Getdetalle_oc_from_cap_and_rubRows() {
-                if ((this.Table.ChildRelations["Detalle de OC por Rubro y CAP"] == null)) {
+                if ((this.Table.ChildRelations["Detalle de OC por Capitulo y Rubro"] == null)) {
                     return new detalle_oc_from_cap_and_rubRow[0];
                 }
                 else {
-                    return ((detalle_oc_from_cap_and_rubRow[])(base.GetChildRows(this.Table.ChildRelations["Detalle de OC por Rubro y CAP"])));
+                    return ((detalle_oc_from_cap_and_rubRow[])(base.GetChildRows(this.Table.ChildRelations["Detalle de OC por Capitulo y Rubro"])));
                 }
             }
         }

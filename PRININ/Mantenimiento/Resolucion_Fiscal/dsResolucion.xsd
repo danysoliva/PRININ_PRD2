@@ -106,8 +106,9 @@
               <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
               <xs:element name="Total_x0020_Fila" msprop:Generator_ColumnVarNameInTable="columnTotal_Fila" msprop:Generator_ColumnPropNameInRow="Total_Fila" msprop:Generator_ColumnPropNameInTable="Total_FilaColumn" msprop:Generator_UserColumnName="Total Fila" type="xs:decimal" minOccurs="0" />
               <xs:element name="Rubro_Cod" msprop:Generator_ColumnVarNameInTable="columnRubro_Cod" msprop:Generator_ColumnPropNameInRow="Rubro_Cod" msprop:Generator_ColumnPropNameInTable="Rubro_CodColumn" msprop:Generator_UserColumnName="Rubro_Cod" type="xs:string" minOccurs="0" />
-              <xs:element name="Rubro" msprop:Generator_ColumnVarNameInTable="columnRubro" msprop:Generator_ColumnPropNameInRow="Rubro" msprop:Generator_ColumnPropNameInTable="RubroColumn" msprop:Generator_UserColumnName="Rubro" type="xs:string" minOccurs="0" />
+              <xs:element name="rubro_id" msprop:Generator_ColumnVarNameInTable="columnrubro_id" msprop:Generator_ColumnPropNameInRow="rubro_id" msprop:Generator_ColumnPropNameInTable="rubro_idColumn" msprop:Generator_UserColumnName="rubro_id" type="xs:int" minOccurs="0" />
               <xs:element name="Cap_Cod" msprop:Generator_ColumnVarNameInTable="columnCap_Cod" msprop:Generator_ColumnPropNameInRow="Cap_Cod" msprop:Generator_ColumnPropNameInTable="Cap_CodColumn" msprop:Generator_UserColumnName="Cap_Cod" type="xs:string" minOccurs="0" />
+              <xs:element name="id_cap" msprop:Generator_ColumnVarNameInTable="columnid_cap" msprop:Generator_ColumnPropNameInRow="id_cap" msprop:Generator_ColumnPropNameInTable="id_capColumn" msprop:Generator_UserColumnName="id_cap" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -136,7 +137,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Detalle_x0020_de_x0020_OC_x0020_por_x0020_Rubro_x0020_y_x0020_CAP" msdata:parent="resolucion_detalle2" msdata:child="detalle_oc_from_cap_and_rub" msdata:parentkey="Código_x0020_Rubro" msdata:childkey="Rubro_Cod" msprop:Generator_UserChildTable="detalle_oc_from_cap_and_rub" msprop:Generator_ChildPropName="Getdetalle_oc_from_cap_and_rubRows" msprop:Generator_UserRelationName="Detalle de OC por Rubro y CAP" msprop:Generator_RelationVarName="relationDetalle_de_OC_por_Rubro_y_CAP" msprop:Generator_UserParentTable="resolucion_detalle2" msprop:Generator_ParentPropName="resolucion_detalle2Row" />
+      <msdata:Relationship name="Detalle_x0020_de_x0020_OC_x0020_por_x0020_Capitulo_x0020_y_x0020_Rubro" msdata:parent="resolucion_detalle2" msdata:child="detalle_oc_from_cap_and_rub" msdata:parentkey="id_rub id_cap" msdata:childkey="rubro_id id_cap" msprop:Generator_UserChildTable="detalle_oc_from_cap_and_rub" msprop:Generator_ChildPropName="Getdetalle_oc_from_cap_and_rubRows" msprop:Generator_UserRelationName="Detalle de OC por Capitulo y Rubro" msprop:Generator_RelationVarName="relationDetalle_de_OC_por_Capitulo_y_Rubro" msprop:Generator_UserParentTable="resolucion_detalle2" msprop:Generator_ParentPropName="resolucion_detalle2RowParent" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
