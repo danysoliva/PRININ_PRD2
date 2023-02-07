@@ -68,7 +68,7 @@ namespace PRININ
         private void ValidateUserInfo()
         {
             Users user = new Users();
-             string usuario = user.EncrypPassword("Nutreco");//Users.EncrypPassword("Nutreco"); 
+            string usuario = user.EncrypPassword("Nutreco");//Users.EncrypPassword("Nutreco"); 
             #region OldCod
             //try
             //{

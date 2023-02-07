@@ -105,7 +105,8 @@ namespace PRININ.Classes
                     if (!dr.IsDBNull(dr.GetOrdinal("created_from")))
                         created_from = dr.GetString(15);
 
-                    cust_po_number = dr.GetString(16);
+                    if (!dr.IsDBNull(dr.GetOrdinal("cust_po_number")))
+                        cust_po_number = dr.GetString(16);
 
                     id_credit_term = dr.GetInt32(17);
 
