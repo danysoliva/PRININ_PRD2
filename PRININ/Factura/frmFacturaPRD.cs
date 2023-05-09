@@ -126,7 +126,8 @@ namespace PRININ.Factura
                 string sql = @"sp_get_detalles_factura";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                //string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                string ConnectionString = dp.ConnectionStringPRININ;
                 SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -218,7 +219,8 @@ namespace PRININ.Factura
                                   where id_invoice_header =@id";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                //string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                string ConnectionString = dp.ConnectionStringPRININ;
                 SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);

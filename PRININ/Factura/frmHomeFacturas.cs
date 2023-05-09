@@ -34,7 +34,8 @@ namespace PRININ.Factura
             {
                 string sql = @"sp_get_home_facturas_united";
                 DBOperations dp = new DBOperations();
-                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                //string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                string ConnectionString = dp.ConnectionStringPRININ;
                 SqlConnection conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);

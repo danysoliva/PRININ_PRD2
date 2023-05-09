@@ -64,7 +64,8 @@ namespace PRININ.Classes
                 string sql = @"sp_get_facturas_united_header";
                 DBOperations dp = new DBOperations();
                 //SqlConnection conn = new SqlConnection(dp.ConnectionStringPRININ);
-                string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                //string ConnectionString = dp.Get_Prinin_db_window_assigned(this.CodeWindow);
+                string ConnectionString = dp.ConnectionStringPRININ;
                 SqlConnection conn = new SqlConnection(ConnectionString);
 
                 conn.Open();
