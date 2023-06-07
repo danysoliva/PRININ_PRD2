@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRININ", "PRININ\PRININ.csproj", "{3EDC8BDC-E426-431C-8F08-AA94128A60FA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstallPrinin", "InstallPrinin\InstallPrinin.vdproj", "{8F421EE5-487B-41E1-B6F6-1023008FD627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,12 @@ Global
 		{3EDC8BDC-E426-431C-8F08-AA94128A60FA}.Release|x86.ActiveCfg = Release|x86
 		{3EDC8BDC-E426-431C-8F08-AA94128A60FA}.Release|x86.Build.0 = Release|x86
 		{3EDC8BDC-E426-431C-8F08-AA94128A60FA}.Release|x86.Deploy.0 = Release|x86
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Debug|Any CPU.ActiveCfg = Debug
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Debug|x64.ActiveCfg = Debug
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Debug|x86.ActiveCfg = Debug
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Release|Any CPU.ActiveCfg = Release
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Release|x64.ActiveCfg = Release
+		{8F421EE5-487B-41E1-B6F6-1023008FD627}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
