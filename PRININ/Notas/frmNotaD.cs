@@ -127,7 +127,7 @@ namespace PRININ.Notas
                             break;
                     }
                     string Leyenda = "Por este medio le notificamos que le estamos " + Evento +
-                                     " a su apreciable cuanta los valores antes mencionado por el siguiente concepto:";
+                                     " a su apreciable cuenta los valores antes mencionado por el siguiente concepto:";
                     DateTime fechai = DateTime.Now;
                     string ini = "";
                     string fin = "";
