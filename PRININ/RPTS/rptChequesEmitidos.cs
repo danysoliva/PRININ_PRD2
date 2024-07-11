@@ -104,12 +104,12 @@ namespace PRININ.RPTS
 
         }
 
-        private void rptChequesEmitidos_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void rptChequesEmitidos_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void xrLabel13_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel13_BeforePrint(object sender, CancelEventArgs e)
         {
                     }
     }

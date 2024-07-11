@@ -60,7 +60,7 @@
             // 
             // lblValor
             // 
-            this.lblValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblValor.LocationFloat = new DevExpress.Utils.PointFloat(451.0417F, 122.9583F);
             this.lblValor.Name = "lblValor";
             this.lblValor.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -72,7 +72,7 @@
             // 
             // lblFecha
             // 
-            this.lblFecha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblFecha.LocationFloat = new DevExpress.Utils.PointFloat(395.7917F, 86.95834F);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -82,7 +82,7 @@
             // 
             // lblLetras
             // 
-            this.lblLetras.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLetras.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblLetras.LocationFloat = new DevExpress.Utils.PointFloat(0F, 166.7084F);
             this.lblLetras.Name = "lblLetras";
             this.lblLetras.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -92,7 +92,7 @@
             // 
             // lblLeyenda
             // 
-            this.lblLeyenda.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeyenda.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblLeyenda.LocationFloat = new DevExpress.Utils.PointFloat(50F, 58.66668F);
             this.lblLeyenda.Name = "lblLeyenda";
             this.lblLeyenda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -102,7 +102,7 @@
             // 
             // lblNombre
             // 
-            this.lblNombre.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblNombre.LocationFloat = new DevExpress.Utils.PointFloat(0F, 127.9584F);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -123,7 +123,7 @@
             this.Detail,
             this.TopMargin,
             this.BottomMargin});
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 195, 33);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 195, 33);
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

@@ -70,7 +70,7 @@ namespace PRININ.RPTS
             }
         }
 
-        private void xrLabel28_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel28_BeforePrint(object sender, CancelEventArgs e)
         {
             try
             {

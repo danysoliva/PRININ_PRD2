@@ -24,7 +24,7 @@ namespace PRININ.RPTS
             lblTotal.Text = lblSub.Text = string.Format("{0:###,##0.00}", pTotal);
         }
 
-        private void RPT_OrdenCompra_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void RPT_OrdenCompra_BeforePrint(object sender, CancelEventArgs e)
         {
             
         }

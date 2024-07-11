@@ -291,7 +291,7 @@
             // 
             // lblLeyenda
             // 
-            this.lblLeyenda.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.lblLeyenda.Font = new DevExpress.Drawing.DXFont("Calibri", 9.75F);
             this.lblLeyenda.LocationFloat = new DevExpress.Utils.PointFloat(2.166271F, 268.0833F);
             this.lblLeyenda.Name = "lblLeyenda";
             this.lblLeyenda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -302,7 +302,7 @@
             // xrTable2
             // 
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)));
-            this.xrTable2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 370.5416F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -409,7 +409,7 @@
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(415.7916F, 152.9999F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -421,7 +421,7 @@
             // 
             // lblFechaVence
             // 
-            this.lblFechaVence.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblFechaVence.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblFechaVence.LocationFloat = new DevExpress.Utils.PointFloat(542.9165F, 152.9999F);
             this.lblFechaVence.Name = "lblFechaVence";
             this.lblFechaVence.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -433,7 +433,7 @@
             // 
             // xrLabel51
             // 
-            this.xrLabel51.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel51.Font = new DevExpress.Drawing.DXFont("Calibri", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel51.LocationFloat = new DevExpress.Utils.PointFloat(174.9586F, 75F);
             this.xrLabel51.Name = "xrLabel51";
             this.xrLabel51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -445,7 +445,7 @@
             // 
             // lblOtras
             // 
-            this.lblOtras.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOtras.Font = new DevExpress.Drawing.DXFont("Calibri", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblOtras.LocationFloat = new DevExpress.Utils.PointFloat(2.812417F, 222F);
             this.lblOtras.Name = "lblOtras";
             this.lblOtras.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -457,7 +457,7 @@
             // 
             // xrLabel14
             // 
-            this.xrLabel14.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Calibri", 9.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(2.812417F, 198.9999F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -469,7 +469,7 @@
             // 
             // lblCorrelativo
             // 
-            this.lblCorrelativo.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCorrelativo.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblCorrelativo.LocationFloat = new DevExpress.Utils.PointFloat(182.0207F, 198.9999F);
             this.lblCorrelativo.Name = "lblCorrelativo";
             this.lblCorrelativo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -481,7 +481,7 @@
             // 
             // lblCaiComp
             // 
-            this.lblCaiComp.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCaiComp.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblCaiComp.LocationFloat = new DevExpress.Utils.PointFloat(130.8124F, 175.9999F);
             this.lblCaiComp.Name = "lblCaiComp";
             this.lblCaiComp.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -493,7 +493,7 @@
             // 
             // xrLabel9
             // 
-            this.xrLabel9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Calibri", 9.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(2.812417F, 175.9999F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -505,7 +505,7 @@
             // 
             // xrLabel8
             // 
-            this.xrLabel8.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(415.7916F, 175.9999F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -517,7 +517,7 @@
             // 
             // lblTasaCambio
             // 
-            this.lblTasaCambio.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.lblTasaCambio.Font = new DevExpress.Drawing.DXFont("Calibri", 9.75F);
             this.lblTasaCambio.LocationFloat = new DevExpress.Utils.PointFloat(542.9164F, 175.9999F);
             this.lblTasaCambio.Name = "lblTasaCambio";
             this.lblTasaCambio.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -537,7 +537,7 @@
             // 
             // lblCAI
             // 
-            this.lblCAI.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCAI.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblCAI.LocationFloat = new DevExpress.Utils.PointFloat(103.1245F, 152.9999F);
             this.lblCAI.Name = "lblCAI";
             this.lblCAI.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -549,7 +549,7 @@
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(2.812417F, 152.9999F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -570,7 +570,7 @@
             // lblTituloDocumento
             // 
             this.lblTituloDocumento.BackColor = System.Drawing.Color.Transparent;
-            this.lblTituloDocumento.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDocumento.Font = new DevExpress.Drawing.DXFont("Calibri", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblTituloDocumento.LocationFloat = new DevExpress.Utils.PointFloat(529.8533F, 40.99997F);
             this.lblTituloDocumento.Name = "lblTituloDocumento";
             this.lblTituloDocumento.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -583,7 +583,7 @@
             // 
             // lblRTN
             // 
-            this.lblRTN.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblRTN.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblRTN.LocationFloat = new DevExpress.Utils.PointFloat(103.1245F, 129.9999F);
             this.lblRTN.Name = "lblRTN";
             this.lblRTN.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -595,7 +595,7 @@
             // 
             // xrLabel19
             // 
-            this.xrLabel19.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(2.166271F, 129.9999F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -607,7 +607,7 @@
             // 
             // lblNombreCLiente
             // 
-            this.lblNombreCLiente.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblNombreCLiente.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblNombreCLiente.LocationFloat = new DevExpress.Utils.PointFloat(203.1245F, 106.9999F);
             this.lblNombreCLiente.Name = "lblNombreCLiente";
             this.lblNombreCLiente.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -619,7 +619,7 @@
             // 
             // lblCodigoCliente
             // 
-            this.lblCodigoCliente.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCodigoCliente.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblCodigoCliente.LocationFloat = new DevExpress.Utils.PointFloat(103.1245F, 106.9999F);
             this.lblCodigoCliente.Name = "lblCodigoCliente";
             this.lblCodigoCliente.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -631,7 +631,7 @@
             // 
             // xrLabel15
             // 
-            this.xrLabel15.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(2.166271F, 106.9999F);
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -643,7 +643,7 @@
             // 
             // lblNumeroDoc
             // 
-            this.lblNumeroDoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroDoc.Font = new DevExpress.Drawing.DXFont("Times New Roman", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblNumeroDoc.LocationFloat = new DevExpress.Utils.PointFloat(529.8533F, 63.99992F);
             this.lblNumeroDoc.Name = "lblNumeroDoc";
             this.lblNumeroDoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -655,7 +655,7 @@
             // 
             // lblFecha
             // 
-            this.lblFecha.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblFecha.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblFecha.LocationFloat = new DevExpress.Utils.PointFloat(542.9164F, 129.9999F);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -667,7 +667,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Calibri", 18F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(174.9586F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -679,7 +679,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Calibri", 10F);
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(174.9586F, 23.99999F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -691,7 +691,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Calibri", 10F);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(174.9586F, 40.99997F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -703,7 +703,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new System.Drawing.Font("Calibri", 10F);
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(174.9586F, 58.00002F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -715,7 +715,7 @@
             // 
             // xrLabel5
             // 
-            this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(529.8533F, 86.99991F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -727,7 +727,7 @@
             // 
             // xrLabel12
             // 
-            this.xrLabel12.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(491.8747F, 129.9999F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -739,7 +739,7 @@
             // 
             // txtConcepto
             // 
-            this.txtConcepto.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConcepto.Font = new DevExpress.Drawing.DXFont("Calibri", 11.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtConcepto.LocationFloat = new DevExpress.Utils.PointFloat(2.812115F, 322.0833F);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -749,7 +749,7 @@
             // 
             // lblNumeroInicial
             // 
-            this.lblNumeroInicial.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblNumeroInicial.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblNumeroInicial.LocationFloat = new DevExpress.Utils.PointFloat(553.77F, 10.00003F);
             this.lblNumeroInicial.Name = "lblNumeroInicial";
             this.lblNumeroInicial.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -761,7 +761,7 @@
             // 
             // xrLabel13
             // 
-            this.xrLabel13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(453.7698F, 10F);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -773,7 +773,7 @@
             // 
             // lblNumeroFinal
             // 
-            this.lblNumeroFinal.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblNumeroFinal.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblNumeroFinal.LocationFloat = new DevExpress.Utils.PointFloat(553.77F, 32.99992F);
             this.lblNumeroFinal.Name = "lblNumeroFinal";
             this.lblNumeroFinal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -785,7 +785,7 @@
             // 
             // xrLabel10
             // 
-            this.xrLabel10.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(453.7698F, 32.99995F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -797,7 +797,7 @@
             // 
             // xrLabel7
             // 
-            this.xrLabel7.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(401.0411F, 55.99997F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -809,7 +809,7 @@
             // 
             // lblFechaLimite
             // 
-            this.lblFechaLimite.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblFechaLimite.Font = new DevExpress.Drawing.DXFont("Calibri", 10F);
             this.lblFechaLimite.LocationFloat = new DevExpress.Utils.PointFloat(553.77F, 55.99987F);
             this.lblFechaLimite.Name = "lblFechaLimite";
             this.lblFechaLimite.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -821,7 +821,7 @@
             // 
             // lblValorLetras
             // 
-            this.lblValorLetras.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorLetras.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblValorLetras.LocationFloat = new DevExpress.Utils.PointFloat(3.291671F, 58.08353F);
             this.lblValorLetras.Name = "lblValorLetras";
             this.lblValorLetras.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -833,7 +833,7 @@
             // 
             // lblMonto
             // 
-            this.lblMonto.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblMonto.Font = new DevExpress.Drawing.DXFont("Calibri", 18F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblMonto.LocationFloat = new DevExpress.Utils.PointFloat(541.9573F, 0F);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -845,7 +845,7 @@
             // 
             // lblSignoMoneda
             // 
-            this.lblSignoMoneda.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSignoMoneda.Font = new DevExpress.Drawing.DXFont("Calibri", 18F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblSignoMoneda.LocationFloat = new DevExpress.Utils.PointFloat(479.4574F, 0F);
             this.lblSignoMoneda.Name = "lblSignoMoneda";
             this.lblSignoMoneda.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -858,7 +858,7 @@
             // xrLabel22
             // 
             this.xrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrLabel22.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(406.3319F, 235.3751F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -872,7 +872,7 @@
             // xrLabel21
             // 
             this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrLabel21.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(37.58218F, 235.3751F);
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -924,7 +924,7 @@
             // 
             // xrLabel17
             // 
-            this.xrLabel17.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Calibri", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(4.250797F, 10.00003F);
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -959,7 +959,7 @@
             // 
             // lblValorHNL
             // 
-            this.lblValorHNL.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblValorHNL.Font = new DevExpress.Drawing.DXFont("Calibri", 18F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblValorHNL.LocationFloat = new DevExpress.Utils.PointFloat(541.9579F, 23F);
             this.lblValorHNL.Name = "lblValorHNL";
             this.lblValorHNL.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -971,7 +971,7 @@
             // 
             // xrLabel18
             // 
-            this.xrLabel18.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Calibri", 18F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(479.4574F, 23F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -996,7 +996,7 @@
             this.total_words_mask,
             this.Texto});
             this.DataSourceSchema = resources.GetString("$this.DataSourceSchema");
-            this.Margins = new System.Drawing.Printing.Margins(71, 74, 24, 17);
+            this.Margins = new DevExpress.Drawing.DXMargins(71, 74, 24, 17);
             this.Version = "18.2";
             this.Watermark.Text = "ANULADA";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

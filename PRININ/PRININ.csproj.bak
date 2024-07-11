@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PRININ</RootNamespace>
     <AssemblyName>PRININ</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -29,7 +29,7 @@
     <PublisherName>Promix S.A. de C.V.</PublisherName>
     <SuiteName>PRININ</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>103</ApplicationRevision>
+    <ApplicationRevision>162</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -89,7 +89,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>key_10_09_18.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -105,192 +106,142 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.BonusSkins.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.BonusSkins.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.CodeParser.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.CodeParser.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Data.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.DataAccess.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Data.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.DataAccess.v18.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.DemoData.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.DemoData.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.DataAccess.v23.1.UI, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.DemoData.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.DemoData.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.DemoData.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Diagram.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.DemoData.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Dialogs.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Diagram.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Docs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Docs.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Dialogs.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Images.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.DataVisualization.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Office.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.TreeMap.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Pdf.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Docs.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Pdf.v18.2.Drawing.dll</HintPath>
+    <Reference Include="DevExpress.Images.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.PivotGrid.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Printing.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.RichEdit.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Pdf.v23.1.Drawing, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.RichEdit.v18.2.Export.dll</HintPath>
+    <Reference Include="DevExpress.PivotGrid.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Sparkline.v18.2.Core">
+    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.1.Export, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v23.1.Core">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Utils.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.Utils.v18.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraBars.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraCharts.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraCharts.v18.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraCharts.v18.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v23.1.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraCharts.v18.2.Web.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v23.1.UI, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraCharts.v18.2.Wizard.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v23.1.Web, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraDiagram.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraDiagram.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v23.1.Wizard, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraDialogs.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraDiagram.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraEditors.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraDialogs.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraGauges.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraGauges.v18.2.Presets.dll</HintPath>
+    <Reference Include="DevExpress.XtraGauges.v23.1.Presets, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraGauges.v18.2.Win.dll</HintPath>
+    <Reference Include="DevExpress.XtraGauges.v23.1.Win, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraGrid.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraLayout.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraMap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraMap.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraMap.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraNavBar.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraPdfViewer.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPdfViewer.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraPivotGrid.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPivotGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraPrinting.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.CodeCompletion, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.CodeCompletion.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.CodeCompletion, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Service, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.Service.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.Service, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.Web.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.Web, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web.Azure, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.Web.Azure.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.Web.Azure, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v18.2.Web.WebForms, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraReports.v18.2.Web.WebForms.dll</HintPath>
+    <Reference Include="DevExpress.XtraReports.v23.1.Web.WebForms, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraRichEdit.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraRichEdit.v18.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core.Desktop, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Core, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.GoogleCalendar, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.GoogleCalendar.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.GoogleCalendar, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Reporting, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.Reporting.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Reporting, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v18.2.Reporting.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraScheduler.v18.2.Reporting.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v23.1.Reporting.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraSpellChecker.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraSpellChecker.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraSpellChecker.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraSpreadsheet.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraSpreadsheet.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraSpreadsheet.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraTreeList.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraTreeMap.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraTreeMap.v23.1.UI, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraVerticalGrid.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraTreeMap.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraWizard.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\XtraEditor.Controls.18.2.7\lib\net45\DevExpress.XtraWizard.v18.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraVerticalGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -308,6 +259,12 @@
     <Compile Include="Classes\ConversorNumALetras.cs" />
     <Compile Include="Classes\ConversorNumALetrasDolares.cs" />
     <Compile Include="Classes\DBOperations.cs" />
+    <Compile Include="Classes\DocsFiscales.cs" />
+    <Compile Include="Classes\FacturaH.cs" />
+    <Compile Include="Classes\Nota.cs" />
+    <Compile Include="Classes\PS_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\Functions.cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Monedas.cs" />
@@ -376,6 +333,12 @@
     <Compile Include="Compras\frmReporteSaldos.Designer.cs">
       <DependentUpon>frmReporteSaldos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmseleccionarCapitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmseleccionarCapitulo.Designer.cs">
+      <DependentUpon>frmseleccionarCapitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\RPT_OrdenCompra.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -388,10 +351,45 @@
     <Compile Include="Compras\RPT_OrdenCompra_Normal.Designer.cs">
       <DependentUpon>RPT_OrdenCompra_Normal.cs</DependentUpon>
     </Compile>
+    <Compile Include="DEV\frmDEV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEV\frmDEV.Designer.cs">
+      <DependentUpon>frmDEV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DEV\frmGenerateXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DEV\frmGenerateXML.Designer.cs">
+      <DependentUpon>frmGenerateXML.cs</DependentUpon>
+    </Compile>
     <Compile Include="dsCheques.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCheques.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\dsFacturasPRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\frmFacturaPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\frmFacturaPRD.Designer.cs">
+      <DependentUpon>frmFacturaPRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\frmHomeFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\frmHomeFacturas.Designer.cs">
+      <DependentUpon>frmHomeFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura\RPT_FacturaPRD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Factura\RPT_FacturaPRD.Designer.cs">
+      <DependentUpon>RPT_FacturaPRD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCheques.cs">
       <SubType>Form</SubType>
@@ -469,6 +467,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMante.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\frmCAIProv_V2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmCAIProv_V2.Designer.cs">
+      <DependentUpon>frmCAIProv_V2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento\frmCAIProv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,11 +485,86 @@
     <Compile Include="Mantenimiento\frmMant.Designer.cs">
       <DependentUpon>frmMant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.cs">
+      <DependentUpon>dsResolucion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResolucion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.Designer.cs">
+      <DependentUpon>frmDetalleOC_fromCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.Designer.cs">
+      <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.Designer.cs">
+      <DependentUpon>frmEditCapitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.Designer.cs">
+      <DependentUpon>frmNewCapitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\Model\ResolucionFiscal.cs" />
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.Designer.cs">
+      <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\dsRubros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRubros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\Model\Capitulo.cs" />
+    <Compile Include="Mantenimiento\Rubros\xfrmCapituloCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapituloCRUD.Designer.cs">
+      <DependentUpon>xfrmCapituloCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmCapitulos.Designer.cs">
+      <DependentUpon>xfrmCapitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubros.Designer.cs">
+      <DependentUpon>xfrmRubros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubrosCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Rubros\xfrmRubrosCRUD.Designer.cs">
+      <DependentUpon>xfrmRubrosCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimiento_Correlativo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento_Correlativo.Designer.cs">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParentPRININ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParentPRININ.Designer.cs">
+      <DependentUpon>MDIParentPRININ.cs</DependentUpon>
     </Compile>
     <Compile Include="ND_NC_OptionsPrint.cs">
       <SubType>Form</SubType>
@@ -504,6 +583,53 @@
     </Compile>
     <Compile Include="invoice_OptionsPrint.Designer.cs">
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\dsNotasUNITE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\frmDueDateND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmDueDateND.Designer.cs">
+      <DependentUpon>frmDueDateND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\frmExploreFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmExploreFactura.Designer.cs">
+      <DependentUpon>frmExploreFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\frmNotaD_UNITE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmNotaD_UNITE.Designer.cs">
+      <DependentUpon>frmNotaD_UNITE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\frmTipoNotaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\frmTipoNotaCredito.Designer.cs">
+      <DependentUpon>frmTipoNotaCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Concept.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Concept.Designer.cs">
+      <DependentUpon>RPT_NC_Concept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Items.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_NC_Items.Designer.cs">
+      <DependentUpon>RPT_NC_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_ND.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notas UNITE\RPT_ND.Designer.cs">
+      <DependentUpon>RPT_ND.cs</DependentUpon>
     </Compile>
     <Compile Include="Notas\dsNotas.cs">
       <DependentUpon>dsNotas.xsd</DependentUpon>
@@ -543,6 +669,24 @@
     <Compile Include="Notas\frmNotaD.Designer.cs">
       <DependentUpon>frmNotaD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numeracion Fiscal\dsNumeracionFiscal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscal.designer.cs">
+      <DependentUpon>frmNumeracionFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.designer.cs">
+      <DependentUpon>frmNumeracionFiscalCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numeracion Fiscal\Model\NumeracionFiscal.cs" />
     <Compile Include="Pedidos\dsPedidos.cs">
       <DependentUpon>dsPedidos.xsd</DependentUpon>
     </Compile>
@@ -586,6 +730,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retencion\dsRetencion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmCAIProveedoresAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmCAIProveedoresAdmin.Designer.cs">
+      <DependentUpon>xfrmCAIProveedoresAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmFindProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmFindProvider.Designer.cs">
+      <DependentUpon>xfrmFindProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencion.Designer.cs">
+      <DependentUpon>xfrmRetencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencionNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retencion\xfrmRetencionNew.Designer.cs">
+      <DependentUpon>xfrmRetencionNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="RPTS\rptChequesEmitidos.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -634,6 +807,18 @@
     <Compile Include="RPTS\RPT_CHQUE.Designer.cs">
       <DependentUpon>RPT_CHQUE.cs</DependentUpon>
     </Compile>
+    <Compile Include="RPTS\RPT_RETENCION.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RPT_RETENCION.Designer.cs">
+      <DependentUpon>RPT_RETENCION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPTS\RPT_Retencion_.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPTS\RPT_Retencion_.Designer.cs">
+      <DependentUpon>RPT_Retencion_.cs</DependentUpon>
+    </Compile>
     <Compile Include="TEMP_JV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -658,6 +843,9 @@
     <Compile Include="WaitForm1.Designer.cs">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Classes\PS_Button.resx">
+      <DependentUpon>PS_Button.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenCompraNormal.resx">
       <DependentUpon>frmOrdenCompraNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -685,12 +873,31 @@
     <EmbeddedResource Include="Compras\frmReporteSaldos.resx">
       <DependentUpon>frmReporteSaldos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmseleccionarCapitulo.resx">
+      <DependentUpon>frmseleccionarCapitulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\RPT_OrdenCompra.resx">
       <DependentUpon>RPT_OrdenCompra.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\RPT_OrdenCompra_Normal.resx">
       <DependentUpon>RPT_OrdenCompra_Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEV\frmDEV.resx">
+      <DependentUpon>frmDEV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DEV\frmGenerateXML.resx">
+      <DependentUpon>frmGenerateXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\frmFacturaPRD.resx">
+      <DependentUpon>frmFacturaPRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\frmHomeFacturas.resx">
+      <DependentUpon>frmHomeFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura\RPT_FacturaPRD.resx">
+      <DependentUpon>RPT_FacturaPRD.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCheques.resx">
       <DependentUpon>frmCheques.cs</DependentUpon>
@@ -726,15 +933,48 @@
     <EmbeddedResource Include="LoginPrinin.resx">
       <DependentUpon>LoginPrinin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmCAIProv_V2.resx">
+      <DependentUpon>frmCAIProv_V2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmCAIProv.resx">
       <DependentUpon>frmCAIProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmMant.resx">
       <DependentUpon>frmMant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmDetalleOC_fromCap.resx">
+      <DependentUpon>frmDetalleOC_fromCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmMantoResolucion.resx">
+      <DependentUpon>frmMantoResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmEditCapitulo.resx">
+      <DependentUpon>frmEditCapitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\frmNewCapitulo.resx">
+      <DependentUpon>frmNewCapitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Resolucion_Fiscal\xfrmResolucionFiscalCRUD.resx">
+      <DependentUpon>xfrmResolucionFiscalCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmCapituloCRUD.resx">
+      <DependentUpon>xfrmCapituloCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmCapitulos.resx">
+      <DependentUpon>xfrmCapitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmRubros.resx">
+      <DependentUpon>xfrmRubros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Rubros\xfrmRubrosCRUD.resx">
+      <DependentUpon>xfrmRubrosCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento_Correlativo.resx">
       <DependentUpon>Mantenimiento_Correlativo.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParentPRININ.resx">
+      <DependentUpon>MDIParentPRININ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ND_NC_OptionsPrint.resx">
       <DependentUpon>ND_NC_OptionsPrint.cs</DependentUpon>
@@ -746,6 +986,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="invoice_OptionsPrint.resx">
       <DependentUpon>invoice_OptionsPrint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmDueDateND.resx">
+      <DependentUpon>frmDueDateND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmExploreFactura.resx">
+      <DependentUpon>frmExploreFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmNotaD_UNITE.resx">
+      <DependentUpon>frmNotaD_UNITE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\frmTipoNotaCredito.resx">
+      <DependentUpon>frmTipoNotaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_NC_Concept.resx">
+      <DependentUpon>RPT_NC_Concept.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_NC_Items.resx">
+      <DependentUpon>RPT_NC_Items.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas UNITE\RPT_ND.resx">
+      <DependentUpon>RPT_ND.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Notas\frmBuscarCliente.resx">
@@ -762,6 +1026,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Notas\frmNotaD.resx">
       <DependentUpon>frmNotaD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeracion Fiscal\frmNumeracionFiscal.resx">
+      <DependentUpon>frmNumeracionFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numeracion Fiscal\frmNumeracionFiscalCRUD.resx">
+      <DependentUpon>frmNumeracionFiscalCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frmAddProd.resx">
       <DependentUpon>frmAddProd.cs</DependentUpon>
@@ -789,6 +1059,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Retencion\xfrmCAIProveedoresAdmin.resx">
+      <DependentUpon>xfrmCAIProveedoresAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retencion\xfrmFindProvider.resx">
+      <DependentUpon>xfrmFindProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retencion\xfrmRetencion.resx">
+      <DependentUpon>xfrmRetencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retencion\xfrmRetencionNew.resx">
+      <DependentUpon>xfrmRetencionNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPTS\rptChequesEmitidos.resx">
       <DependentUpon>rptChequesEmitidos.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -820,6 +1102,12 @@
     <EmbeddedResource Include="RPTS\RPT_ND_NC_Local.resx">
       <DependentUpon>RPT_ND_NC_Local.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RPT_RETENCION.resx">
+      <DependentUpon>RPT_RETENCION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTS\RPT_Retencion_.resx">
+      <DependentUpon>RPT_Retencion_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TEMP_JV.resx">
       <DependentUpon>TEMP_JV.cs</DependentUpon>
@@ -856,6 +1144,17 @@
     <None Include="dsCheques.xss">
       <DependentUpon>dsCheques.xsd</DependentUpon>
     </None>
+    <None Include="Factura\dsFacturasPRD.xsc">
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
+    </None>
+    <None Include="Factura\dsFacturasPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFacturasPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Factura\dsFacturasPRD.xss">
+      <DependentUpon>dsFacturasPRD.xsd</DependentUpon>
+    </None>
     <None Include="Gestion de Usuarios\dsUsers.xsc">
       <DependentUpon>dsUsers.xsd</DependentUpon>
     </None>
@@ -867,7 +1166,6 @@
     <None Include="Gestion de Usuarios\dsUsers.xss">
       <DependentUpon>dsUsers.xsd</DependentUpon>
     </None>
-    <None Include="key_10_09_18.pfx" />
     <None Include="Mantenimiento\dsMante.xsc">
       <DependentUpon>dsMante.xsd</DependentUpon>
     </None>
@@ -879,6 +1177,39 @@
     <None Include="Mantenimiento\dsMante.xss">
       <DependentUpon>dsMante.xsd</DependentUpon>
     </None>
+    <None Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.xsc">
+      <DependentUpon>dsResolucion.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResolucion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Mantenimiento\Resolucion_Fiscal\dsResolucion.xss">
+      <DependentUpon>dsResolucion.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xsc">
+      <DependentUpon>dsRubros.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRubros.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Mantenimiento\Rubros\dsRubros.xss">
+      <DependentUpon>dsRubros.xsd</DependentUpon>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xsc">
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotasUNITE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Notas UNITE\dsNotasUNITE.xss">
+      <DependentUpon>dsNotasUNITE.xsd</DependentUpon>
+    </None>
     <None Include="Notas\dsNotas.xsc">
       <DependentUpon>dsNotas.xsd</DependentUpon>
     </None>
@@ -889,6 +1220,17 @@
     </None>
     <None Include="Notas\dsNotas.xss">
       <DependentUpon>dsNotas.xsd</DependentUpon>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xsc">
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNumeracionFiscal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Numeracion Fiscal\dsNumeracionFiscal.xss">
+      <DependentUpon>dsNumeracionFiscal.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Pedidos\dsPedidos.xsc">
@@ -911,6 +1253,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Retencion\dsRetencion.xsc">
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </None>
+    <None Include="Retencion\dsRetencion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRetencion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Retencion\dsRetencion.xss">
+      <DependentUpon>dsRetencion.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PNG\shrimp_16.png" />
@@ -1074,7 +1427,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="DevExpress.Charts.v18.2.Core">
+    <PublishFile Include="DevExpress.Charts.v23.1.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1084,7 +1437,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v18.2">
+    <PublishFile Include="DevExpress.DataAccess.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1094,7 +1447,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v18.2.UI">
+    <PublishFile Include="DevExpress.DataAccess.v23.1.UI">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1104,7 +1457,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Pdf.v18.2.Drawing">
+    <PublishFile Include="DevExpress.Pdf.v23.1.Drawing">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1114,7 +1467,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Sparkline.v18.2.Core">
+    <PublishFile Include="DevExpress.Sparkline.v23.1.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1124,7 +1477,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Xpo.v18.2">
+    <PublishFile Include="DevExpress.Xpo.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1134,7 +1487,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v18.2.Extensions">
+    <PublishFile Include="DevExpress.XtraCharts.v23.1.Extensions">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1144,7 +1497,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraNavBar.v18.2">
+    <PublishFile Include="DevExpress.XtraNavBar.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1154,7 +1507,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraPivotGrid.v18.2">
+    <PublishFile Include="DevExpress.XtraPivotGrid.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1164,7 +1517,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraRichEdit.v18.2">
+    <PublishFile Include="DevExpress.XtraRichEdit.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1174,7 +1527,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraTreeList.v18.2">
+    <PublishFile Include="DevExpress.XtraTreeList.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1184,7 +1537,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraVerticalGrid.v18.2">
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1194,7 +1547,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Data.v18.2.resources">
+    <PublishFile Include="de\DevExpress.Data.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1204,7 +1557,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.DataAccess.v18.2.resources">
+    <PublishFile Include="de\DevExpress.DataAccess.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1214,7 +1567,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.DataAccess.v18.2.UI.resources">
+    <PublishFile Include="de\DevExpress.DataAccess.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1224,7 +1577,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Office.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.Office.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1234,7 +1587,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Pdf.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.Pdf.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1244,7 +1597,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.PivotGrid.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.PivotGrid.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1254,7 +1607,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Printing.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.Printing.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1264,7 +1617,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.RichEdit.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.RichEdit.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1274,7 +1627,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Sparkline.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.Sparkline.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1284,7 +1637,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Utils.v18.2.resources">
+    <PublishFile Include="de\DevExpress.Utils.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1294,7 +1647,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Utils.v18.2.UI.resources">
+    <PublishFile Include="de\DevExpress.Utils.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1304,7 +1657,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Xpo.v18.2.resources">
+    <PublishFile Include="de\DevExpress.Xpo.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1314,7 +1667,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraBars.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraBars.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1324,7 +1677,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraCharts.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraCharts.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1334,7 +1687,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraCharts.v18.2.Wizard.resources">
+    <PublishFile Include="de\DevExpress.XtraCharts.v23.1.Wizard.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1344,7 +1697,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraEditors.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraEditors.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1354,7 +1707,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraGauges.v18.2.Core.resources">
+    <PublishFile Include="de\DevExpress.XtraGauges.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1364,7 +1717,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraGrid.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1374,7 +1727,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraLayout.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraLayout.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1384,7 +1737,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraNavBar.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraNavBar.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1394,7 +1747,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraPivotGrid.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraPivotGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1404,7 +1757,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraPrinting.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraPrinting.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1414,7 +1767,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraReports.v18.2.Extensions.resources">
+    <PublishFile Include="de\DevExpress.XtraReports.v23.1.Extensions.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1424,7 +1777,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraReports.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraReports.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1434,7 +1787,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraRichEdit.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraRichEdit.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1444,7 +1797,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraTreeList.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraTreeList.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1454,7 +1807,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraVerticalGrid.v18.2.resources">
+    <PublishFile Include="de\DevExpress.XtraVerticalGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1464,7 +1817,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Data.v18.2.resources">
+    <PublishFile Include="es\DevExpress.Data.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1474,7 +1827,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.DataAccess.v18.2.resources">
+    <PublishFile Include="es\DevExpress.DataAccess.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1484,7 +1837,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.DataAccess.v18.2.UI.resources">
+    <PublishFile Include="es\DevExpress.DataAccess.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1494,7 +1847,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Office.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.Office.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1504,7 +1857,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Pdf.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.Pdf.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1514,7 +1867,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.PivotGrid.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.PivotGrid.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1524,7 +1877,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Printing.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.Printing.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1534,7 +1887,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.RichEdit.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.RichEdit.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1544,7 +1897,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Sparkline.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.Sparkline.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1554,7 +1907,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Utils.v18.2.resources">
+    <PublishFile Include="es\DevExpress.Utils.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1564,7 +1917,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Utils.v18.2.UI.resources">
+    <PublishFile Include="es\DevExpress.Utils.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1574,7 +1927,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.Xpo.v18.2.resources">
+    <PublishFile Include="es\DevExpress.Xpo.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1584,7 +1937,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraBars.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraBars.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1594,7 +1947,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraCharts.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraCharts.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1604,7 +1957,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraCharts.v18.2.Wizard.resources">
+    <PublishFile Include="es\DevExpress.XtraCharts.v23.1.Wizard.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1614,7 +1967,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraEditors.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraEditors.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1624,7 +1977,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraGauges.v18.2.Core.resources">
+    <PublishFile Include="es\DevExpress.XtraGauges.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1634,7 +1987,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraGrid.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1644,7 +1997,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraLayout.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraLayout.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1654,7 +2007,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraNavBar.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraNavBar.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1664,7 +2017,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraPivotGrid.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraPivotGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1674,7 +2027,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraPrinting.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraPrinting.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1684,7 +2037,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraReports.v18.2.Extensions.resources">
+    <PublishFile Include="es\DevExpress.XtraReports.v23.1.Extensions.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1694,7 +2047,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraReports.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraReports.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1704,7 +2057,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraRichEdit.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraRichEdit.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1714,7 +2067,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraTreeList.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraTreeList.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1724,7 +2077,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="es\DevExpress.XtraVerticalGrid.v18.2.resources">
+    <PublishFile Include="es\DevExpress.XtraVerticalGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1734,7 +2087,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Data.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.Data.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1744,7 +2097,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.DataAccess.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.DataAccess.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1754,7 +2107,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.DataAccess.v18.2.UI.resources">
+    <PublishFile Include="ja\DevExpress.DataAccess.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1764,7 +2117,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Office.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.Office.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1774,7 +2127,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Pdf.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.Pdf.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1784,7 +2137,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.PivotGrid.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.PivotGrid.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1794,7 +2147,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Printing.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.Printing.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1804,7 +2157,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.RichEdit.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.RichEdit.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1814,7 +2167,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Sparkline.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.Sparkline.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1824,7 +2177,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Utils.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.Utils.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1834,7 +2187,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Utils.v18.2.UI.resources">
+    <PublishFile Include="ja\DevExpress.Utils.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1844,7 +2197,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Xpo.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.Xpo.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1854,7 +2207,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraBars.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraBars.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1864,7 +2217,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraCharts.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraCharts.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1874,7 +2227,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraCharts.v18.2.Wizard.resources">
+    <PublishFile Include="ja\DevExpress.XtraCharts.v23.1.Wizard.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1884,7 +2237,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraEditors.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraEditors.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1894,7 +2247,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraGauges.v18.2.Core.resources">
+    <PublishFile Include="ja\DevExpress.XtraGauges.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1904,7 +2257,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraGrid.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1914,7 +2267,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraLayout.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraLayout.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1924,7 +2277,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraNavBar.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraNavBar.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1934,7 +2287,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraPivotGrid.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraPivotGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1944,7 +2297,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraPrinting.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraPrinting.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1954,7 +2307,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraReports.v18.2.Extensions.resources">
+    <PublishFile Include="ja\DevExpress.XtraReports.v23.1.Extensions.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1964,7 +2317,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraReports.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraReports.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1974,7 +2327,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraRichEdit.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraRichEdit.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1984,7 +2337,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraTreeList.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraTreeList.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1994,7 +2347,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraVerticalGrid.v18.2.resources">
+    <PublishFile Include="ja\DevExpress.XtraVerticalGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2004,7 +2357,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Data.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.Data.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2014,7 +2367,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.DataAccess.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.DataAccess.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2024,7 +2377,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.DataAccess.v18.2.UI.resources">
+    <PublishFile Include="ru\DevExpress.DataAccess.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2034,7 +2387,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Office.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.Office.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2044,7 +2397,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Pdf.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.Pdf.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2054,7 +2407,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.PivotGrid.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.PivotGrid.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2064,7 +2417,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Printing.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.Printing.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2074,7 +2427,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.RichEdit.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.RichEdit.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2084,7 +2437,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Sparkline.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.Sparkline.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2094,7 +2447,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Utils.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.Utils.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2104,7 +2457,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Utils.v18.2.UI.resources">
+    <PublishFile Include="ru\DevExpress.Utils.v23.1.UI.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2114,7 +2467,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Xpo.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.Xpo.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2124,7 +2477,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraBars.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraBars.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2134,7 +2487,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraCharts.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraCharts.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2144,7 +2497,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraCharts.v18.2.Wizard.resources">
+    <PublishFile Include="ru\DevExpress.XtraCharts.v23.1.Wizard.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2154,7 +2507,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraEditors.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraEditors.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2164,7 +2517,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraGauges.v18.2.Core.resources">
+    <PublishFile Include="ru\DevExpress.XtraGauges.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2174,7 +2527,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraGrid.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2184,7 +2537,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraLayout.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraLayout.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2194,7 +2547,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraNavBar.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraNavBar.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2204,7 +2557,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraPivotGrid.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraPivotGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2214,7 +2567,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraPrinting.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraPrinting.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2224,7 +2577,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraReports.v18.2.Extensions.resources">
+    <PublishFile Include="ru\DevExpress.XtraReports.v23.1.Extensions.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2234,7 +2587,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraReports.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraReports.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2244,7 +2597,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraRichEdit.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraRichEdit.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2254,7 +2607,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraTreeList.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraTreeList.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2264,7 +2617,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraVerticalGrid.v18.2.resources">
+    <PublishFile Include="ru\DevExpress.XtraVerticalGrid.v23.1.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -2306,8 +2659,18 @@
     <None Include="Resources\Reports-icon24px.png" />
     <None Include="Resources\Custom-Icon-Design-Flatastic-5-Reports.ico" />
     <None Include="Resources\Alarm-Error-icon16px.png" />
+    <None Include="Resources\excel16px.png" />
+    <None Include="Resources\excel64px.png" />
+    <None Include="Resources\view-details24px.png" />
+    <None Include="Resources\add24px_.png" />
+    <None Include="Resources\printer24px_.png" />
+    <None Include="Resources\user32px.png" />
+    <None Include="Resources\cross32px.png" />
+    <None Include="Resources\Document-icon32px.png" />
+    <None Include="Resources\document-photo-icon32px.png" />
     <Content Include="Shrimp.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
